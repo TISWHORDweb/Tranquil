@@ -1,0 +1,26 @@
+// NAV
+.nav {
+    background-color: white;
+    max-height: 50px;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+
+    .right {
+        right: 0;
+
+        ul {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+// #close{
+//     width: 1200px !important;
+// }
+
+// #open{
+//     width: 950px !important;
+// }
