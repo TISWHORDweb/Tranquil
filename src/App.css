@@ -2,3 +2,8 @@
 /* .dashboard{
   display: flex;
 } */
+
+.side{
+  overflow: auto;
+  height: 91vh;
+}

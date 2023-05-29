@@ -40,7 +40,7 @@ function Sidebar() {
             <div class="sidebar">
                 <div class="logo_details">
                     <i class="bx bxl-audible icon"></i>
-                    <div class="logo_name">Code effect</div>
+                    <div class="logo_name">Code effect </div> 
                     {!noItem? <i class="bx bx-menu" id="btn" onClick={handleClose}></i>: 
                     <i class="bx bx-menu-alt-right" id="btn" onClick={handleOpen}></i>}
                 </div>

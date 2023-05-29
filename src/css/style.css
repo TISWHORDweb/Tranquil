@@ -1,15 +1,239 @@
 .nav {
   background-color: white;
-  max-height: 50px;
+  max-height: 60px;
   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
   display: flex;
   justify-content: space-between;
   padding: 10px 30px;
+  border-bottom: 1px solid rgba(221, 221, 221, 0.8666666667);
 }
-.nav .right {
-  right: 0;
+.nav .search {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--color-dull-white);
+  max-height: 35px;
+  align-items: center;
+  display: flex;
+}
+.nav .search input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 300px;
+  margin: 0px 20px;
 }
 .nav .right ul {
   display: flex;
   align-items: center;
+}
+.nav .right ul li {
+  list-style: none;
+  font-size: 25px;
+  padding: 0px 20px;
+}
+.nav .right ul li img {
+  width: 30px;
+  height: 30px;
+}
+
+.Banner .sets {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-white);
+  padding: 30px 50px;
+}
+.Banner .sets .set1 {
+  display: flex;
+  align-items: center;
+}
+.Banner .sets .set1 h2 {
+  font-weight: 600;
+  color: var(--color-default);
+}
+.Banner .sets .set1 p {
+  color: var(--color-grey);
+  font-size: 15px;
+}
+.Banner .sets .set1 img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.Banner .sets .set2 button {
+  margin: 0px 10px;
+  border-radius: 25px;
+  padding: 7px 20px;
+  font-size: 15px;
+  border: none;
+  font-weight: 500;
+  outline: none;
+  color: var(--color-white);
+}
+.Banner .sets .set2 button svg {
+  margin-right: 10px;
+}
+.Banner .sets .set2 .setting {
+  background-color: var(--color-second);
+}
+.Banner .sets .set2 .message {
+  background-color: var(--color-default);
+}
+.Banner .section {
+  padding: 30px;
+}
+.Banner .section .cards .set {
+  background-color: var(--color-white);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  border-radius: 20px;
+  padding: 20px;
+}
+.Banner .section .cards .set .opt1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Banner .section .cards .set .opt1 p {
+  color: var(--color-black);
+  font-size: 18px;
+}
+.Banner .section .cards .set .opt1 svg {
+  color: var(--color-grey);
+}
+.Banner .section .cards .set .task h1,
+.Banner .section .cards .set .due h1,
+.Banner .section .cards .set .proposal h1,
+.Banner .section .cards .set .open h1 {
+  font-size: 100px;
+  line-height: 80px;
+}
+.Banner .section .cards .set .task p,
+.Banner .section .cards .set .due p,
+.Banner .section .cards .set .proposal p,
+.Banner .section .cards .set .open p {
+  font-size: 18px;
+}
+.Banner .section .cards .set .due {
+  color: var(--color-blue);
+}
+.Banner .section .cards .set .task {
+  color: var(--color-red);
+}
+.Banner .section .cards .set .open {
+  color: var(--color-orange);
+}
+.Banner .section .cards .set .proposal {
+  color: var(--color-green);
+}
+.Banner .section .cards .set .down {
+  color: var(--color-grey);
+}
+.Banner .section .card-header {
+  background-color: var(--color-second);
+  color: white;
+  border: none;
+}
+.Banner .section .news .bg-soft-pink {
+  background-color: rgba(253, 60, 151, 0.08) !important;
+  color: var(--color-second) !important;
+}
+.Banner .section .news .btn {
+  background-color: var(--color-second);
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  font-size: 13px;
+  border-radius: 3px;
+}
+.Banner .section .news .newsHeading {
+  display: block;
+  display: -webkit-box;
+  margin: 0.5rem 0px;
+  height: 3.6em;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.Banner .section .news .newsSummary {
+  display: block;
+  display: -webkit-box;
+  height: 5em;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.Banner .section .tables {
+  background-color: var(--color-white);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+.Banner .section .tables .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+}
+.Banner .section .tables .top button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  padding: 8px 20px;
+}
+.Banner .section .tables .top .last {
+  color: var(--color-grey);
+}
+.Banner .section .tables .top .this {
+  color: var(--color-default);
+  background-color: var(--color-light-purple);
+}
+.Banner .section .tables thead {
+  background-color: var(--color-second);
+  color: var(--color-white);
+  font-weight: 600 !important;
+}
+.Banner .section .tables tr:nth-child(even) {
+  background-color: var(--color-light-purple);
+}
+.Banner .section .tables img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.Banner .section .tables .action {
+  position: relative;
+  cursor: pointer;
+}
+.Banner .section .tables .action .list {
+  position: absolute;
+  background-color: var(--color-white);
+  width: 120px;
+  top: -30px;
+  left: 30px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  display: none;
+}
+.Banner .section .tables .action .list ul {
+  padding: 0;
+  margin: 0;
+}
+.Banner .section .tables .action .list ul li {
+  list-style: none;
+  padding: 7px 20px;
+  color: var(--color-default);
+}
+.Banner .section .tables .action .list ul li:hover {
+  background-color: var(--color-second);
+  color: var(--color-white);
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+}
+.Banner .section .tables .action:hover .list {
+  display: block;
 }/*# sourceMappingURL=style.css.map */

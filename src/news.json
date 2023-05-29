@@ -1,0 +1,204 @@
+{
+    "articles": [
+        {
+            "id" : 1,
+            "author": "Sam Shead",
+            "title": "Facebook should not have bowed to public outrage and shut down its facial recognition system, former world chess champion says - CNBC",
+            "description": "Facebook is wrong to shut down facial recognition, according to Gary Kasparov, the former world chess champion and chairman of Human Rights Foundation.",
+            "url": "https://www.cnbc.com/2021/11/04/facebook-is-wrong-to-shut-down-facial-recognition-says-gary-kasparov.html",
+            "urlToImage": "https://image.cnbcfm.com/api/v1/image/105921427-1558274387737gettyimages-1058674250.jpg?v=1558274476",
+            "publishedAt": "2021-11-04T09:02:18Z",
+            "content": "LISBON, Portugal Facebook is wrong to shut down its facial recognition system, according to Gary Kasparov, the former world chess champion and chairman of the Human Rights Foundation.\r\nThe decision, … [+2410 chars]"
+        },
+        {
+            "id" : 2,
+            "author": "https://www.facebook.com/bbcnews",
+            "title": "Cupcakes recalled in US over metal fragment contamination fears - BBC News",
+            "description": "People are being warned not to eat the chocolate cakes which may have fragments of mesh wire.",
+            "url": "https://www.bbc.com/news/world-us-canada-59160644",
+            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/B260/production/_121346654_68767374tastykakebuttercremeicedchocolatecupcakes1488980.jpg",
+            "publishedAt": "2021-11-04T08:07:42Z",
+            "content": "Image caption, The multi-pack cakes were on sale in eight US states.\r\nA range of chocolate cupcakes is being recalled in eight US states because they may contain tiny fragments of metal mesh wire.\r\nP… [+1036 chars]"
+        },
+        {
+            "id" : 3,
+            "author": "Natasha Turak",
+            "title": "OPEC+ members likely to hold firm on slow oil output, despite international pressure - CNBC",
+            "description": "U.S. President Joe Biden has squarely blamed the reluctance of OPEC+ to pump more oil for the sharp rise in energy prices in the U.S. and around the world.",
+            "url": "https://www.cnbc.com/2021/11/04/opec-members-likely-to-hold-firm-on-slow-oil-output-despite-international-pressure-.html",
+            "urlToImage": "https://image.cnbcfm.com/api/v1/image/106468798-1585678776470gettyimages-1206554654.jpeg?v=1587001711",
+            "publishedAt": "2021-11-04T07:24:54Z",
+            "content": "Oil pumping jacks, also known as \"nodding donkeys,\" operate in an oilfield near Almetyevsk, Tatarstan, Russia, on Wednesday, March 11, 2020.\r\nOil prices have hit their highest levels since 2014, and … [+3304 chars]"
+        },
+        {
+            "id" : 4,
+            "author": null,
+            "title": "Why Is Shiba Inu Coin Price Crashing Today? - Benzinga - Benzinga",
+            "description": "Shiba Inu (CRYPTO: SHIB) traded 15.1% lower over 24 hours at $0.00005...",
+            "url": "https://www.benzinga.com/markets/cryptocurrency/21/11/23880624/why-is-shiba-inu-coin-price-crashing-today",
+            "urlToImage": "https://cdn2.benzinga.com/files/imagecache/og_image_social_share_1200x630/images/story/2012/petr-magera-v1pzr380qbo-unsplash_4.jpg?width=720",
+            "publishedAt": "2021-11-04T06:37:00Z",
+            "content": "Shiba Inu (CRYPTO: SHIB) traded 15.1% lower over 24 hours at $0.00005675 early Thursday morning.\r\nWhat’s Moving? The meme cryptocurrency has fallen 14.66% over a seven-day trailing period.\r\nAgainst B… [+1879 chars]"
+        },
+        {
+            "id" : 5,
+            "author": "Patrick Frater",
+            "title": "Netflix Under Pressure in Korea as ‘Squid Game’ Success Stirs Lawmakers and Internet Firms - Variety",
+            "description": "American streaming firm Netflix faced up to a multi-faceted wave of pressure in South Korea, a country where it has achieved market dominance and which is a vital production hub, this week. The global success of Korean-made Netflix original series “Squid Game…",
+            "url": "https://variety.com/2021/biz/asia/netflix-under-pressure-in-korea-1235104596/",
+            "urlToImage": "https://variety.com/wp-content/uploads/2021/11/squidgame-decor-lr.jpg?w=1000",
+            "publishedAt": "2021-11-04T06:00:00Z",
+            "content": "American streaming firm Netflix faced up to a multi-faceted wave of pressure in South Korea, a country where it has achieved market dominance and which is a vital production hub, this week.\r\nThe glob… [+5071 chars]"
+        },
+        {
+            "id" : 6,
+            "author": "Georgina Mckay",
+            "title": "Cathie Wood's Ark Dumps 3.9 Million Zillow Shares - Yahoo Finance",
+            "description": "(Bloomberg) -- Cathie Wood’s exchange-traded funds sold 3.9 million shares in Zillow Group Inc. on Wednesday as the stock’s rout deepened -- a day after...",
+            "url": "https://finance.yahoo.com/news/cathie-wood-ark-dumps-3-031239383.html",
+            "urlToImage": "https://s.yimg.com/uu/api/res/1.2/3ZerjMWRW.aVJwPfYwTdOg--~B/aD02NzU7dz0xMjAwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/bloomberg_markets_842/9b7d321214e8aecbf96b4ef304c0b10c",
+            "publishedAt": "2021-11-04T04:49:47Z",
+            "content": "(Bloomberg) -- Cathie Woods exchange-traded funds sold 3.9 million shares in Zillow Group Inc. on Wednesday as the stocks rout deepened -- a day after buying 288,813 of the securities.\r\nMost Read fro… [+1306 chars]"
+        },
+        {
+            "id" : 7,
+            "author": "Nick Visser",
+            "title": "New York City Cabbies Rescued From Debt Crisis In ‘New Dawn’ For Iconic Taxis - HuffPost",
+            "description": "\"Drivers will no longer be at risk of losing their homes, and no longer be held captive to a debt beyond their lifetime.”",
+            "url": "https://www.huffpost.com/entry/new-york-city-cab-medallion-bailout_n_61833a00e4b0c8666bd7a509",
+            "urlToImage": "https://img.huffingtonpost.com/asset/618354242400007a70508f4e.jpeg?cache=YVNhpHJYmC&ops=1778_1000",
+            "publishedAt": "2021-11-04T04:11:16Z",
+            "content": "New York City taxi drivers, crushed by debt after years of exploitative loan practices, will be rescued under a new deal announced by state officials on Wednesday, a major win for drivers amid a days… [+2975 chars]"
+        },
+        {
+            "id" : 8,
+            "author": "Edmund DeMarche",
+            "title": "Tom Hanks says he turned down offer from Jeff Bezos to go to space - Fox News",
+            "description": "Tom Hanks, them Hollywood legend best known for films like “Sleepless in Seattle” and “Apollo 13,” said in an interview Wednesday that Jeff Bezos, the billionaire founder of Amazon offered to fly him to space before William Shatner but…but for a steep price.",
+            "url": "https://www.foxnews.com/entertainment/tom-hanks-says-he-turned-down-offer-from-jeff-bezos-to-go-to-space",
+            "urlToImage": "https://static.foxnews.com/foxnews.com/content/uploads/2021/11/GettyImages-1350964627.jpg",
+            "publishedAt": "2021-11-04T03:58:37Z",
+            "content": "Maybe he's not a Prime member?\r\nTom Hanks, them Hollywood legend best known for films like \"Sleepless in Seattle\" and \"Apollo 13,\" said in an interview Wednesday that Jeff Bezos, the billionaire foun… [+2072 chars]"
+        },
+        {
+            "id" : 9,
+            "author": null,
+            "title": "'Squid Game' Crypto Price Shoots Up 1000% Even As Binance Investigates Rug Pull - Benzinga - Benzinga",
+            "description": "Cryptocurrency exchange Binance is reportedly investigating the Squid Game (CRYPTO: SQUID) token in order to pursue the matter wit...",
+            "url": "https://www.benzinga.com/markets/cryptocurrency/21/11/23879776/squid-game-crypto-price-shoots-up-1000-even-as-binance-investigates-rug-pull",
+            "urlToImage": "https://cdn2.benzinga.com/files/imagecache/og_image_social_share_1200x630/images/story/2012/screen_shot_2021-10-22_at_1.21.36_pm_1.png?width=720",
+            "publishedAt": "2021-11-04T03:43:00Z",
+            "content": "Cryptocurrency exchange Binance is reportedly investigating the Squid Game (CRYPTO: SQUID) token in order to pursue the matter with law enforcement.\r\nWhat Happened: The largest cryptocurrency exchang… [+2379 chars]"
+        },
+        {
+            "id" : 10,
+            "author": "Eric J. Savitz",
+            "title": "Qualcomm Stock Rises on Strong Earnings - Barron's",
+            "description": "The provider of mobile phone chips said revenue was up 43% from a year ago, easily beating Wall Street estimates.",
+            "url": "https://www.barrons.com/articles/qualcomm-stock-price-earnings-51635973720",
+            "urlToImage": "https://images.barrons.com/im-428307/social",
+            "publishedAt": "2021-11-04T03:27:00Z",
+            "content": "Qualcomm shares were rising after the provider of mobile phone chips posted better-than-expected quarterly results and offered strong guidance for its current quarter, driven by strong smartphone dem… [+275 chars]"
+        },
+        {
+            "id" : 11,
+            "author": "Reuters",
+            "title": "Kellogg's US cereal plant workers reject revised offer - Fox Business",
+            "description": "",
+            "url": "https://www.foxbusiness.com/markets/kelloggs-us-cereal-plant-workers-reject-revised-offer",
+            "urlToImage": "https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2021/10/0/0/kelloggs-labor-strike.jpg?ve=1&tl=1",
+            "publishedAt": "2021-11-04T03:07:48Z",
+            "content": "Kellogg Co said late Wednesday its cereal plant workers had rejected a revised offer by the U.S. packaged foods maker, prolonging the months-long negotiations over a new contract.\r\nGET FOX BUSINESS O… [+2668 chars]"
+        },
+        {
+            "id" : 12,
+            "author": "Laura Hautala",
+            "title": "PayPal, Venmo and CashApp simplify cryptocurrency for beginners - CNET",
+            "description": "Some of the apps are limited to buying and selling and don't let you move cryptocurrency to a wallet. But they might entice beginners to try crypto.",
+            "url": "https://www.cnet.com/personal-finance/crypto/paypal-venmo-and-cashapp-simplify-cryptocurrency-for-beginners/",
+            "urlToImage": "https://www.cnet.com/a/img/dJaUcyA062XD2kBjhrEsqzW_Jsc=/1200x630/2021/10/25/dbc15839-a152-428b-814e-819a7da07b1e/gettyimages-1332976426.jpg",
+            "publishedAt": "2021-11-04T02:59:46Z",
+            "content": "Simple crypto-buying features on familiar payment apps could attract more people to the world of cryptocurrency, analysts say.\r\nGetty Images\r\nIf you find cryptocurrency intimidating, payment apps wan… [+6882 chars]"
+        },
+        {
+            "id" : 13,
+            "author": null,
+            "title": "China's Market Is Opening Up Rapidly, Credit Suisse Says - Bloomberg Markets and Finance",
+            "description": "Neil Hosie, head of APAC and EMEA equities at Credit Suisse, discusses the outlook for the markets and the opportunities he sees. He speaks on the sidelines ...",
+            "url": "https://www.youtube.com/watch?v=FBLL1Sb79VU",
+            "urlToImage": "https://i.ytimg.com/vi/FBLL1Sb79VU/maxresdefault.jpg",
+            "publishedAt": "2021-11-04T02:56:34Z",
+            "content": null
+        },
+        {
+            "id" : 14,
+            "author": "Maggie Fox, CNN",
+            "title": "CDC updates health warning for aromatherapy spray - CNN",
+            "description": "Federal agencies widened recalls and warnings to doctors Wednesday about aromatherapy sprays that have been linked to fatal cases of a rare tropical disease.",
+            "url": "https://www.cnn.com/2021/11/03/health/aromatherapy-spray-health-warning/index.html",
+            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/211103164541-aromatherapy-spray-health-warning-super-tease.jpg",
+            "publishedAt": "2021-11-04T02:53:00Z",
+            "content": null
+        },
+        {
+            "id" : 15,
+            "author": "Paul Best",
+            "title": "Trump surgeon general speaks out on vaccinating kids - Fox News",
+            "description": "Dr. Jerome Adams, who served as U.S. surgeon general under former President Trump, said Wednesday that he will definitely be getting his 11-year-old daughter vaccinated against COVID-19 as the benefits clearly outweigh the risks.",
+            "url": "https://www.foxnews.com/us/former-trump-surgeon-general-on-vaccinating-his-kid-we-have-to-do-everything-we-can-to-protect-our-children",
+            "urlToImage": "https://static.foxnews.com/foxnews.com/content/uploads/2021/01/Jerome-Adams.jpg",
+            "publishedAt": "2021-11-04T02:51:37Z",
+            "content": "Dr. Jerome Adams, who served as U.S. surgeon general under former President Trump, said Wednesday that he will be getting his 11-year-old daughter vaccinated against COVID-19 as the benefits clearly … [+2825 chars]"
+        },
+        {
+            "id" : 16,
+            "author": null,
+            "title": "Watch: 'The Masked Singer' reveals who's behind The Beach Ball - CNN",
+            "description": "\"The Masked Singer\" pulled the cover off of the celebrity who's been inside a beach ball costume this season.",
+            "url": "https://www.cnn.com/videos/media/2021/11/04/masked-singer-beach-ball-reveal-mh-orig.cnn",
+            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/211104023256-masked-singer-beach-ball-super-tease.jpg",
+            "publishedAt": "2021-11-04T02:40:40Z",
+            "content": null
+        },
+        {
+            "id" : 17,
+            "author": "Florence Ion",
+            "title": "Boeing Wins FCC Approval for Satellite Internet Despite SpaceX's Best Attempts - Gizmodo",
+            "description": "SpaceX, which owns Starlink, claimed Boeing's satellites would cause interference, but that argument didn't fly.",
+            "url": "https://gizmodo.com/boeing-wins-fcc-approval-for-satellite-internet-despite-1847993439",
+            "urlToImage": "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/7246f4a21bea2794d6b92d1735e59472.jpg",
+            "publishedAt": "2021-11-04T02:00:00Z",
+            "content": "SpaceXs Starlink will eventually have more competition in the satellite broadband businessand rural Americans will have more providers to choose from. The FCC on Wednesday gave Boeing the go-ahead to… [+2235 chars]"
+        },
+        {
+            "id" : 18,
+            "author": "The Wall Street Journal",
+            "title": "MGM plans to sell Mirage operations in Las Vegas - Fox Business",
+            "description": "MGM Resorts International said it would sell its operations of The Mirage to another operator, part of a rash of deals that are changing the hands of ownership on the Las Vegas Strip.",
+            "url": "https://www.foxbusiness.com/markets/mgm-plans-to-sell-mirage-operations-in-las-vegas",
+            "urlToImage": "https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2021/11/0/0/Mirage-CasinoA.jpg?ve=1&tl=1",
+            "publishedAt": "2021-11-04T01:44:06Z",
+            "content": "MGM Resorts International said it would sell its operations of The Mirage to another operator, part of a rash of deals that are changing the hands of ownership on the Las Vegas Strip.\r\nMGM Resorts, l… [+3636 chars]"
+        },
+        {
+            "id" : 19,
+            "author": "Quinn Owen, Luke Barr",
+            "title": "CISA issues sweeping federal directive for government cybersecurity - ABC News",
+            "description": "",
+            "url": "https://abcnews.go.com/Politics/cisa-issues-sweeping-federal-directive-government-cybersecurity/story?id=80949645",
+            "urlToImage": "https://s.abcnews.com/images/US/solarwinds-rt-jt-211025_1635179105542_hpMain_16x9_992.jpg",
+            "publishedAt": "2021-11-04T01:41:12Z",
+            "content": "The Biden administration is ordering federal agencies to fix hundreds of vulnerabilities in software and hardware that hackers have been known to exploit, according to a new government directive rele… [+2942 chars]"
+        },
+        {
+            "id" : 20,
+            "author": "Eustance Huang",
+            "title": "Asia-Pacific stocks rise after Fed announces plans to start tapering bond purchases; oil falls 1% - CNBC",
+            "description": "The U.S. Federal Reserve announced Wednesday it will begin tapering the pace of asset purchases later in November.",
+            "url": "https://www.cnbc.com/2021/11/04/asia-markets-us-federal-reserve-currencies-oil.html",
+            "urlToImage": "https://image.cnbcfm.com/api/v1/image/106868547-1618443427035-gettyimages-1230415697-JAPAN_STOCK.jpeg?v=1635982105",
+            "publishedAt": "2021-11-03T23:43:42Z",
+            "content": "Fed announces tapering plans\r\nThe Fed announced Wednesday it will begin reducing the pace of monthly bond purchases later this month. The move was in line with market expectations following a series … [+1070 chars]"
+        }
+    ]
+}

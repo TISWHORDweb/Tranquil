@@ -1,6 +1,7 @@
 import React from 'react'
 import Sidebar from '../components/Sidebar/Sidebar'
 import Nav from '../components/Nav'
+import Banner from '../components/Banner'
 
 function Dashboard() {
     return (
@@ -11,6 +12,10 @@ function Dashboard() {
                 </div>
                 <div className="">
                     <Nav />
+                    <div className="side">
+                        <Banner />
+                    </div>
+
                 </div>
             </div>
 
