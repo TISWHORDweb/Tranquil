@@ -1,8 +1,8 @@
 import React from 'react'
 import '../css/style.css'
 import Logo from '../img/2N-Logo-Transparent.png'
-import Bg from '../img/vector-gray-and-white-color-geometric-abstract-background.jpeg'
-import Dot from '../img/Dot-Transparent-Isolated-Background.png'
+// import Bg from '../img/vector-gray-and-white-color-geometric-abstract-background.jpeg'
+// import Dot from '../img/Dot-Transparent-Isolated-Background.png'
 import { Link } from 'react-router-dom'
 function Login() {
     return (

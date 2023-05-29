@@ -30,6 +30,12 @@ body{
     position: relative;
 }
 
+.sidebar .logo_details img{
+    height: 40px;
+    width: 40px;
+    margin: 0 10px;
+}
+
 .sidebar .logo_details .icon{
     opacity: 0;
     transition: all 0.5s ease;

@@ -1,23 +1,25 @@
 import React, { useContext, useState } from 'react';
 import { MyContext } from '../../context/Context';
 import './sidebar.css'
+import Logo from '../../img/2N-Logo-Transparent.png'
 import Profile from '../../img/pexels-megan-ruth-16642703.jpg'
+import { Link } from 'react-router-dom'
 
 function Sidebar() {
 
-    const [noItem,setNoItem] = useState(false)
+    const [noItem, setNoItem] = useState(false)
 
-    window.onload = function(){
+    window.onload = function () {
         const sidebar = document.querySelector('.sidebar');
         const closeBtn = document.querySelector('#btn');
-    
-        closeBtn.addEventListener('click', function(){
+
+        closeBtn.addEventListener('click', function () {
             sidebar.classList.toggle("open")
             menuBtnChange()
         })
-    
+
         function menuBtnChange() {
-            if(sidebar.classList.contains("open")) {
+            if (sidebar.classList.contains("open")) {
                 setNoItem(true)
             } else {
                 setNoItem(false)
@@ -28,21 +30,22 @@ function Sidebar() {
     const { updateData } = useContext(MyContext);
 
     const handleOpen = () => {
-      updateData('open');
+        updateData('open');
     };
 
     const handleClose = () => {
         updateData('close');
-      };
+    };
 
     return (
         <div>
             <div class="sidebar">
                 <div class="logo_details">
-                    <i class="bx bxl-audible icon"></i>
-                    <div class="logo_name">Code effect </div> 
-                    {!noItem? <i class="bx bx-menu" id="btn" onClick={handleClose}></i>: 
-                    <i class="bx bx-menu-alt-right" id="btn" onClick={handleOpen}></i>}
+                    {/* <i class="bx bxl-audible icon"></i> */}
+                    <img src={Logo} alt="" className='icon' />
+                    <div class="logo_name">Zephyr </div>
+                    {!noItem ? <i class="bx bx-menu" id="btn" onClick={handleClose}></i> :
+                        <i class="bx bx-menu-alt-right" id="btn" onClick={handleOpen}></i>}
                 </div>
                 <ul class="nav-list p-0">
                     <li>
@@ -96,13 +99,16 @@ function Sidebar() {
                     </li>
                     <li class="profile">
                         <div class="profile_details">
-                            <img src={Profile} alt="Profile Image"/>
-                                <div class="profile_content">
-                                    <div class="name">John Doe</div>
-                                    <div class="designation">Admin</div>
-                                </div>
+                            <img src={Profile} alt="Profile Image" />
+                            <div class="profile_content">
+                                <div class="name">John Doe</div>
+                                <div class="designation">Admin</div>
+                            </div>
                         </div>
-                        <i class="bx bx-log-out" id="log_out"></i>
+                        <div className="">
+                            <i class="bx bx-log-out" id="log_out"></i>
+                        </div>
+
                     </li>
                 </ul>
             </div>
