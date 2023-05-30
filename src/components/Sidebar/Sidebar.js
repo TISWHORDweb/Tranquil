@@ -47,7 +47,7 @@ function Sidebar() {
                     {!noItem ? <i class="bx bx-menu" id="btn" onClick={handleClose}></i> :
                         <i class="bx bx-menu-alt-right" id="btn" onClick={handleOpen}></i>}
                 </div>
-                <ul class="nav-list p-0">
+                <ul class="nav-list p-0 ">
                     <li>
                         <a href="">
                             <i class="bx bx-grid-alt"></i>

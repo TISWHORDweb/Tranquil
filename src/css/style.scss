@@ -50,6 +50,7 @@
 .Banner {
     .sets {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         background-color: var(--color-white);
         padding: 30px 50px;
@@ -298,8 +299,6 @@
 /* Authentication */
 .auth {
     background: transparent;
-    overflow: hidden;
-    max-height: 100vh;
 
     .first {
         padding: 50px 100px;
@@ -426,6 +425,115 @@
         span {
             font-family: 'Kaushan Script', cursive;
             color: var(--color-second);
+        }
+    }
+
+}
+
+.navbar{display: none !important;}
+
+@media only screen and (max-width: 400px) {
+    .first {
+        padding: 50px ;
+    }
+    .second{
+        display: none;
+    }
+    .section{
+        .set{
+            margin: 10px auto;
+        }
+    }
+    .sets{
+        align-items:start !important;
+        padding: 20px 30px !important;
+        .set1{
+            img {
+                width: 100px !important;
+                height: 100px !important;
+                border-radius: 10% !important;
+                object-fit: cover;
+            }
+        }
+        .set2{
+            display: flex;
+            button {
+                margin: 10px 5px !important;
+                border-radius: 25px;
+                padding: 7px 15px !important;
+                font-size: 10px;
+                border: none;
+                font-weight: 400;
+                outline: none;
+                color: var(--color-white);
+
+                svg {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+    .but{
+        button{
+            padding: 7px 25px !important;
+            margin: 10px  !important;
+        }
+    }
+    #nav{
+        display: none !important;
+    }
+    .tables{
+        overflow: auto;
+        width: 330px;
+        .top{
+            display: none !important;
+        }
+    }
+    .navbar{
+        display: block !important;
+        padding: 6px 14px;
+        background-color: var(--color-default);
+        transition: all .5s ease;
+        .nan{
+            display: flex;
+            h2{
+                color: var(--color-white);
+                
+            }
+        }
+        li{
+            &:hover{
+                background-color: var(--color-dull-white);
+                border-radius: 5px;
+                i,span{color: var(--color-default);}
+            }
+            div{
+                display: flex;
+                align-items: center;
+            }
+            span{
+                font-size: 15px;
+                color: var(--color-dull-white);
+            }
+            i{
+                color: var(--color-dull-white);
+                line-height: 60px;
+                min-width: 50px;
+                font-size: 25px;
+                text-align: center;
+            }
+        }
+        img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px !important;
+        }
+        .navbar-toggler {
+            border: 1px solid var(--color-second) !important;
+            // background-color: var(--color-second) !important;
+            svg{
+                color: var(--color-white) !important;
+            }
         }
     }
 }

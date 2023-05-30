@@ -42,7 +42,7 @@ body{
 }
 
 .sidebar .logo_details .logo_name{
-    color: var(--color-second);
+    color: var(--color-white);
     font-size: 22px;
     font-weight: 600;
     opacity: 0;
@@ -279,3 +279,9 @@ body{
     font-weight: 500;
     margin: 18px;
 } */
+
+@media only screen and (max-width: 400px) {
+    .sidebar{
+        display: none !important;
+    }
+}

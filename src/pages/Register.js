@@ -43,7 +43,7 @@ function Register() {
                                     <input type="checkbox" />
                                     <p className='m-0 ms-3'>I agree with <span>Terms</span> and <span>Privacy Policy</span></p>
                                 </div>
-                                <div className="mt-4" >
+                                <div className="mt-4 mb-5" >
                                     <button className='button'>Create your free account</button>
                                 </div>
                             </div>
