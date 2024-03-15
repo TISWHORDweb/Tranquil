@@ -120,6 +120,7 @@ body{
     font-size: 14px;
     font-weight: 400;
     border-radius: 5px;
+    width: 130px;
     white-space: nowrap;
     opacity: 0;
     pointer-events: none;
@@ -143,19 +144,23 @@ body{
     list-style: none;
 }
 
-.sidebar li a {
+.sidebar li .tooltip{
+    color: var(--color-default);
+}
+
+.sidebar li span {
     display: flex;
     height: 100%;
     width: 100%;
     align-items: center;
     text-decoration: none;
-    background-color: var(--color-default);
+    /* background-color: var(--color-default); */
     position: relative;
     transition: all .5s ease;
     z-index: 12;
 }
 
-.sidebar li a::after{
+.sidebar li span::after{
     content: "";
     position: absolute;
     width: 100%;
@@ -168,12 +173,12 @@ body{
     z-index: -2;
 }
 
-.sidebar li a:hover::after{
+.sidebar li span:hover::after{
     transform: scaleX(1);
     color: var(--color-white);
 }
 
-.sidebar li a .link_name{
+.sidebar li span .link_name{
     color: var(--color-dull-white);
     font-size: 15px;
     font-weight: 400;
@@ -184,13 +189,13 @@ body{
     opacity: 0;
 }
 
-.sidebar.open li a .link_name{
+.sidebar.open li span .link_name{
     opacity: 1;
     pointer-events: auto;
 }
 
-.sidebar li a:hover .link_name,
-.sidebar li a:hover i{
+.sidebar li span:hover .link_name,
+.sidebar li span:hover i{
     transition: all 0.5s ease;
     color: var(--color-white);
 }

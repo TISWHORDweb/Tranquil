@@ -3,7 +3,7 @@ import { MyContext } from '../../context/Context';
 import './sidebar.css'
 import Logo from '../../img/2N-Logo-Transparent.png'
 import Profile from '../../img/pexels-megan-ruth-16642703.jpg'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function Sidebar() {
 
@@ -48,81 +48,83 @@ function Sidebar() {
                         <i class="bx bx-menu-alt-right" id="btn" onClick={handleOpen}></i>}
                 </div>
                 <ul class="nav-list p-0 ">
-                    <li>
-                        <span>
-                            <i class="bx bx-grid-alt"></i>
-                            <span class="link_name">Dashboard</span>
-                       </span>
-                        <span class="tooltip">Dashboard</span>
-                    </li>
+                    <Link to="/">
+                        <li>
+                            <span>
+                                <i class="bx bx-grid-alt"></i>
+                                <span class="link_name">Dashboard</span>
+                            </span>
+                            <span class="tooltip">Dashboard</span>
+                        </li>
+                    </Link>
                     <li>
                         <span>
                             <i class='bx bx-child' ></i>
                             <span class="link_name">Patients</span>
-                       </span>
-                        <span class="tooltip">User</span>
+                        </span>
+                        <span class="tooltip">Patients</span>
                     </li>
                     <li>
                         <span>
                             <i class='bx bx-clipboard'></i>
                             <span class="link_name">Reports</span>
-                       </span>
+                        </span>
                         <span class="tooltip">Reports</span>
                     </li>
                     <li>
                         <span>
                             <i class='bx bx-calendar'></i>
                             <span class="link_name">Appointment</span>
-                       </span>
+                        </span>
                         <span class="tooltip">Appointment</span>
                     </li>
                     <li>
                         <span>
                             <i class='bx bx-plus-medical' ></i>
                             <span class="link_name">Doctors</span>
-                       </span>
+                        </span>
                         <span class="tooltip">Doctors</span>
                     </li>
                     <li>
                         <span>
                             <i class='bx bx-injection'></i>
                             <span class="link_name">Medication</span>
-                       </span>
+                        </span>
                         <span class="tooltip">Medication</span>
                     </li>
                     <li>
                         <span>
                             <i class='bx bxs-capsule'></i>
                             <span class="link_name">Medicine</span>
-                       </span>
+                        </span>
                         <span class="tooltip">Medicine</span>
                     </li>
                     <li>
                         <span>
                             <i class='bx bx-credit-card' ></i>
                             <span class="link_name">Payment</span>
-                       </span>
+                        </span>
                         <span class="tooltip">Payment</span>
                     </li>
                     <li>
                         <span>
                             <i class='bx bxs-group' ></i>
                             <span class="link_name">Departments</span>
-                       </span>
+                        </span>
                         <span class="tooltip">Departments</span>
                     </li>
                     <li>
                         <span>
                             <i class="bx bx-user"></i>
                             <span class="link_name">Employee</span>
-                       </span>
+                        </span>
                         <span class="tooltip">Employee</span>
                     </li>
                     <li>
                         <span>
                             <i class="bx bx-bed"></i>
                             <span class="link_name">Allots</span>
-                       </span>
+                        </span>
                         <span class="tooltip">Allots</span>
                     </li>
                     <li class="profile">

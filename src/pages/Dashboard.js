@@ -1,24 +1,21 @@
 import React from 'react'
-import Sidebar from '../components/Sidebar/Sidebar'
-import Nav from '../components/Nav'
 import Banner from '../components/Banner'
+import Card from '../components/Card'
+import News from '../components/News'
+import Layout from '../components/Layout'
 
 function Dashboard() {
     return (
         <div>
-            <div className="dashboard d-flex">
-                <div className="">
-                    <Sidebar />
-                </div>
-                <div className="">
-                    <Nav />
-                    <div className="side">
-                        <Banner />
+            <Layout>
+                <div className="side">
+                    <Banner />
+                    <div className="section">
+                        <Card />
+                        <News />
                     </div>
-
                 </div>
-            </div>
-
+            </Layout>
         </div>
     )
 }
