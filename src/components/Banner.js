@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Prof from '../img/pexels-megan-ruth-16642703.jpg'
-import img1 from '../img/pexels-alexander-rondón-15206807.jpg'
-import img2 from '../img/pexels-sevil-yeva-15895543.jpg'
-import img3 from '../img/pexels-néo-rioux-9489163.jpg'
+// import img1 from '../img/pexels-alexander-rondón-15206807.jpg'
+// import img2 from '../img/pexels-sevil-yeva-15895543.jpg'
+// import img3 from '../img/pexels-néo-rioux-9489163.jpg'
 import { Carousel } from "react-bootstrap";
 import articles from '../news.json'
 
@@ -12,7 +12,7 @@ function Banner() {
     useEffect(() => {
         setData(articles);
         // console.log(data.articles[0])
-    })
+    },[setData])
 
     return (
         <div>
@@ -20,7 +20,7 @@ function Banner() {
                 <div className="sets">
                     <div className="set1">
                         <div className="">
-                            <img src={Prof} alt="Profile image" />
+                            <img src={Prof} alt="Profile img" />
                         </div>
                         <div className="ms-3">
                             <h2 className='m-0'>Welcome back, Brian!</h2>
@@ -172,7 +172,7 @@ function Banner() {
                             </div>
                         </div>
                     </div>
-                    <div className="tables">
+                    {/* <div className="tables">
                         <div className="top">
                             <div className="">
                                 <p className='m-0'>Github Issues Summary</p>
@@ -259,7 +259,7 @@ function Banner() {
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

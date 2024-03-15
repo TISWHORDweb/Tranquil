@@ -103,6 +103,12 @@
 .Banner .section .cards .set .opt1 svg {
   color: var(--color-grey);
 }
+.Banner .section .cards .set .task,
+.Banner .section .cards .set .due,
+.Banner .section .cards .set .proposal,
+.Banner .section .cards .set .open {
+  text-align: center;
+}
 .Banner .section .cards .set .task h1,
 .Banner .section .cards .set .due h1,
 .Banner .section .cards .set .proposal h1,

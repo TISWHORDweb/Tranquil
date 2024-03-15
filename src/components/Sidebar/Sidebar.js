@@ -3,7 +3,7 @@ import { MyContext } from '../../context/Context';
 import './sidebar.css'
 import Logo from '../../img/2N-Logo-Transparent.png'
 import Profile from '../../img/pexels-megan-ruth-16642703.jpg'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 function Sidebar() {
 
@@ -49,57 +49,85 @@ function Sidebar() {
                 </div>
                 <ul class="nav-list p-0 ">
                     <li>
-                        <a href="">
+                        <span>
                             <i class="bx bx-grid-alt"></i>
                             <span class="link_name">Dashboard</span>
-                        </a>
+                       </span>
                         <span class="tooltip">Dashboard</span>
                     </li>
                     <li>
-                        <a href="">
-                            <i class="bx bx-user"></i>
-                            <span class="link_name">User</span>
-                        </a>
+                        <span>
+                            <i class='bx bx-child' ></i>
+                            <span class="link_name">Patients</span>
+                       </span>
                         <span class="tooltip">User</span>
                     </li>
                     <li>
-                        <a href="">
-                            <i class="bx bx-chat"></i>
-                            <span class="link_name">Message</span>
-                        </a>
-                        <span class="tooltip">Message</span>
+                        <span>
+                            <i class='bx bx-clipboard'></i>
+                            <span class="link_name">Reports</span>
+                       </span>
+                        <span class="tooltip">Reports</span>
                     </li>
                     <li>
-                        <a href="">
-                            <i class="bx bx-pie-chart-alt-2"></i>
-                            <span class="link_name">Analytics</span>
-                        </a>
-                        <span class="tooltip">Analytics</span>
+                        <span>
+                            <i class='bx bx-calendar'></i>
+                            <span class="link_name">Appointment</span>
+                       </span>
+                        <span class="tooltip">Appointment</span>
                     </li>
                     <li>
-                        <a href="">
-                            <i class="bx bx-folder"></i>
-                            <span class="link_name">File Manager</span>
-                        </a>
-                        <span class="tooltip">File Manager</span>
+                        <span>
+                            <i class='bx bx-plus-medical' ></i>
+                            <span class="link_name">Doctors</span>
+                       </span>
+                        <span class="tooltip">Doctors</span>
                     </li>
                     <li>
-                        <a href="">
-                            <i class="bx bx-cart-alt"></i>
-                            <span class="link_name">Order</span>
-                        </a>
-                        <span class="tooltip">Order</span>
+                        <span>
+                            <i class='bx bx-injection'></i>
+                            <span class="link_name">Medication</span>
+                       </span>
+                        <span class="tooltip">Medication</span>
                     </li>
                     <li>
-                        <a href="">
-                            <i class="bx bx-cog"></i>
-                            <span class="link_name">Settings</span>
-                        </a>
-                        <span class="tooltip">Settings</span>
+                        <span>
+                            <i class='bx bxs-capsule'></i>
+                            <span class="link_name">Medicine</span>
+                       </span>
+                        <span class="tooltip">Medicine</span>
+                    </li>
+                    <li>
+                        <span>
+                            <i class='bx bx-credit-card' ></i>
+                            <span class="link_name">Payment</span>
+                       </span>
+                        <span class="tooltip">Payment</span>
+                    </li>
+                    <li>
+                        <span>
+                            <i class='bx bxs-group' ></i>
+                            <span class="link_name">Departments</span>
+                       </span>
+                        <span class="tooltip">Departments</span>
+                    </li>
+                    <li>
+                        <span>
+                            <i class="bx bx-user"></i>
+                            <span class="link_name">Employee</span>
+                       </span>
+                        <span class="tooltip">Employee</span>
+                    </li>
+                    <li>
+                        <span>
+                            <i class="bx bx-bed"></i>
+                            <span class="link_name">Allots</span>
+                       </span>
+                        <span class="tooltip">Allots</span>
                     </li>
                     <li class="profile">
                         <div class="profile_details">
-                            <img src={Profile} alt="Profile Image" />
+                            <img src={Profile} alt="Profile img" />
                             <div class="profile_content">
                                 <div class="name">John Doe</div>
                                 <div class="designation">Admin</div>
