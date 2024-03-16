@@ -57,13 +57,15 @@ function Sidebar() {
                             <span class="tooltip">Dashboard</span>
                         </li>
                     </Link>
-                    <li>
-                        <span>
-                            <i class='bx bx-child' ></i>
-                            <span class="link_name">Patients</span>
-                        </span>
-                        <span class="tooltip">Patients</span>
-                    </li>
+                    <Link to="/patient">
+                        <li>
+                            <span>
+                                <i class='bx bx-child' ></i>
+                                <span class="link_name">Patients</span>
+                            </span>
+                            <span class="tooltip">Patients</span>
+                        </li>
+                    </Link>
                     <li>
                         <span>
                             <i class='bx bx-clipboard'></i>

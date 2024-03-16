@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRoutes } from 'react-router-dom';
-import { Dashboard, Login, Register, Profile } from '../pages/index';
+import { Dashboard, Login, Register, Profile, Patients } from '../pages/index';
 
 
 export const Routes = () => {
@@ -20,6 +20,10 @@ export const Routes = () => {
         {
             path: '/profile',
             element: < Profile />
+        },
+        {
+            path: '/patient',
+            element: < Patients />
         }
     ]);
 };

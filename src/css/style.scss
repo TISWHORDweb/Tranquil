@@ -13,6 +13,10 @@
 // GENERAL
 // ================================================================
 
+.borderGray {
+    border: 1px solid #efefef;
+    border-radius: 15px;
+}
 
 // NAV
 .nav {
@@ -66,16 +70,16 @@
                     font-weight: 500;
                     outline: none;
                     color: var(--color-white);
-    
+
                     i {
                         margin-right: 10px;
                     }
                 }
-    
+
                 .setting {
                     background-color: var(--color-second);
                 }
-    
+
                 .message {
                     background-color: var(--color-default);
                 }
@@ -491,19 +495,22 @@
 ////////////////////////////////////////////////////////////////
 /// //PROFILE
 /// ////////////////////////////////////////////////////////////////
-.Profile{
+.Profile {
     background-color: var(--color-white);
     padding: 10px 20px;
     border-radius: 20px;
     margin: 30px 0;
-    .card1{
-        .header{
+
+    .card1 {
+        padding: 20px;
+
+        .header {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            // justify-content: space-between;
+            gap: 15px;
 
-            h3 {
-                font-weight: 600;
+            h4 {
                 color: var(--color-default);
             }
 
@@ -512,6 +519,108 @@
                 height: 70px;
                 border-radius: 50%;
                 object-fit: cover;
+            }
+        }
+
+        h5 {
+            color: var(--color-second);
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                margin: 10px 0;
+                font-size: 15px;
+
+                i {
+                    font-size: 20px;
+                    color: var(--color-second);
+                }
+            }
+        }
+    }
+
+    .card3 {
+        padding: 20px;
+
+        p {
+            color: var(--color-second);
+            margin: 0;
+            color: gray;
+        }
+
+        h5{
+            color: var(--color-second);
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                margin: 10px 0;
+                font-size: 15px;
+            }
+        }
+    }
+
+    .overview {
+        padding: 20px;
+        padding-bottom: 0px;
+        h4 {
+            color: var(--color-second);
+        }
+
+        p {
+            margin: 0;
+            color: gray;
+            font-size: 13px;
+        }
+        h5{
+            font-size: 15px;
+        }
+    }
+    .card2{
+        padding: 20px;
+        padding-bottom: 0px;
+        .column{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            cursor: pointer;
+            p{
+                margin: 0;
+                color: var(--color-default);
+            }
+            i{
+                text-align: center;
+                font-size: 25px;
+                color: gray;
+            }
+            .icon{
+                background-color: var(--color-second-light);
+                width: 45px;
+                height: 45px;
+                padding: 12px;
+                border: 1px solid var(--color-second);
+                border-radius: 50%;
+                i{
+                    text-align: center;
+                    font-size: 20px;
+                    color:var(--color-second);
+                }
+            }
+            &:hover{
+                background-color: var(--color-second-light);
             }
         }
     }

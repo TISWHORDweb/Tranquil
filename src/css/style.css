@@ -11,6 +11,11 @@
   box-sizing: border-box;
 }
 
+.borderGray {
+  border: 1px solid #efefef;
+  border-radius: 15px;
+}
+
 .nav {
   background-color: white;
   max-height: 60px;
@@ -403,13 +408,15 @@
   border-radius: 20px;
   margin: 30px 0;
 }
+.Profile .card1 {
+  padding: 20px;
+}
 .Profile .card1 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 15px;
 }
-.Profile .card1 .header h3 {
-  font-weight: 600;
+.Profile .card1 .header h4 {
   color: var(--color-default);
 }
 .Profile .card1 .header img {
@@ -418,6 +425,97 @@
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.Profile .card1 h5 {
+  color: var(--color-second);
+}
+.Profile .card1 ul {
+  margin: 0;
+  padding: 0;
+}
+.Profile .card1 ul li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 10px 0;
+  font-size: 15px;
+}
+.Profile .card1 ul li i {
+  font-size: 20px;
+  color: var(--color-second);
+}
+.Profile .card3 {
+  padding: 20px;
+}
+.Profile .card3 p {
+  color: var(--color-second);
+  margin: 0;
+  color: gray;
+}
+.Profile .card3 h5 {
+  color: var(--color-second);
+}
+.Profile .card3 ul {
+  margin: 0;
+  padding: 0;
+}
+.Profile .card3 ul li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 10px 0;
+  font-size: 15px;
+}
+.Profile .overview {
+  padding: 20px;
+  padding-bottom: 0px;
+}
+.Profile .overview h4 {
+  color: var(--color-second);
+}
+.Profile .overview p {
+  margin: 0;
+  color: gray;
+  font-size: 13px;
+}
+.Profile .overview h5 {
+  font-size: 15px;
+}
+.Profile .card2 {
+  padding: 20px;
+  padding-bottom: 0px;
+}
+.Profile .card2 .column {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  cursor: pointer;
+}
+.Profile .card2 .column p {
+  margin: 0;
+  color: var(--color-default);
+}
+.Profile .card2 .column i {
+  text-align: center;
+  font-size: 25px;
+  color: gray;
+}
+.Profile .card2 .column .icon {
+  background-color: var(--color-second-light);
+  width: 45px;
+  height: 45px;
+  padding: 12px;
+  border: 1px solid var(--color-second);
+  border-radius: 50%;
+}
+.Profile .card2 .column .icon i {
+  text-align: center;
+  font-size: 20px;
+  color: var(--color-second);
+}
+.Profile .card2 .column:hover {
+  background-color: var(--color-second-light);
 }
 
 @media only screen and (max-width: 400px) {

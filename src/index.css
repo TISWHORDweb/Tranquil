@@ -3,6 +3,7 @@
 :root {
   --color-default: rgb(15, 23, 43);
   --color-second: rgb(79, 70, 229);
+  --color-second-light: rgba(78, 70, 229, 0.163);
   --color-white: #fff;
   --color-black: #000;
   --color-body: rgb(241, 245, 249);
