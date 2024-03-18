@@ -42,15 +42,11 @@ function Nav() {
     return (
         <div>
             <div className="nav" id="nav" style={{ width: width }}>
-                <div className="search">
-                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                    </svg></span>
-                    <input type="text" placeholder='Search.....' />
+                <div className="">
                 </div>
                 <div className="right">
                     <ul>
-                        <li> <Link to="/profile"><button className='setting'>  <i class="bx bx-user"></i>View Profile</button></Link></li>
+                        <li> <Link to="/profile"><button className='btnNoBg'>  <i class="bx bx-user"></i>View Profile</button></Link></li>
                     </ul>
                 </div>
             </div>

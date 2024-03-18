@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Pacifico&display=swap');
 :root {
-  --color-default: rgb(15, 23, 43);
-  --color-second: rgb(79, 70, 229);
-  --color-second-light: rgba(78, 70, 229, 0.163);
-  --color-white: #fff;
+  --color-default: #0D5F50;
+  --color-second: #54D4BD;
+  --color-second-dark: rgb(41, 35, 156);
+  --color-second-light:  rgba(238, 255, 252, 1);
+  --color-white: white;
   --color-black: #000;
   --color-body: rgb(241, 245, 249);
   --color-red: rgb(222, 59, 60);
@@ -16,13 +17,15 @@
   --color-light-purple: rgb(225, 231, 255);
   --color-yellow: rgb(253, 224, 71);
   --color-pink: rgb(219, 39, 119);
-  --color-default-light: hsl(225, 21.43%, 21.96%);
+  --color-default-light: #FFFFFF80;
   --color-dull-white: rgb(199, 202, 205);
+  --color-dark: #0c5648;
 }
 
 * {
   padding: 0%;
   margin: 0%;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
+

@@ -20,8 +20,7 @@ function Banner() {
                         </div>
                     </div>
                     <div className="set2">
-                        <button className='message'> <i class='bx bx-calendar'></i> View Appointments</button>
-                        {/* <Link to="/profile"><button className='setting'>  <i class="bx bx-user"></i> Profile</button></Link> */}
+                        <button className='btnDark'> <i class='bx bx-calendar'></i> View Appointments</button>
                     </div>
                 </div>
             </div>
