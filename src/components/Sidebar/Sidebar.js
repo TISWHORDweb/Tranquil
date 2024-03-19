@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { MyContext } from '../../context/Context';
 import './sidebar.css'
-import Logo from '../../img/2N-Logo-Transparent.png'
+import Logo from '../../img/Tranquil4.png'
 import Profile from '../../img/pexels-megan-ruth-16642703.jpg'
 import { Link } from 'react-router-dom'
 
@@ -43,7 +43,6 @@ function Sidebar() {
                 <div class="logo_details">
                     {/* <i class="bx bxl-audible icon"></i> */}
                     <img src={Logo} alt="" className='icon' />
-                    <div class="logo_name">Zephyr </div>
                     {!noItem ? <i class="bx bx-menu" id="btn" onClick={handleClose}></i> :
                         <i class="bx bx-menu-alt-right" id="btn" onClick={handleOpen}></i>}
                 </div>

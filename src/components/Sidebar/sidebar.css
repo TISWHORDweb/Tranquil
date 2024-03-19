@@ -31,8 +31,7 @@ body{
 }
 
 .sidebar .logo_details img{
-    height: 40px;
-    width: 40px;
+    width: 20%;
     margin: 0 10px;
 }
 
