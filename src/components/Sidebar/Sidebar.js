@@ -128,19 +128,6 @@ function Sidebar() {
                         </span>
                         <span class="tooltip">Allots</span>
                     </li>
-                    <li class="profile">
-                        <div class="profile_details">
-                            <img src={Profile} alt="Profile img" />
-                            <div class="profile_content">
-                                <div class="name">John Doe</div>
-                                <div class="designation">Admin</div>
-                            </div>
-                        </div>
-                        <div className="">
-                            <i class="bx bx-log-out" id="log_out"></i>
-                        </div>
-
-                    </li>
                 </ul>
             </div>
         </div>

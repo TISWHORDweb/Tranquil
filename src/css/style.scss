@@ -13,6 +13,12 @@
     width: 100%;
 }
 
+
+.offcanvas-start {
+    width: 300px !important;
+    background-color: var(--color-default);
+}
+
 .fw3 {
     font-weight: 300;
 }
@@ -65,10 +71,15 @@
     font-size: 17px !important;
 }
 
+
 // ================================================================
 // GENERAL
 // ================================================================
 
+.Nav-menu{
+    font-size: 30px;
+    color: var(--color-second);
+}
 .borderGray {
     border: 1px solid #efefef;
     border-radius: 15px;
@@ -1028,13 +1039,8 @@
 
         li {
             &:hover {
-                background-color: var(--color-dull-white);
+                background-color: var(--color-default-light);
                 border-radius: 5px;
-
-                i,
-                span {
-                    color: var(--color-default);
-                }
             }
 
             div {
@@ -1044,11 +1050,11 @@
 
             span {
                 font-size: 15px;
-                color: var(--color-dull-white);
+                color: var(--color-white);
             }
 
             i {
-                color: var(--color-dull-white);
+                color: var(--color-white);
                 line-height: 60px;
                 min-width: 50px;
                 font-size: 25px;
@@ -1057,8 +1063,7 @@
         }
 
         img {
-            width: 180px;
-            height: 30px;
+            width: 150px;
             margin-right: 10px !important;
         }
 

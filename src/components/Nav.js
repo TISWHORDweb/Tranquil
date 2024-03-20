@@ -36,8 +36,8 @@ function Nav() {
         } else (
             setNoItem(false)
         )
-    
-    },[setNoItem, cardWidth, data])
+
+    }, [setNoItem, cardWidth, data])
     console.log(noItem);
     return (
         <div>
@@ -55,58 +55,85 @@ function Nav() {
                 <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
                         <a class="navbar-brand nan" href="/"><img src={Logo} alt="" /> </a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
-                            </svg>
-                            {/* <span class="navbar-toggler-icon"></span> */}
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mt-3">
-                                <li class="nav-item">
-                                    <div className="">
-                                        <i class="bx bx-grid-alt"></i>
-                                        <span class="link_name">Dashboard</span>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <div className="">
-                                        <i class="bx bx-user"></i>
-                                        <span class="link_name">User</span>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <div className="">
-                                        <i class="bx bx-chat"></i>
-                                        <span class="link_name">Message</span>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <div className="">
-                                        <i class="bx bx-pie-chart-alt-2"></i>
-                                        <span class="link_name">Analytics</span>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <div className="">
-                                        <i class="bx bx-folder"></i>
-                                        <span class="link_name">File Manager</span>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <div className="">
-                                        <i class="bx bx-cart-alt"></i>
-                                        <span class="link_name">Order</span>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <div className="">
-                                        <i class="bx bx-cog"></i>
-                                        <span class="link_name">Settings</span>
-                                    </div>
-                                </li>
-                            </ul>
+                        <button class="btn Nav-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="bx bx-menu" id="btn" ></i></button>
+
+                        <div class="offcanvas offcanvas-start w-300" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"><img src={Logo} alt="" /></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <ul class="m-0 p-0">
+                                    <li class="">
+                                        <div className="">
+                                            <i class="bx bx-grid-alt"></i>
+                                            <span class="link_name">Dashboard</span>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <div className="">
+                                            <i class='bx bx-child' ></i>
+                                            <span class="link_name">Patients</span>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <div className="">
+                                            <i class='bx bx-clipboard'></i>
+                                            <span class="link_name">Reports</span>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <div className="">
+                                            <i class='bx bx-calendar'></i>
+                                            <span class="link_name">Appointment</span>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <div className="">
+                                            <i class='bx bx-plus-medical' ></i>
+                                            <span class="link_name">Doctors</span>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <div className="">
+                                            <i class='bx bx-injection'></i>
+                                            <span class="link_name">Medication</span>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <div className="">
+                                            <i class='bx bxs-capsule'></i>
+                                            <span class="link_name">Medicine</span>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <div className="">
+                                            <i class='bx bx-credit-card' ></i>
+                                            <span class="link_name">Payment</span>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <div className="">
+                                            <i class='bx bxs-group' ></i>
+                                            <span class="link_name">Departments</span>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <div className="">
+                                            <i class="bx bx-user"></i>
+                                            <span class="link_name">Employee</span>
+                                        </div>
+                                    </li>
+                                    <li class="">
+                                        <div className="">
+                                            <i class="bx bx-bed"></i>
+                                            <span class="link_name">Allots</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
+
                     </div>
                 </nav>
             </div>
