@@ -15,6 +15,14 @@
   width: 100%;
 }
 
+.w-100 {
+  width: 100%;
+}
+
+.w-80 {
+  width: 80%;
+}
+
 .offcanvas-start {
   width: 300px !important;
   background-color: var(--color-default);
@@ -525,7 +533,7 @@
   color: var(--color-second);
 }
 
-.navbar {
+.navbarDisplay {
   display: none !important;
 }
 
@@ -716,7 +724,8 @@
   cursor: pointer;
   font-size: 14px;
 }
-.Table table tbody tr td, .Table table tbody tr th {
+.Table table tbody tr td,
+.Table table tbody tr th {
   color: gray !important;
 }
 .Table .TableAction .dot {
@@ -772,6 +781,10 @@
   .first {
     padding: 50px;
   }
+  .navbar2 .logo {
+    width: 50% !important;
+    margin-top: 10px !important;
+  }
   .second {
     display: none;
   }
@@ -819,45 +832,45 @@
   .tables .top {
     display: none !important;
   }
-  .navbar {
+  .navbarDisplay {
     display: block !important;
     padding: 6px 14px;
     background-color: var(--color-default);
     transition: all 0.5s ease;
   }
-  .navbar .nan {
+  .navbarDisplay .nan {
     display: flex;
   }
-  .navbar .nan h2 {
+  .navbarDisplay .nan h2 {
     color: var(--color-white);
   }
-  .navbar li:hover {
+  .navbarDisplay li:hover {
     background-color: var(--color-default-light);
     border-radius: 5px;
   }
-  .navbar li div {
+  .navbarDisplay li div {
     display: flex;
     align-items: center;
   }
-  .navbar li span {
+  .navbarDisplay li span {
     font-size: 15px;
     color: var(--color-white);
   }
-  .navbar li i {
+  .navbarDisplay li i {
     color: var(--color-white);
     line-height: 60px;
     min-width: 50px;
     font-size: 25px;
     text-align: center;
   }
-  .navbar img {
+  .navbarDisplay img {
     width: 150px;
     margin-right: 10px !important;
   }
-  .navbar .navbar-toggler {
+  .navbarDisplay .navbar-toggler {
     border: 1px solid var(--color-second) !important;
   }
-  .navbar .navbar-toggler svg {
+  .navbarDisplay .navbar-toggler svg {
     color: var(--color-white) !important;
   }
 }/*# sourceMappingURL=style.css.map */

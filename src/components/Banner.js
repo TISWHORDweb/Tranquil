@@ -1,31 +1,31 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
-// import img1 from '../img/pexels-alexander-rondón-15206807.jpg'
-// import img2 from '../img/pexels-sevil-yeva-15895543.jpg'
-// import img3 from '../img/pexels-néo-rioux-9489163.jpg'
-
-
+import BannerImg from '../img/Banner.png'
+import { Link } from 'react-router-dom'
 
 function Banner() {
-    return (
-        <div>
-            <div className="Banner">
-                <div className="sets">
-                    <div className="set1">
-                        <div className="ms-3">
-                            <h2 className='m-0'>Welcome back, Brian!</h2>
-                            <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
-                                <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
-                            </svg> You have 2 new messages and 15 new tasks</p>
+  return (
+    <div>
+        <div className="NewBanner">
+            <div className="container">
+                <div className="row mt-4">
+                    <div className="col-md-6 mb-3">
+                        <div className="text mt-5">
+                            <h3>Personal Care For Your Healthy Living</h3>
+                            <p>At Tranquil Hospital, we are dedicated to providing exceptional healthcare services in a serene and calming environment. Our team of experienced healthcare professionals is committed to delivering compassionate care and personalized treatment to each patient. From advanced medical technologies to holistic wellness programs, we strive to promote healing, comfort, and well-being for all our patients. Experience the tranquility of healthcare excellence at Tranquil Hospital.</p>
+                            <div className="">
+                               <Link to="/web/about"> <button className='btnDark'>About Us</button></Link>
+                               <Link to="/web/service"><button className='btnLight'>Get Started</button></Link>
+                            </div>
                         </div>
                     </div>
-                    <div className="set2">
-                        <button className='btnDark'> <i class='bx bx-calendar'></i> View Appointments</button>
+                    <div className="col-md-6 mb-3">
+                        <img src={BannerImg} alt="" className='w-80' />
                     </div>
                 </div>
             </div>
         </div>
-    )
+    </div>
+  )
 }
 
 export default Banner

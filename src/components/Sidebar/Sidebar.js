@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react';
 import { MyContext } from '../../context/Context';
 import './sidebar.css'
 import Logo from '../../img/Tranquil4.png'
-import Profile from '../../img/pexels-megan-ruth-16642703.jpg'
 import { Link } from 'react-router-dom'
 
 function Sidebar() {

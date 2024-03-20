@@ -52,7 +52,7 @@ function Nav() {
             </div>
 
             <div className="">
-                <nav class="navbar navbar-expand-lg">
+                <nav class="navbar navbar-expand-lg navbarDisplay">
                     <div class="container-fluid">
                         <a class="navbar-brand nan" href="/"><img src={Logo} alt="" /> </a>
                         <button class="btn Nav-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="bx bx-menu" id="btn" ></i></button>

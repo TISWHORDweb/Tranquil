@@ -1,12 +1,12 @@
 import React from 'react';
 import { useRoutes } from 'react-router-dom';
-import { Dashboard, Login, Register, Profile, Patients } from '../pages/index';
+import { Dashboard, Login, Register, Profile, Patients, Home, Contact, About, Service } from '../pages/index';
 
 
 export const Routes = () => {
     return useRoutes([
         {
-            path: '/',
+            path: '/app',
             element: < Dashboard />
         },
         {
@@ -18,12 +18,32 @@ export const Routes = () => {
             element: < Register />
         },
         {
-            path: '/profile',
+            path: '/app/profile',
             element: < Profile />
         },
         {
-            path: '/patient',
+            path: '/app/patient',
             element: < Patients />
+        },
+        {
+            path: '/',
+            element: < Home />
+        },
+        {
+            path: '/web',
+            element: < Home />
+        },
+        {
+            path: '/web/contact',
+            element: < Contact />
+        },
+        {
+            path: '/web/about',
+            element: < About />
+        },
+        {
+            path: '/web/service',
+            element: < Service />
         }
     ]);
 };

@@ -1,15 +1,15 @@
 import React from 'react'
-import Banner from '../components/Banner'
 import Card from '../components/Card'
 import News from '../components/News'
 import Layout from '../components/Layout'
+import BannerHeader from '../components/BannerHeader'
 
 function Dashboard() {
     return (
         <div>
             <Layout>
                 <div className="side">
-                    <Banner />
+                    <BannerHeader />
                     <div className="section">
                         <Card />
                         <News />

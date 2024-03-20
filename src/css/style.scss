@@ -13,6 +13,13 @@
     width: 100%;
 }
 
+.w-100 {
+    width: 100%;
+}
+
+.w-80 {
+    width: 80%;
+}
 
 .offcanvas-start {
     width: 300px !important;
@@ -76,10 +83,11 @@
 // GENERAL
 // ================================================================
 
-.Nav-menu{
+.Nav-menu {
     font-size: 30px;
     color: var(--color-second);
 }
+
 .borderGray {
     border: 1px solid #efefef;
     border-radius: 15px;
@@ -617,7 +625,7 @@
 
 }
 
-.navbar {
+.navbarDisplay {
     display: none !important;
 }
 
@@ -861,7 +869,8 @@
         thead {
             background-color: var(--color-second) !important;
             color: white;
-            th{
+
+            th {
                 font-size: 16px !important;
             }
         }
@@ -869,12 +878,15 @@
         tbody {
             tr {
                 margin-bottom: 10px !important;
-                color: gray !important;;
+                color: gray !important;
+                ;
                 cursor: pointer;
                 font-size: 14px;
 
-                td, th {
-                    color: gray !important;;
+                td,
+                th {
+                    color: gray !important;
+                    ;
                 }
 
                 // &:hover{
@@ -959,6 +971,13 @@
         padding: 50px;
     }
 
+    .navbar2 {
+        .logo {
+            width: 50% !important;
+            margin-top: 10px !important;
+        }
+    }
+
     .second {
         display: none;
     }
@@ -1022,7 +1041,7 @@
         }
     }
 
-    .navbar {
+    .navbarDisplay {
         display: block !important;
         padding: 6px 14px;
         background-color: var(--color-default);
