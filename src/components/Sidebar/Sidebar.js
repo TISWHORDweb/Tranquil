@@ -46,7 +46,7 @@ function Sidebar() {
                         <i class="bx bx-menu-alt-right" id="btn" onClick={handleOpen}></i>}
                 </div>
                 <ul class="nav-list p-0 ">
-                    <Link to="/">
+                    <Link to="/app">
                         <li>
                             <span>
                                 <i class="bx bx-grid-alt"></i>
@@ -55,7 +55,7 @@ function Sidebar() {
                             <span class="tooltip">Dashboard</span>
                         </li>
                     </Link>
-                    <Link to="/patient">
+                    <Link to="/app/patient">
                         <li>
                             <span>
                                 <i class='bx bx-child' ></i>
@@ -119,6 +119,13 @@ function Sidebar() {
                             <span class="link_name">Employee</span>
                         </span>
                         <span class="tooltip">Employee</span>
+                    </li>
+                    <li>
+                        <span>
+                            <i class='bx bx-plus-medical' ></i>
+                            <span class="link_name">Nurse</span>
+                        </span>
+                        <span class="tooltip">Nurse</span>
                     </li>
                     <li>
                         <span>
