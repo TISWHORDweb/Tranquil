@@ -46,7 +46,7 @@ function Nav() {
                 </div>
                 <div className="right">
                     <ul>
-                        <li> <Link to="/profile"><button className='btnNoBg'>  <i class="bx bx-user"></i>View Profile</button></Link></li>
+                        <li> <Link to="/app/profile"><button className='btnNoBg'>  <i class="bx bx-user"></i>View Profile</button></Link></li>
                     </ul>
                 </div>
             </div>

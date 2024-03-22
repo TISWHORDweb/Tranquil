@@ -1,7 +1,7 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import Banner2 from '../components/Banner2'
+import Navbar from '../../components/Navbar'
+import Footer from '../../components/Footer'
+import Banner2 from '../../components/Banner2'
 
 function About() {
     return (

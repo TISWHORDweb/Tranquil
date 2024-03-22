@@ -1,10 +1,29 @@
 import React from 'react';
 import { useRoutes } from 'react-router-dom';
-import { Dashboard, Login, Register, Profile, Patients, Home, Contact, About, Service } from '../pages/index';
-
+import { Dashboard, Login, Register, Report, Profile, Patients, Home, Contact, About, Service, Employee, Appointment, Medication, Medicine, Department, Allots, Payment } from '../pages/index';
 
 export const Routes = () => {
     return useRoutes([
+        {
+            path: '/',
+            element: < Home />
+        },
+        {
+            path: '/web',
+            element: < Home />
+        },
+        {
+            path: '/web/contact',
+            element: < Contact />
+        },
+        {
+            path: '/web/about',
+            element: < About />
+        },
+        {
+            path: '/web/service',
+            element: < Service />
+        },
         {
             path: '/app',
             element: < Dashboard />
@@ -26,24 +45,40 @@ export const Routes = () => {
             element: < Patients />
         },
         {
-            path: '/',
-            element: < Home />
+            path: '/app/report',
+            element: < Report />
         },
         {
-            path: '/web',
-            element: < Home />
+            path: '/app/employee',
+            element: < Employee />
         },
         {
-            path: '/web/contact',
-            element: < Contact />
+            path: '/app/appointment',
+            element: < Appointment />
         },
         {
-            path: '/web/about',
-            element: < About />
+            path: '/app/medication',
+            element: < Medication />
         },
         {
-            path: '/web/service',
-            element: < Service />
-        }
+            path: '/app/medicine',
+            element: < Medicine />
+        },
+        {
+            path: '/app/medicine',
+            element: < Medicine />
+        },
+        {
+            path: '/app/department',
+            element: < Department />
+        },
+        {
+            path: '/app/allots',
+            element: < Allots />
+        },
+        {
+            path: '/app/payment',
+            element: < Payment />
+        },
     ]);
 };

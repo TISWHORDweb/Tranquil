@@ -64,76 +64,78 @@ function Sidebar() {
                             <span class="tooltip">Patients</span>
                         </li>
                     </Link>
-                    <li>
-                        <span>
-                            <i class='bx bx-clipboard'></i>
-                            <span class="link_name">Reports</span>
-                        </span>
-                        <span class="tooltip">Reports</span>
-                    </li>
-                    <li>
-                        <span>
-                            <i class='bx bx-calendar'></i>
-                            <span class="link_name">Appointment</span>
-                        </span>
-                        <span class="tooltip">Appointment</span>
-                    </li>
-                    <li>
-                        <span>
-                            <i class='bx bx-plus-medical' ></i>
-                            <span class="link_name">Doctors</span>
-                        </span>
-                        <span class="tooltip">Doctors</span>
-                    </li>
-                    <li>
-                        <span>
-                            <i class='bx bx-injection'></i>
-                            <span class="link_name">Medication</span>
-                        </span>
-                        <span class="tooltip">Medication</span>
-                    </li>
-                    <li>
-                        <span>
-                            <i class='bx bxs-capsule'></i>
-                            <span class="link_name">Medicine</span>
-                        </span>
-                        <span class="tooltip">Medicine</span>
-                    </li>
-                    <li>
-                        <span>
-                            <i class='bx bx-credit-card' ></i>
-                            <span class="link_name">Payment</span>
-                        </span>
-                        <span class="tooltip">Payment</span>
-                    </li>
-                    <li>
-                        <span>
-                            <i class='bx bxs-group' ></i>
-                            <span class="link_name">Departments</span>
-                        </span>
-                        <span class="tooltip">Departments</span>
-                    </li>
-                    <li>
-                        <span>
-                            <i class="bx bx-user"></i>
-                            <span class="link_name">Employee</span>
-                        </span>
-                        <span class="tooltip">Employee</span>
-                    </li>
-                    <li>
-                        <span>
-                            <i class='bx bx-plus-medical' ></i>
-                            <span class="link_name">Nurse</span>
-                        </span>
-                        <span class="tooltip">Nurse</span>
-                    </li>
-                    <li>
-                        <span>
-                            <i class="bx bx-bed"></i>
-                            <span class="link_name">Allots</span>
-                        </span>
-                        <span class="tooltip">Allots</span>
-                    </li>
+                    <Link to="/app/report">
+                        <li>
+                            <span>
+                                <i class='bx bx-clipboard'></i>
+                                <span class="link_name">Reports</span>
+                            </span>
+                            <span class="tooltip">Reports</span>
+                        </li>
+                    </Link>
+                    <Link to="/app/appointment">
+                        <li>
+                            <span>
+                                <i class='bx bx-calendar'></i>
+                                <span class="link_name">Appointment</span>
+                            </span>
+                            <span class="tooltip">Appointment</span>
+                        </li>
+                    </Link>
+                    <Link to="/app/medicine">
+                        <li>
+                            <span>
+                                <i class='bx bxs-capsule'></i>
+                                <span class="link_name">Medicine</span>
+                            </span>
+                            <span class="tooltip">Medicine</span>
+                        </li>
+                    </Link>
+                    <Link to="/app/department">
+                        <li>
+                            <span>
+                                <i class='bx bxs-group' ></i>
+                                <span class="link_name">Departments</span>
+                            </span>
+                            <span class="tooltip">Departments</span>
+                        </li>
+                    </Link>
+                    <Link to="/app/medication">
+                        <li>
+                            <span>
+                                <i class='bx bx-injection'></i>
+                                <span class="link_name">Medication</span>
+                            </span>
+                            <span class="tooltip">Medication</span>
+                        </li>
+                    </Link>
+                    <Link to="/app/employee">
+                        <li>
+                            <span>
+                                <i class="bx bx-user"></i>
+                                <span class="link_name">Employee</span>
+                            </span>
+                            <span class="tooltip">Employee</span>
+                        </li>
+                    </Link>
+                    <Link to="/app/allots">
+                        <li>
+                            <span>
+                                <i class="bx bx-bed"></i>
+                                <span class="link_name">Allots</span>
+                            </span>
+                            <span class="tooltip">Allots</span>
+                        </li>
+                    </Link>
+                    <Link to="/app/payment">
+                        <li>
+                            <span>
+                                <i class='bx bx-credit-card' ></i>
+                                <span class="link_name">Payment</span>
+                            </span>
+                            <span class="tooltip">Payment</span>
+                        </li>
+                    </Link>
                 </ul>
             </div>
         </div>

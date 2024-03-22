@@ -1,12 +1,20 @@
-import Dashboard from "../pages/Dashboard"
-import Login from "../pages/Login"
-import Register from "../pages/Register"
-import Profile from "../pages/Profile"
-import Patients from "../pages/Patients"
-import Home from "../pages/Home"
-import Contact from "../pages/Contact"
-import About from "../pages/About"
-import Service from "../pages/Service"
+import Dashboard from "./app/Dashboard"
+import Login from "./auth/Login"
+import Register from "./auth/Register"
+import Profile from "./app/Profile/Profile"
+import Patients from "./app/Patient/Patients"
+import Report from "./app/Report/Report"
+import Appointment from "./app/Appointment/Appointment"
+import Employee from "./app/Employee/Employee"
+import Medication from "./app/Medication/Medication"
+import Medicine from "./app/Medicine/Medicine"
+import Department from "./app/Department/Department"
+import Payment from "./app/Payment/Payment"
+import Allots from "./app/Allots/Allots"
+import Home from "./web/Home"
+import Contact from "./web/Contact"
+import About from "./web/About"
+import Service from "./web/Service"
 
 export {
     Dashboard,
@@ -17,5 +25,13 @@ export {
     Service,
     Home,
     Contact,
-    About
+    About,
+    Report,
+    Employee,
+    Appointment,
+    Medication,
+    Medicine,
+    Department,
+    Allots,
+    Payment
 }
