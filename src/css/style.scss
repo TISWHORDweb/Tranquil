@@ -66,6 +66,10 @@
     font-size: 10px !important;
 }
 
+.m50 {
+    margin: 50px !important;
+}
+
 .BorderNone {
     border: none !important;
 }
@@ -78,6 +82,39 @@
     font-size: 17px !important;
 }
 
+.alert__message {
+    // background: red;
+    // padding: 0.8rem 1.4rem;
+    margin-bottom: 1rem;
+    border-radius: var(--card-border-radius-2);
+    font-size: 15px;
+}
+
+.alert__message.error {
+    background: var(--color-red-light);
+    color: var(--color-red);
+
+    p {
+        margin: 0;
+    }
+}
+
+.Unavailable {
+    color: var(--color-red);
+}
+
+.Available {
+    color: var(--color-green);
+}
+
+.alert__message.success {
+    background: var(--color-green-light);
+    color: var(--color-green);
+
+    p {
+        margin: 0;
+    }
+}
 
 // ================================================================
 // GENERAL
@@ -86,6 +123,20 @@
 .Nav-menu {
     font-size: 30px;
     color: var(--color-second);
+}
+
+.Inner {
+    overflow: scroll;
+    height: 91.2vh;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+
 }
 
 .borderGray {
@@ -173,6 +224,28 @@
     }
 }
 
+.btnRed {
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 15px;
+    border: none;
+    margin: 0 10px;
+    font-weight: 500;
+    outline: none;
+    color: var(--color-red);
+    background-color: transparent;
+    border: 1px solid var(--color-red);
+
+    i {
+        margin-right: 10px;
+    }
+
+    &:hover {
+        background-color: var(--color-red);
+        color: var(--color-white);
+    }
+}
+
 .btnDark {
     border-radius: 10px;
     padding: 10px 20px;
@@ -190,6 +263,69 @@
 
     &:hover {
         background-color: var(--color-dark);
+    }
+}
+
+.AlertModal {
+    background-color: var(--color-bg);
+    padding: 50px;
+
+    p {
+        margin: 15px 0;
+        font-size: 15px;
+    }
+
+    img {
+        width: 15%;
+        margin-top: 20px;
+    }
+
+    .buttonss {
+        margin: 0 15px;
+        margin-bottom: 20px;
+
+        .success {
+            font-size: 14px;
+            color: var(--color-default);
+            padding: 7px 15px;
+            border-radius: 6px;
+            outline: none;
+            margin: 0 5px;
+            border: none;
+            background-color: transparent;
+            border: 1px solid var(--color-default);
+
+            img {
+                width: 20px;
+                margin-right: 5px;
+            }
+
+            &:hover {
+                background: var(--color-default);
+                color: var(--color-white);
+            }
+        }
+
+        .cancel {
+            font-size: 14px;
+            color: var(--color-white);
+            padding: 7px 15px;
+            border-radius: 6px;
+            outline: none;
+            margin: 0 5px;
+            border: none;
+            background-color: var(--color-red);
+
+            img {
+                width: 20px;
+                margin-right: 5px;
+            }
+
+            &:hover {
+                background: var(--color-red);
+                color: var(--color-white);
+            }
+        }
     }
 }
 
@@ -478,155 +614,14 @@
 }
 
 
-/* Authentication */
-.auth {
-    background: transparent;
-
-    .first {
-        padding: 50px 100px;
-        padding-left: 200px;
-        background-color: var(--color-white);
-        height: 100vh;
-
-        .up {
-            img {
-                width: 60px;
-                height: 60px;
-                margin-bottom: 30px;
-            }
-
-            h2 {
-                font-weight: 600;
-                color: var(--color-default);
-            }
-
-            p {
-                font-size: 15px;
-                color: var(--color-default);
-
-                span {
-                    color: var(--color-second);
-                    text-decoration: none;
-                }
-            }
-        }
-
-        form {
-            input {
-                border: 1px solid var(--color-dull-white);
-                outline: none;
-                width: 100%;
-                padding: 10px;
-                border-radius: 5px;
-            }
-
-            label {
-                font-size: 14px;
-                color: var(--color-default);
-            }
-        }
-
-        .check {
-            display: flex;
-            align-items: center;
-
-            input {
-                width: 15px;
-                height: 15px;
-            }
-
-            p {
-                font-size: 13px;
-                color: var(--color-default);
-
-                span {
-                    color: var(--color-second);
-                    text-decoration: none;
-                }
-            }
-        }
-
-        .marg {
-            margin: 20px 0;
-        }
-
-        .rem {
-            display: flex;
-            justify-content: space-between;
-            margin: 20px 0;
-
-            .pass {
-                p {
-                    font-size: 14px;
-                    color: var(--color-second);
-                }
-            }
-        }
-
-        .button {
-            width: 100%;
-            color: var(--color-white);
-            background-color: var(--color-second);
-            border-radius: 25px;
-            padding: 10px;
-            border: none;
-            outline: none;
-            font-size: 14px;
-        }
-
-        .but {
-            button {
-                padding: 7px 35px;
-                border: none;
-                outline: none;
-                margin: 0px 10px;
-                border-radius: 20px;
-                background: transparent;
-                color: var(--color-grey);
-                border: 1px solid var(--color-dull-white);
-            }
-        }
-    }
-
-    .second {
-        background-color: var(--color-default);
-        height: 100vh;
-        background-image: url(../img/vector-gray-and-white-color-geometric-abstract-background.jpeg);
-        position: relative;
-        background-position: center;
-        background-size: cover;
-        background-blend-mode: multiply;
-        padding: 200px 50px;
-
-        .line {
-            border-bottom: 4px solid var(--color-blue);
-            width: 15%;
-        }
-
-        .text {
-            color: var(--color-white);
-
-            h2 {
-                font-weight: 700;
-                font-size: 40px;
-                color: var(--color-second);
-            }
-        }
-
-        .lorem {
-            padding-left: 50px;
-        }
-
-        span {
-            font-family: 'Kaushan Script', cursive;
-            color: var(--color-second);
-        }
-    }
-
-}
 
 .navbarDisplay {
     display: none !important;
+}
+
+.move-right {
+    display: block;
+    float: right !important;
 }
 
 ////////////////////////////////////////////////////////////////
@@ -634,9 +629,9 @@
 /// ////////////////////////////////////////////////////////////////
 .Profile {
     background-color: var(--color-white);
-    padding: 10px 20px;
+    padding: 10px;
     border-radius: 20px;
-    margin: 30px 0;
+    margin: 20px 0;
 
     .card1 {
         padding: 20px;
@@ -980,6 +975,10 @@
 
     .second {
         display: none;
+    }
+
+    .Authpad {
+        padding: 30px !important;
     }
 
     .section {

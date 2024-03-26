@@ -13,7 +13,6 @@ body{
     padding: 6px 14px;
     z-index: 1;
     overflow: scroll;
-    
     background-color: var(--color-default);
     transition: all .5s ease;
     /* position:fixed; */

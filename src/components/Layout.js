@@ -11,7 +11,7 @@ function Layout(props) {
                 </div>
                 <div className="">
                     <Nav />
-                    <div className="">
+                    <div className="Inner">
                         {props.children}
                     </div>
                 </div>

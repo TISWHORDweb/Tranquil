@@ -896,18 +896,47 @@ ul.list_ok li:before {
      object-fit: contain;
 }
 
+.registerScroll {
+  height: 95vh;
+  overflow: scroll;
+  overflow-x: none;
+  width: 100%;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+.registerScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.Authpad {
+  padding: 50px 100px;
+}
+
+.btnBottom {
+  font-size: 14px;
+}
+.btnBottom a {
+  color: var(--color-second) !important;
+}
+
+.verifyInput_Container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+
 .auth {
   background: transparent;
 }
 .auth .first {
-  padding: 50px 100px;
-  padding-left: 200px;
   background-color: var(--color-white);
   height: 100vh;
 }
 .auth .first .up img {
-  width: 60px;
-  height: 60px;
+  width: 60%;
   margin-bottom: 30px;
 }
 .auth .first .up h2 {
@@ -926,12 +955,14 @@ ul.list_ok li:before {
   border: 1px solid var(--color-dull-white);
   outline: none;
   width: 100%;
+  color: var(--color-second);
   padding: 10px;
   border-radius: 5px;
+  font-size: 15px;
 }
 .auth .first form label {
   font-size: 14px;
-  color: var(--color-default);
+  color: var(--color-second);
 }
 .auth .first .check {
   display: flex;
@@ -960,16 +991,6 @@ ul.list_ok li:before {
 .auth .first .rem .pass p {
   font-size: 14px;
   color: var(--color-second);
-}
-.auth .first .button {
-  width: 100%;
-  color: var(--color-white);
-  background-color: var(--color-second);
-  border-radius: 25px;
-  padding: 10px;
-  border: none;
-  outline: none;
-  font-size: 14px;
 }
 .auth .first .but button {
   padding: 7px 35px;

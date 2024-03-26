@@ -1,9 +1,15 @@
 import React from 'react';
 import { useRoutes } from 'react-router-dom';
 import { Dashboard, Login, Register, Report, Profile, Patients, Home, Contact, About, Service, Employee, Appointment, Medication, Medicine, Department, Allots, Payment } from '../pages/index';
+import ResetPassword from '../pages/auth/Reset/ResetPassword';
+import VerifyCode from '../pages/auth/Reset/VerifyCode';
+import UpdatePassword from '../pages/auth/Reset/UpdatePassword';
 
 export const Routes = () => {
     return useRoutes([
+        /**
+       * WEBSITE
+       */
         {
             path: '/',
             element: < Home />
@@ -28,6 +34,9 @@ export const Routes = () => {
             path: '/app',
             element: < Dashboard />
         },
+        /**
+       * AUTHENTICATION
+       */
         {
             path: '/auth/login',
             element: < Login />
@@ -36,6 +45,21 @@ export const Routes = () => {
             path: '/auth/register',
             element: < Register />
         },
+        {
+            path: '/auth/reset',
+            element: < ResetPassword />
+        },
+        {
+            path: '/auth/verify',
+            element: < VerifyCode />
+        },
+        {
+            path: '/auth/change',
+            element: < UpdatePassword />
+        },
+        /**
+         * APPLICATION
+         */
         {
             path: '/app/profile',
             element: < Profile />

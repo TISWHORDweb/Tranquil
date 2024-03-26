@@ -68,6 +68,10 @@
   font-size: 10px !important;
 }
 
+.m50 {
+  margin: 50px !important;
+}
+
 .BorderNone {
   border: none !important;
 }
@@ -80,9 +84,50 @@
   font-size: 17px !important;
 }
 
+.alert__message {
+  margin-bottom: 1rem;
+  border-radius: var(--card-border-radius-2);
+  font-size: 15px;
+}
+
+.alert__message.error {
+  background: var(--color-red-light);
+  color: var(--color-red);
+}
+.alert__message.error p {
+  margin: 0;
+}
+
+.Unavailable {
+  color: var(--color-red);
+}
+
+.Available {
+  color: var(--color-green);
+}
+
+.alert__message.success {
+  background: var(--color-green-light);
+  color: var(--color-green);
+}
+.alert__message.success p {
+  margin: 0;
+}
+
 .Nav-menu {
   font-size: 30px;
   color: var(--color-second);
+}
+
+.Inner {
+  overflow: scroll;
+  height: 91.2vh;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+}
+.Inner::-webkit-scrollbar {
+  display: none;
 }
 
 .borderGray {
@@ -164,6 +209,26 @@
   color: var(--color-white);
 }
 
+.btnRed {
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 15px;
+  border: none;
+  margin: 0 10px;
+  font-weight: 500;
+  outline: none;
+  color: var(--color-red);
+  background-color: transparent;
+  border: 1px solid var(--color-red);
+}
+.btnRed i {
+  margin-right: 10px;
+}
+.btnRed:hover {
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
+
 .btnDark {
   border-radius: 10px;
   padding: 10px 20px;
@@ -180,6 +245,60 @@
 }
 .btnDark:hover {
   background-color: var(--color-dark);
+}
+
+.AlertModal {
+  background-color: var(--color-bg);
+  padding: 50px;
+}
+.AlertModal p {
+  margin: 15px 0;
+  font-size: 15px;
+}
+.AlertModal img {
+  width: 15%;
+  margin-top: 20px;
+}
+.AlertModal .buttonss {
+  margin: 0 15px;
+  margin-bottom: 20px;
+}
+.AlertModal .buttonss .success {
+  font-size: 14px;
+  color: var(--color-default);
+  padding: 7px 15px;
+  border-radius: 6px;
+  outline: none;
+  margin: 0 5px;
+  border: none;
+  background-color: transparent;
+  border: 1px solid var(--color-default);
+}
+.AlertModal .buttonss .success img {
+  width: 20px;
+  margin-right: 5px;
+}
+.AlertModal .buttonss .success:hover {
+  background: var(--color-default);
+  color: var(--color-white);
+}
+.AlertModal .buttonss .cancel {
+  font-size: 14px;
+  color: var(--color-white);
+  padding: 7px 15px;
+  border-radius: 6px;
+  outline: none;
+  margin: 0 5px;
+  border: none;
+  background-color: var(--color-red);
+}
+.AlertModal .buttonss .cancel img {
+  width: 20px;
+  margin-right: 5px;
+}
+.AlertModal .buttonss .cancel:hover {
+  background: var(--color-red);
+  color: var(--color-white);
 }
 
 .nav {
@@ -417,131 +536,20 @@
   display: block;
 }
 
-/* Authentication */
-.auth {
-  background: transparent;
-}
-.auth .first {
-  padding: 50px 100px;
-  padding-left: 200px;
-  background-color: var(--color-white);
-  height: 100vh;
-}
-.auth .first .up img {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 30px;
-}
-.auth .first .up h2 {
-  font-weight: 600;
-  color: var(--color-default);
-}
-.auth .first .up p {
-  font-size: 15px;
-  color: var(--color-default);
-}
-.auth .first .up p span {
-  color: var(--color-second);
-  text-decoration: none;
-}
-.auth .first form input {
-  border: 1px solid var(--color-dull-white);
-  outline: none;
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-}
-.auth .first form label {
-  font-size: 14px;
-  color: var(--color-default);
-}
-.auth .first .check {
-  display: flex;
-  align-items: center;
-}
-.auth .first .check input {
-  width: 15px;
-  height: 15px;
-}
-.auth .first .check p {
-  font-size: 13px;
-  color: var(--color-default);
-}
-.auth .first .check p span {
-  color: var(--color-second);
-  text-decoration: none;
-}
-.auth .first .marg {
-  margin: 20px 0;
-}
-.auth .first .rem {
-  display: flex;
-  justify-content: space-between;
-  margin: 20px 0;
-}
-.auth .first .rem .pass p {
-  font-size: 14px;
-  color: var(--color-second);
-}
-.auth .first .button {
-  width: 100%;
-  color: var(--color-white);
-  background-color: var(--color-second);
-  border-radius: 25px;
-  padding: 10px;
-  border: none;
-  outline: none;
-  font-size: 14px;
-}
-.auth .first .but button {
-  padding: 7px 35px;
-  border: none;
-  outline: none;
-  margin: 0px 10px;
-  border-radius: 20px;
-  background: transparent;
-  color: var(--color-grey);
-  border: 1px solid var(--color-dull-white);
-}
-.auth .second {
-  background-color: var(--color-default);
-  height: 100vh;
-  background-image: url(../img/vector-gray-and-white-color-geometric-abstract-background.jpeg);
-  position: relative;
-  background-position: center;
-  background-size: cover;
-  background-blend-mode: multiply;
-  padding: 200px 50px;
-}
-.auth .second .line {
-  border-bottom: 4px solid var(--color-blue);
-  width: 15%;
-}
-.auth .second .text {
-  color: var(--color-white);
-}
-.auth .second .text h2 {
-  font-weight: 700;
-  font-size: 40px;
-  color: var(--color-second);
-}
-.auth .second .lorem {
-  padding-left: 50px;
-}
-.auth .second span {
-  font-family: "Kaushan Script", cursive;
-  color: var(--color-second);
-}
-
 .navbarDisplay {
   display: none !important;
 }
 
+.move-right {
+  display: block;
+  float: right !important;
+}
+
 .Profile {
   background-color: var(--color-white);
-  padding: 10px 20px;
+  padding: 10px;
   border-radius: 20px;
-  margin: 30px 0;
+  margin: 20px 0;
 }
 .Profile .card1 {
   padding: 20px;
@@ -787,6 +795,9 @@
   }
   .second {
     display: none;
+  }
+  .Authpad {
+    padding: 30px !important;
   }
   .section .set {
     margin: 10px auto;

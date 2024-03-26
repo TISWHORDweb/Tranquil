@@ -1115,19 +1115,55 @@ ul.list_ok li:before {
 
 
 ///auth
+.registerScroll {
+    height: 95vh;
+    overflow: scroll;
+    overflow-x: none;
+    width: 100%;
+
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+
+}
+
+.Authpad {
+    padding: 50px 100px;
+}
+.btnBottom {
+    font-size: 14px;
+    a{
+        color: var(--color-second) !important;
+    }
+}
+
+.verifyInput_Container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+
+}
+
 .auth {
     background: transparent;
 
+  
+
     .first {
-        padding: 50px 100px;
-        padding-left: 200px;
+
         background-color: var(--color-white);
         height: 100vh;
 
         .up {
             img {
-                width: 60px;
-                height: 60px;
+                width: 60%;
                 margin-bottom: 30px;
             }
 
@@ -1152,13 +1188,15 @@ ul.list_ok li:before {
                 border: 1px solid var(--color-dull-white);
                 outline: none;
                 width: 100%;
+                color: var(--color-second);
                 padding: 10px;
                 border-radius: 5px;
+                font-size: 15px;
             }
 
             label {
                 font-size: 14px;
-                color: var(--color-default);
+                color: var(--color-second);
             }
         }
 
@@ -1197,17 +1235,6 @@ ul.list_ok li:before {
                     color: var(--color-second);
                 }
             }
-        }
-
-        .button {
-            width: 100%;
-            color: var(--color-white);
-            background-color: var(--color-second);
-            border-radius: 25px;
-            padding: 10px;
-            border: none;
-            outline: none;
-            font-size: 14px;
         }
 
         .but {

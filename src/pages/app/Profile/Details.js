@@ -6,10 +6,14 @@ function Details() {
         <div>
             <div className="card1 borderGray">
                 <div className="header">
-                    <div className="">
+                    <div className="row align-items-center">
+                        <div className="col-md-3">
                         <img src={Prof} alt="Profile img" />
+                        </div>
+                        <div className="col-md-9 p-0">
+                        <h4>Batimehin Emmanuel</h4>
+                        </div>
                     </div>
-                    <h4>Batimehin Emmanuel</h4>
                 </div>
                 <div className="contact mt-3">
                     <h5>Contact details</h5>
