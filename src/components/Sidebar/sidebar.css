@@ -12,24 +12,11 @@ body{
     width: 78px;
     padding: 6px 14px;
     z-index: 1;
-    overflow: scroll;
     background-color: var(--color-default);
     transition: all .5s ease;
     /* position:fixed; */
     top: 0;
     left: 0;
-}
-
-.sidebar::-webkit-scrollbar {
-    display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.sidebar {
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
 }
 
  .open{
@@ -89,10 +76,10 @@ body{
     text-align: center;
 }
 
-.sidebar .nav-list {
+/* .sidebar .nav-list {
     margin-top: 20px;
     height: 100%;
-}
+} */
 
 /* .home-section input {
     font-size: 15px;

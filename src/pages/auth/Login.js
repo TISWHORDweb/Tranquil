@@ -61,7 +61,8 @@ function Login() {
                         successRef.current.click()
                         setSuccessMessage(data.message)
                         localStorage.setItem('userLoggedIn', true);
-                        localStorage.setItem('userData', JSON.stringify(data.data));
+                        localStorage.setItem('userData', JSON.stringify(data.data.user));
+                        localStorage.setItem('Access', JSON.stringify(data.data.roles));
                         const timerId = setTimeout(() => {
                             navigate('/app');
                             window.location.reload();

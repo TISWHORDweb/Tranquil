@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 
 function Nav() {
 
-    const [noItem, setNoItem] = useState(false)
     const [width, setWidth] = useState('')
     const [cardWidth, setCardWidth] = useState(0);
 
@@ -17,28 +16,22 @@ function Nav() {
         const screenWidth = window.innerWidth;
 
         if (data === '') {
-            setNoItem(false);
             const calculatedWidth = screenWidth - 78;
             setCardWidth(calculatedWidth);
             setWidth(cardWidth + "px")
         } else if (data === 'open') {
-            setNoItem(true);
             const calculatedWidth = screenWidth - 250;
             setCardWidth(calculatedWidth);
             setWidth(cardWidth + "px")
         }
 
         if (data === 'close') {
-            setNoItem(false);
             const calculatedWidth = screenWidth - 78;
             setCardWidth(calculatedWidth);
             setWidth(cardWidth + "px")
-        } else (
-            setNoItem(false)
-        )
+        } 
 
-    }, [setNoItem, cardWidth, data])
-    console.log(noItem);
+    }, [ cardWidth, data])
     return (
         <div>
             <div className="nav" id="nav" style={{ width: width }}>
