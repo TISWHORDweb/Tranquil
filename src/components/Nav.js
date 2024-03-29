@@ -32,6 +32,26 @@ function Nav() {
         } 
 
     }, [ cardWidth, data])
+
+    window.onload = function () {
+        const screenWidth = window.innerWidth;
+
+        if (data === '') {
+            const calculatedWidth = screenWidth - 78;
+            setCardWidth(calculatedWidth);
+            setWidth(cardWidth + "px")
+        } else if (data === 'open') {
+            const calculatedWidth = screenWidth - 250;
+            setCardWidth(calculatedWidth);
+            setWidth(cardWidth + "px")
+        }
+
+        if (data === 'close') {
+            const calculatedWidth = screenWidth - 78;
+            setCardWidth(calculatedWidth);
+            setWidth(cardWidth + "px")
+        } 
+    }
     return (
         <div>
             <div className="nav" id="nav" style={{ width: width }}>

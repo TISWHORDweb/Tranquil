@@ -27,6 +27,7 @@ function Navbar() {
                                             <Link to="/web/service" style={{ textDecoration: "none" }}>  <li class=" ">SERVICES</li></Link>
                                             <Link to="/web/blog" style={{ textDecoration: "none" }}>  <li class=" ">BLOG</li></Link>
                                             <Link to="/web/contact" style={{ textDecoration: "none" }}>  <li class=" ">CONTACT</li></Link>
+                                            <Link to="/auth/login" style={{ textDecoration: "none" }}>  <li class="btnLight white">SIGN IN</li></Link>
                                         </ul>
                                     </div>
                                 </div>

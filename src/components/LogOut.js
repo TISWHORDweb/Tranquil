@@ -1,7 +1,16 @@
 import React from 'react'
 import CautionImg from '../img/icon/Group 5647.png'
+import { useNavigate } from 'react-router-dom';
 
 function LogOut() {
+    const navigate = useNavigate();
+
+    const HandleLogout =()=>{
+        localStorage.clear()
+        navigate('/');
+        window.location.reload();
+    }
+
     return (
         <div>
             <div className="Logout">
@@ -17,7 +26,7 @@ function LogOut() {
                                         <img src={CautionImg} alt="" />
                                         <p>Are you sure you want to log out ?</p>
                                         <div className="buttonss">
-                                            <a href="/auth/login"> <button type="button" class="btn success">Yes</button></a>
+                                            <button  onClick={HandleLogout} type="button" class="btn success">Yes</button>
                                             <button type="button" class="btn cancel" data-bs-dismiss="modal">Cancel</button>
                                         </div>
                                     </center>

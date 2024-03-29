@@ -58,6 +58,18 @@
   background-color: var(--color-white);
 }
 
+.white {
+  color: white !important;
+}
+
+.gray {
+  color: gray !important;
+}
+
+.second {
+  color: var(--color-second) !important;
+}
+
 .navbar2 {
   background-color: white;
 }
@@ -69,12 +81,11 @@
 .navbar2 .navbar-nav ul li {
   text-decoration: none;
   color: var(--color-second);
-  padding: 20px;
   font-size: 600;
+  margin: 10px 15px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  margin: 0;
   font-weight: 600;
   list-style: none;
 }

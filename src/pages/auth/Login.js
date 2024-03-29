@@ -136,7 +136,7 @@ function Login() {
                             </div>
                         </div>
                         <div className="mt-4 mb-4">
-                            <button className='btnLight w-100' onClick={handleLogin}>
+                            <button className='btnLight w-100 m-0' onClick={handleLogin}>
                                 {spin ? <span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span> : <span></span>}
                                 Sign In
                             </button>

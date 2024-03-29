@@ -82,4 +82,24 @@ const TimeConverter = (timestamp) => {
 }
 
 
-export { checkPasswordValidity, TimeConverter }
+const DateConverter = (timestamp) => {
+    const date = new Date(timestamp);
+
+    const monthNames = [
+        'January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December'
+      ];
+
+    // Extracting date components
+    const year = date.getFullYear();
+    const month = monthNames[date.getMonth()];
+    const day = date.getDate();
+    // const seconds = date.getSeconds();
+
+    // Creating a formatted date string
+    const formattedDate = `${month} ${day}, ${year}`;
+
+    return formattedDate;
+}
+
+export { checkPasswordValidity, TimeConverter, DateConverter }

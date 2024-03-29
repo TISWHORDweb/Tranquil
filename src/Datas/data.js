@@ -1,6 +1,6 @@
 
 const AUTH_BASE_URL = "https://devsync-server-beta.onrender.com/api/v1/auth"
-const USER_BASE_URL = "https://devsync-server-beta.onrender.com/api/v1/user"
+const USER_BASE_URL = "http://localhost:5000/api/v1"
 
 const LOCAL_AUTH_BASE_URL = "http://localhost:5000/api/v1/auth"
 // const LOCAL_USER_BASE_URL = "https://devsync-server-beta.onrender.com/api/v1/user"
@@ -14,7 +14,7 @@ const AxiosConfig = () => {
         headers: {
             'Content-Type': 'application/json;charset=UTF-8',
             "Access-Control-Allow-Origin": "*",
-            "d-token": token
+            "t-token": token
         }
     }
 }

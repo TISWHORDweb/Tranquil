@@ -1,7 +1,8 @@
 import React from 'react'
 import Prof from '../../../img/1533506.png'
 
-function Details() {
+function Details({user}) {
+
     return (
         <div>
             <div className="card1 borderGray">
@@ -11,7 +12,7 @@ function Details() {
                         <img src={Prof} alt="Profile img" />
                         </div>
                         <div className="col-md-9 p-0">
-                        <h4>Batimehin Emmanuel</h4>
+                        <h4>{user.firstName} {user.lastName}</h4>
                         </div>
                     </div>
                 </div>
@@ -20,15 +21,15 @@ function Details() {
                     <ul>
                         <li>
                             <i class='bx bx-phone-call'></i>
-                            <span>+2348120963057</span>
+                            <span>{user.phone ? user.phone : "---"}</span>
                         </li>
                         <li>
                             <i class='bx bxl-gmail'></i>
-                            <span>ebatimehin@gmail.com</span>
+                            <span>{user.email ? user.email : "---"}</span>
                         </li>
                         <li>
                             <i class='bx bx-home' ></i>
-                            <span>Durumi 1, Area 1, Abuja</span>
+                            <span>{user.address ? user.address : "---"}</span>
                         </li>
                     </ul>
                 </div>

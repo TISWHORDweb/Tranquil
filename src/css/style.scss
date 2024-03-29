@@ -13,13 +13,24 @@
     width: 100%;
 }
 
-.w-100 {
-    width: 100%;
-}
-
 .w-80 {
     width: 80%;
 }
+.loaderHeightWeight {
+    width: 50px;
+    height: 50px;
+}
+
+.loadWrapper{
+    height: 80vh;
+    position: relative;
+    .loader{
+        position: absolute;
+        top: 40%;
+        left: 40%;
+    }
+}
+
 
 .offcanvas-start {
     width: 300px !important;
