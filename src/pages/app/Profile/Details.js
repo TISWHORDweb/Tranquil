@@ -7,11 +7,11 @@ function Details({user}) {
         <div>
             <div className="card1 borderGray">
                 <div className="header">
-                    <div className="row align-items-center">
-                        <div className="col-md-3">
+                    <div className="d-flex align-items-center">
+                        <div className="">
                         <img src={Prof} alt="Profile img" />
                         </div>
-                        <div className="col-md-9 p-0">
+                        <div className="ms-3">
                         <h4>{user.firstName} {user.lastName}</h4>
                         </div>
                     </div>
