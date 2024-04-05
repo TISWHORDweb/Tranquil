@@ -1,9 +1,9 @@
 import React from 'react'
 import Layout from '../../../components/Layout'
-import Table from '../../../components/Table'
 import Modal from '../../../components/Modal'
 import TableHeader from '../../../components/TableHeader'
 import ModalDetails from './ModalDetails'
+import Table from './Table'
 
 function Allots() {
     return (

@@ -9,16 +9,18 @@ import Modal from '../../../components/Modal'
 import ModalDetails from './ModalDetails'
 import LogOut from '../../../components/LogOut'
 import { MyContext } from '../../../context/Context';
-import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { USER_BASE_URL } from '../../../Datas/data'
 import Loader from '../../../components/Loader'
+import { Check } from '../../../Utils/Core'
+import SessionExpireModal from '../../../components/SessionExpireModal'
 
 function Profile() {
     const { checkAuth, type } = useContext(MyContext)
     const [user, setUser] = useState(null)
-    const navigate = useNavigate();
+    const [expired, setexpired] = useState(false)
 
+    const Checks = Check()
     useEffect(() => {
         checkAuth();
 
@@ -26,8 +28,7 @@ function Profile() {
 
     useEffect(() => {
         const data = JSON.parse(localStorage.getItem('userData'));
-        const Check = localStorage.getItem('userLoggedIn');
-        if (Check === "true") {
+        if (Checks) {
 
             const url = `${USER_BASE_URL}/${type}/details`
             axios.get(url, {
@@ -44,14 +45,17 @@ function Profile() {
                 .catch((err) => console.log(err));
         }
         else {
-            navigate('/');
+            setexpired(true)
         }
-    }, [navigate, type]);
+    }, [ type, Checks]);
 
     return (
         <div>
+            {expired ? <SessionExpireModal /> : <></>}
+
             {user ?
                 <Layout>
+
 
                     <div className="container">
                         <div className="text-end">
@@ -63,7 +67,7 @@ function Profile() {
                             <div className="row ">
                                 <div className="col-md-5">
                                     <Details user={user} />
-                                    <Kin />
+                                    <Kin user={user} />
                                 </div>
                                 <div className="col-md-7">
                                     <Overview user={user} />

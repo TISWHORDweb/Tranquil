@@ -102,4 +102,9 @@ const DateConverter = (timestamp) => {
     return formattedDate;
 }
 
-export { checkPasswordValidity, TimeConverter, DateConverter }
+const Check =()=>{
+    const Check = localStorage.getItem('userLoggedIn');
+    return Check
+}
+
+export { checkPasswordValidity, TimeConverter, DateConverter, Check }

@@ -3,33 +3,37 @@ import Card from '../../components/Card'
 import News from '../../components/News'
 import Layout from '../../components/Layout'
 import BannerHeader from '../../components/BannerHeader'
-import { useNavigate } from 'react-router-dom'
 import Loader from '../../components/Loader'
 import { MyContext } from '../../context/Context'
+import SessionExpireModal from '../../components/SessionExpireModal'
+import { Check } from '../../Utils/Core'
 
 function Dashboard() {
 
     const { checkAuth } = useContext(MyContext)
     const [user, setUser] = useState(null)
-    const navigate = useNavigate();
+    const [expired, setexpired] = useState(false)
 
     useEffect(() => {
         checkAuth();
 
     }, [checkAuth]);
+    const Checks = Check()
 
     useEffect(() => {
         const data = JSON.parse(localStorage.getItem('userData'));
-        const Check = localStorage.getItem('userLoggedIn');
-        if (Check === "true") {
+        if (Checks) {
             setUser(data)
         }
         else {
-            navigate('/');
+            setexpired(true)
         }
-    }, [navigate]);
+    }, [Checks]);
     return (
         <div>
+
+            {expired ? <SessionExpireModal /> : <></>}
+
             {user ?
                 <Layout>
 

@@ -1,33 +1,41 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-function Kin() {
+function Kin({ user }) {
+    const [kin, setKin] = useState()
+    useEffect(() => {
+        if (user) {
+            setKin(user.kid)
+        }
+    }, [setKin, user])
+    
     return (
         <div>
             <div className="card3 borderGray mt-3">
                 <div className="contact">
                     <h5>Next of kin details</h5>
-                    <ul>
+                    {kin ? <ul>
                         <li>
                             <p>Name :</p>
-                            <span>Batimehin young</span>
+                            <span>{kin.fullName ? kin.fullName : "---"}</span>
                         </li>
                         <li>
                             <p>Phone :</p>
-                            <span>+2348120963057</span>
+                            <span>{kin.phone ? kin.phone : "---"}</span>
                         </li>
                         <li>
                             <p>Email :</p>
-                            <span>ebatimehin@gmail.com</span>
+                            <span>{kin.email ? kin.email : "---"}</span>
                         </li>
                         <li>
                             <p>Relationship :</p>
-                            <span>Cousin</span>
+                            <span>{kin.relationship ? kin.relationship : "---"}</span>
                         </li>
                         <li>
                             <p>Address :</p>
-                            <span>Durumi 1, Area 1, Abuja</span>
+                            <span>{kin.address ? kin.address : "---"}</span>
                         </li>
-                    </ul>
+                    </ul> : <div></div>
+                    }
                 </div>
             </div>
         </div>
