@@ -2,7 +2,7 @@ import React from 'react'
 import TableAction from '../../../components/TableAction'
 
 
-function Table() {
+function Table({ allots }) {
     return (
         <div>
             <div className="Table mt-4">
@@ -19,16 +19,33 @@ function Table() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">ZP-139318</th>
-                            <td>Batimehin Emmanuel</td>
-                            <td>ebatimehin@gmail.com</td>
-                            <td>Male</td>
-                            <td>08/04/2024</td>
+                        {allots ? <>
+                            {allots.map((each, i) => (
+                                <tr key={i}>
+                                    <th scope="row">{each.aid}</th>
+                                    <td>{each.pid.hid}</td>
+                                    <td>{each.did.name}</td>
+                                    <td>{each.wid.name}</td>
+                                    <td>{each.cid.name}</td>
+                                    <td>{each.status ? "Assigned" : "Unassigned"}</td>
+                                    <td>
+                                        <TableAction />
+                                    </td>
+                                </tr>
+                            ))}
+
+                        </> : <tr>
+                            <td>....</td>
+                            <td>....</td>
+                            <td>....</td>
+                            <td>....</td>
+                            <td>....</td>
+                            <td>....</td>
                             <td>
-                              <TableAction />
+                                <TableAction />
                             </td>
                         </tr>
+                        }
                     </tbody>
                 </table>
                 <div className="down">
