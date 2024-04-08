@@ -149,7 +149,7 @@
 .inputts {
   border: 1px solid rgba(99, 119, 138, 0.5);
   border-radius: 8px;
-  height: 40px;
+  height: 45px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -172,6 +172,10 @@
 }
 .inputts img {
   width: 12px;
+}
+.inputts option {
+  font-size: 12px !important;
+  color: rgba(99, 119, 138, 0.5) !important;
 }
 
 .btnLight {
@@ -256,6 +260,23 @@
 }
 .btnDark:hover {
   background-color: var(--color-dark);
+}
+
+.search_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.search_list span {
+  border: 1px solid var(--color-second);
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 13px;
+  margin: 5px;
+  cursor: pointer;
+}
+.search_list .picked {
+  background-color: var(--color-second);
+  color: white;
 }
 
 .AlertModal {

@@ -1166,7 +1166,7 @@ ul.list_ok li:before {
 }
 
 form label {
-  font-weight: 600;
+  font-weight: 500 !important;
   color: var(--color-second);
 }
 form input,

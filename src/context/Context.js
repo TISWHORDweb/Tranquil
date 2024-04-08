@@ -1,6 +1,6 @@
 // MyContext.js
 import axios from 'axios';
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useCallback, useEffect, useState } from 'react';
 import { USER_BASE_URL } from '../Datas/data';
 export const MyContext = createContext();
 
@@ -9,6 +9,9 @@ export const MyContextProvider = ({ children }) => {
   const [token, setToken] = useState("");
   const [user, setUser] = useState(null);
   const [type, setType] = useState(null);
+  const [patients, setPatients] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredPatients, setFilteredPatient] = useState([]);
   const [userLoggedIn, setUserLoggedIn] = useState(false)
 
   const updateData = (newValue) => {
@@ -30,7 +33,7 @@ export const MyContextProvider = ({ children }) => {
       } else if (number === 3) {
         types = "patient";
       }
-      
+
       localStorage.setItem('userType', types);
 
       setToken(data.token);
@@ -43,6 +46,59 @@ export const MyContextProvider = ({ children }) => {
       setType("")
     }
   }, [setToken, setUser]);
+
+  useEffect(() => {
+    if(type && token){
+      const url = `${USER_BASE_URL}/${type}/patient/all`
+      axios.get(url, {
+        headers: {
+          'Content-Type': 'application/json;charset=UTF-8',
+          "Access-Control-Allow-Origin": "*",
+          "t-token": token
+        }
+      })
+        .then((res) => {
+          const response = res.data.data
+          setPatients(response);
+        })
+        .catch((err) => console.log(err));
+  
+    }
+  }, [type,token])
+
+  const updateSearchQuery = (newQuery) => {
+    if (!newQuery) {
+      setFilteredPatient('');
+      console.log("in")
+    }
+    setSearchQuery(newQuery);
+    filterPatients(newQuery); // Trigger filtering based on new query
+  };
+
+  const filterPatients = useCallback((newQuery) => {
+    if (!newQuery) {
+      setFilteredPatient('');
+      console.log("in")
+    }
+    const filtered = patients.filter((patient) => {
+      // Adjust search logic as needed
+      return patient.hid.toLowerCase().includes(newQuery.toLowerCase());
+    });
+    setFilteredPatient(filtered);
+  }, [patients]);
+
+  useEffect(() => {
+    let hasRun = false;
+    if (!hasRun && patients) {
+      filterPatients('');
+      hasRun = true;
+    }
+  }, [patients, filterPatients]);
+
+  useEffect(() => {
+    // Filter whenever searchQuery changes
+    filterPatients(searchQuery);
+  }, [searchQuery, filterPatients]);
 
   const checkAuth = async () => {
     try {
@@ -81,7 +137,11 @@ export const MyContextProvider = ({ children }) => {
       user,
       userLoggedIn,
       checkAuth,
-      type
+      type,
+      token,
+      searchQuery,
+      updateSearchQuery,
+      filteredPatients
     }}>
 
       {children}

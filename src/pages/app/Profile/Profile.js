@@ -28,7 +28,8 @@ function Profile() {
 
     useEffect(() => {
         const data = JSON.parse(localStorage.getItem('userData'));
-        if (Checks === "true") {
+
+        if (Checks === "true" || data) {
             const url = `${USER_BASE_URL}/${type}/details`
             axios.get(url, {
                 headers: {
@@ -45,7 +46,7 @@ function Profile() {
         } else {
             setexpired(true)
         }
-    }, [ type, Checks]);
+    }, [type, Checks]);
 
     return (
         <div>
