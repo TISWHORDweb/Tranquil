@@ -1,5 +1,5 @@
-$color1: #54D4BD;
-$color2: #0D5F50;
+$color1: #98C1D9;
+$color2: #3D5A80;
 $color3: #fff;
 
 .red {
@@ -24,12 +24,12 @@ $color3: #fff;
 
 // .nan{background-color: $color1;}
 .secondnav {
-    background-color: var(--color-second);
+    background-color: var(--color-default);
 
     .dd {
         display: flex;
         align-items: center;
-        background-color: var(--color-second);
+        background-color: var(--color-default);
         justify-content: space-between;
 
         p {
@@ -1197,7 +1197,7 @@ ul.list_ok li:before {
                 border: 1px solid var(--color-dull-white);
                 outline: none;
                 width: 100%;
-                color: var(--color-second);
+                color: var(--color-default);
                 padding: 10px;
                 border-radius: 5px;
                 font-size: 15px;
@@ -1429,7 +1429,7 @@ ul.list_ok li:before {
 form {
     label {
         font-weight: 500 !important;
-        color: var(--color-second);
+        color: var(--color-default);
     }
 
     input,

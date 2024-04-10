@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { MyContext } from '../../../context/Context';
 import { USER_BASE_URL } from '../../../Datas/data';
 import axios from 'axios';
@@ -31,7 +31,7 @@ function ModalDetails() {
 
     useEffect(() => {
 
-        if (type === "employee") {
+        if (type !== "patient") {
             const url = `${USER_BASE_URL}/employee/allot/dropdown`
             axios.get(url, {
                 headers: {
@@ -115,7 +115,10 @@ function ModalDetails() {
     return (
         <div>
             <div class="modal-body InviteModal p-5">
-                <h3 className='mb-3 f20'>Create Allots</h3>
+                <div class="justify-content-space">
+                    <h3 className='mb-3 f20'>Create Allots</h3>
+                    <button type="button" class=" cancel f20" data-bs-dismiss="modal"><i class='bx bx-x'></i></button>
+                </div>
                 {fetch ? <form action="">
                     <div className="mb-3">
                         <label htmlFor="discount" className='f15 fw3'>Patients</label>  <br />
@@ -173,7 +176,7 @@ function ModalDetails() {
                         <p>{message}</p>
                     </div> : ""}
                     <div className="pt-3">
-                        <button type="button" onClick={HandleAllot} class="btnLight  w-100 m-0 f17 ">
+                        <button type="button" onClick={HandleAllot} class="btnDark  w-100 m-0 f17 ">
                             {spin ? <span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span> : <span></span>}
                             Create Allotment
                         </button>

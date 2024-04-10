@@ -1,50 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Pacifico&display=swap');
 :root {
-  --color-default: #0D5F50;
-  --color-second: #54D4BD;
+  --color-default: #3D5A80;
+  --color-second: #98C1D9;
   --color-second-dark: rgb(41, 35, 156);
-  --color-second-light:  rgba(238, 255, 252, 1);
+  --color-second-light:  #84a0b0;
   --color-white: white;
   --color-black: #000;
-  --color-body: rgb(241, 245, 249);
+  --color-body: #E0FBFC;
   --color-red: rgb(222, 59, 60);
   --color-blue: rgb(59, 130, 246);
   --color-green: rgb(14, 148, 136);
   --color-orange: rgb(245, 158, 12);
-  --color-light-green: rgb(45, 212, 191);
-  --color-dark: #0c5648;
+  --color-light-green: #84a0b0;
+  --color-dark: #293241;
   --color-grey: rgb(100, 116, 139);
   --color-light-purple: rgb(225, 231, 255);
   --color-yellow: rgb(253, 224, 71);
   --color-pink: rgb(219, 39, 119);
   --color-default-light: #FFFFFF80;
   --color-dull-white: rgb(199, 202, 205);
-  --color-dark: #0c5648;
+  --color-dark: #293241;
 }
 
 :root {
-  --color-default:  #0D5F50;
-  --color-seconds:  #54D4BD;
+  --color-default:  #3D5A80;
+  --color-seconds:  #98C1D9;
   --color-second-dark: rgb(41, 35, 156);
-  --color-second-light:  rgba(238, 255, 252, 1);
+  --color-second-light:  #84a0b0;
   --color-white: #fff;
   --color-black: #000;
-  --color-body: rgb(241, 245, 249);
+  --color-body: #E0FBFC;
   --color-red: rgb(222, 59, 60);
-  --color-second:  #54D4BD;
+  --color-second:  #98C1D9;
   --color-green: rgb(14, 148, 136);
   --color-orange: rgb(245, 158, 12);
-  --color-light-green: rgb(45, 212, 191);
+  --color-light-green: #84a0b0;
   --color-grey: rgb(100, 116, 139);
   --color-light-purple: rgb(225, 231, 255);
   --color-yellow: rgb(253, 224, 71);
   --color-pink: rgb(219, 39, 119);
   --color-default-light: #FFFFFF80;
   --color-dull-white: rgb(199, 202, 205);
-  --color-light-green: rgb(45, 212, 191);
-  --color-dark: #0c5648;
+  --color-dark: #293241;
+  --color-third:#EE6C4D;
 }
+
 * {
   padding: 0%;
   margin: 0%;

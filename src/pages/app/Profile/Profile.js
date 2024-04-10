@@ -13,12 +13,10 @@ import axios from 'axios'
 import { USER_BASE_URL } from '../../../Datas/data'
 import Loader from '../../../components/Loader'
 import { Check } from '../../../Utils/Core'
-import SessionExpireModal from '../../../components/SessionExpireModal'
 
 function Profile() {
     const { checkAuth, type } = useContext(MyContext)
     const [user, setUser] = useState(null)
-    const [expired, setexpired] = useState(false)
 
     const Checks = Check()
     useEffect(() => {
@@ -29,7 +27,7 @@ function Profile() {
     useEffect(() => {
         const data = JSON.parse(localStorage.getItem('userData'));
 
-        if (Checks === "true" || data) {
+        if (Checks === "true" && data) {
             const url = `${USER_BASE_URL}/${type}/details`
             axios.get(url, {
                 headers: {
@@ -43,15 +41,11 @@ function Profile() {
                     setUser(response)
                 })
                 .catch((err) => console.log(err));
-        } else {
-            setexpired(true)
         }
     }, [type, Checks]);
 
     return (
         <div>
-            {expired ? <SessionExpireModal /> : <></>}
-
             {user ?
                 <Layout>
 

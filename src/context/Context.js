@@ -5,7 +5,7 @@ import { USER_BASE_URL } from '../Datas/data';
 export const MyContext = createContext();
 
 export const MyContextProvider = ({ children }) => {
-  const [data, setData] = useState('');
+  const [data, setData] = useState('close');
   const [token, setToken] = useState("");
   const [user, setUser] = useState(null);
   const [type, setType] = useState(null);

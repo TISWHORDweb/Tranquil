@@ -1,5 +1,5 @@
 import React from 'react'
-import BannerImg from '../img/Banner.png'
+import BannerImg from '../img/tt.jpg'
 import { Link } from 'react-router-dom'
 
 function Banner() {
@@ -19,7 +19,7 @@ function Banner() {
                         </div>
                     </div>
                     <div className="col-md-6 mb-3">
-                        <img src={BannerImg} alt="" className='w-80' />
+                        <img src={BannerImg} alt="" className='w-100' />
                     </div>
                 </div>
             </div>

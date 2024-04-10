@@ -6,7 +6,6 @@ import ModalDetails from './ModalDetails'
 import Table from './Table'
 import { MyContext } from '../../../context/Context'
 import Loader from '../../../components/Loader'
-import SessionExpireModal from '../../../components/SessionExpireModal'
 import { USER_BASE_URL } from '../../../Datas/data'
 import axios from 'axios'
 import { Check } from '../../../Utils/Core'
@@ -14,7 +13,6 @@ import { Check } from '../../../Utils/Core'
 function Allots() {
     const { checkAuth, type } = useContext(MyContext)
     const [allots, setAllots] = useState(null)
-    const [expired, setexpired] = useState(false)
 
     const Checks = Check()
     useEffect(() => {
@@ -39,14 +37,12 @@ function Allots() {
                     setAllots(response)
                 })
                 .catch((err) => console.log(err));
-        }
-        else {
-            setexpired(true)
+
         }
     }, [type, Checks]);
+    
     return (
         <div>
-            {expired ? <SessionExpireModal /> : <></>}
             {allots ?
                 <Layout>
                     <div className="container">

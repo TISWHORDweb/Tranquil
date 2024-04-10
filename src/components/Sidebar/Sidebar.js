@@ -13,36 +13,21 @@ function Sidebar() {
     const [appointment, setAppointment] = useState()
     const [medication, setMedication] = useState()
     const [medicine, setMedicine] = useState()
-    const [deparment, setDepartment] = useState()
+    const [department, setDepartment] = useState()
     const [payment, setPayment] = useState()
     const [employee, setEmployee] = useState()
 
-    window.onload = function () {
-        const sidebar = document.querySelector('.sidebar');
-        const closeBtn = document.querySelector('#btn');
 
-        closeBtn.addEventListener('click', function () {
-            sidebar.classList.toggle("open")
-            menuBtnChange()
-        })
-
-        function menuBtnChange() {
-            if (sidebar.classList.contains("open")) {
-                setNoItem(true)
-            } else {
-                setNoItem(false)
-            }
-        }
-    }
-
-    const { updateData } = useContext(MyContext);
+    const { updateData, data } = useContext(MyContext);
 
     const handleOpen = () => {
         updateData('open');
+        setNoItem(true)
     };
 
     const handleClose = () => {
         updateData('close');
+        setNoItem(false)
     };
 
     useEffect(() => {
@@ -52,7 +37,7 @@ function Sidebar() {
             setAllot(Access.allot)
             setReport(Access.report)
             setAppointment(Access.appointment)
-            setDepartment(Access.deparment)
+            setDepartment(Access.department)
             setPayment(Access.payment)
             setEmployee(Access.employee)
             setMedication(Access.medication)
@@ -63,12 +48,12 @@ function Sidebar() {
 
     return (
         <div>
-            <div class="sidebar">
+            <div class={`sidebar ${data}`}>
                 <div class="logo_details">
                     {/* <i class="bx bxl-audible icon"></i> */}
                     <img src={Logo} alt="" className='icon' />
-                    {!noItem ? <i class="bx bx-menu" id="btn" onClick={handleClose}></i> :
-                        <i class="bx bx-menu-alt-right" id="btn" onClick={handleOpen}></i>}
+                    {!noItem ? <i class="bx bx-menu" id="btn" onClick={handleOpen}></i> :
+                        <i class="bx bx-menu-alt-right" id="btn" onClick={ handleClose}></i>}
                 </div>
                 <ul class="nav-list p-0 ">
                     <Link to="/app">
@@ -128,7 +113,7 @@ function Sidebar() {
                         </Link>
                         : <li></li>
                     }
-                    {deparment ?
+                    {department ?
                         <Link to="/app/department">
                             <li>
                                 <span>

@@ -107,4 +107,18 @@ const Check =()=>{
     return Check
 }
 
-export { checkPasswordValidity, TimeConverter, DateConverter, Check }
+const calculateAge =(birthDate)=> {
+    const birth = new Date(birthDate);
+    const today = new Date();
+  
+    let age = today.getFullYear() - birth.getFullYear();
+  
+    const birthMonth = birth.getMonth();
+    const todayMonth = today.getMonth();
+    if (todayMonth < birthMonth || (todayMonth === birthMonth && today.getDate() < birth.getDate())) {
+        age--;
+    }
+  
+    return age;
+}
+export { checkPasswordValidity, TimeConverter, DateConverter, Check, calculateAge }

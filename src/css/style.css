@@ -34,6 +34,10 @@
   left: 40%;
 }
 
+h1, h2, h3, h4 {
+  color: var(--color-default) !important;
+}
+
 .offcanvas-start {
   width: 300px !important;
   background-color: var(--color-default);
@@ -109,12 +113,20 @@
   margin: 0;
 }
 
+.timg {
+  width: 25px;
+}
+
 .Unavailable {
   color: var(--color-red);
 }
 
 .Available {
   color: var(--color-green);
+}
+
+.third {
+  color: var(--color-third);
 }
 
 .alert__message.success {
@@ -125,9 +137,36 @@
   margin: 0;
 }
 
+.justify-content-space {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Depeach {
+  background-color: var(--color-default);
+  width: 40px;
+  height: 40px;
+  padding: 8px 10px;
+  font-weight: 500;
+  border-radius: 50%;
+  color: var(--color-second);
+}
+
 .Nav-menu {
   font-size: 30px;
   color: var(--color-second);
+}
+
+.Card2 {
+  background-color: var(--color-body);
+  border-radius: 15px;
+  padding: 20px;
+  cursor: pointer;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+.Card2:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .Inner {
@@ -144,6 +183,10 @@
 .borderGray {
   border: 1px solid #efefef;
   border-radius: 15px;
+}
+
+textarea {
+  min-height: 100px !important;
 }
 
 .inputts {
@@ -752,7 +795,7 @@
   border-radius: 20px;
 }
 .Table table thead {
-  background-color: var(--color-second) !important;
+  background-color: var(--color-default) !important;
   color: white;
 }
 .Table table thead th {
@@ -768,19 +811,30 @@
 .Table table tbody tr th {
   color: gray !important;
 }
-.Table .TableAction .dot {
+.Table .down {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Table .down li,
+.Table .down span {
+  color: var(--color-second) !important;
+  background-color: transparent;
+}
+
+.TableAction .dot {
   position: relative;
   cursor: pointer;
 }
-.Table .TableAction .dot img {
+.TableAction .dot img {
   width: 3px;
   margin: 0;
   position: relative;
 }
-.Table .TableAction .dot:hover div {
+.TableAction .dot:hover div {
   display: block;
 }
-.Table .TableAction .dot .firstDiv {
+.TableAction .dot .firstDiv {
   display: none;
   position: absolute;
   cursor: pointer;
@@ -791,30 +845,20 @@
   border-radius: 5px;
   z-index: 1;
 }
-.Table .TableAction .dot .firstDiv .flex {
+.TableAction .dot .firstDiv .flex {
   display: flex;
   padding: 10px 15px;
   align-items: center;
 }
-.Table .TableAction .dot .firstDiv .flex:hover {
+.TableAction .dot .firstDiv .flex:hover {
   background: rgb(238, 255, 252);
 }
-.Table .TableAction .dot .firstDiv img {
+.TableAction .dot .firstDiv img {
   width: 16px;
   margin-right: 10px;
 }
-.Table .TableAction .dot .firstDiv span {
+.TableAction .dot .firstDiv span {
   font-size: 13px;
-}
-.Table .down {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.Table .down li,
-.Table .down span {
-  color: var(--color-second) !important;
-  background-color: transparent;
 }
 
 @media only screen and (max-width: 400px) {

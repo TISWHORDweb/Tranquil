@@ -15,16 +15,16 @@
 }
 
 .re {
-  color: #54D4BD;
+  color: #98C1D9;
 }
 
 .secondnav {
-  background-color: var(--color-second);
+  background-color: var(--color-default);
 }
 .secondnav .dd {
   display: flex;
   align-items: center;
-  background-color: var(--color-second);
+  background-color: var(--color-default);
   justify-content: space-between;
 }
 .secondnav .dd p {
@@ -47,7 +47,7 @@
   font-size: 15px;
 }
 .secondnav .dd .rep li:hover {
-  color: #0D5F50;
+  color: #3D5A80;
   transition: all 0.5s ease;
 }
 .secondnav .dd .rep span {
@@ -197,7 +197,7 @@
   font-size: 25px;
 }
 #containers .text button {
-  background-color: #54D4BD;
+  background-color: #98C1D9;
   padding: 10px 20px;
   border: none;
   outline: none;
@@ -284,7 +284,7 @@
   font-weight: 600;
 }
 .news .head h2 {
-  color: #54D4BD;
+  color: #98C1D9;
   font-weight: 700;
 }
 .news .head span {
@@ -297,7 +297,7 @@
   background-color: rgba(19, 158, 31, 0.1215686275);
 }
 .project .head h3 {
-  color: #54D4BD;
+  color: #98C1D9;
   font-weight: 600;
 }
 .project .head p {
@@ -327,7 +327,7 @@
   margin: 10px;
 }
 .project .help {
-  background-color: #0D5F50;
+  background-color: #3D5A80;
   border-radius: 10px;
   padding: 20px 0;
 }
@@ -355,13 +355,13 @@
   justify-content: space-between;
 }
 .project .help ul li:hover {
-  background-color: #54D4BD;
+  background-color: #98C1D9;
 }
 .project .help ul li p {
   margin: 0;
 }
 .project .pub {
-  background-color: #0D5F50;
+  background-color: #3D5A80;
   border-radius: 10px;
   padding: 10px 0;
 }
@@ -394,7 +394,7 @@
   margin: 0;
 }
 .project .pub ul li:hover {
-  background-color: #54D4BD;
+  background-color: #98C1D9;
 }
 
 .feature .celes {
@@ -438,7 +438,7 @@
   font-size: 13px;
 }
 .feature .feat .head h4 {
-  color: #54D4BD;
+  color: #98C1D9;
   margin: 0;
 }
 .feature .feat .head p {
@@ -486,7 +486,7 @@
   height: 100px;
 }
 .feature .vid .head h4 {
-  color: #54D4BD;
+  color: #98C1D9;
 }
 .feature .vid .line {
   display: flex;
@@ -541,7 +541,7 @@
   border-radius: 20px;
   border: 1px solid gray;
   outline: none;
-  color: #54D4BD;
+  color: #98C1D9;
   padding: 5px 30px;
 }
 
@@ -549,7 +549,7 @@
   background-color: var(--color-default);
 }
 .three .head h5 {
-  color: #54D4BD;
+  color: #98C1D9;
   font-weight: 700;
 }
 .three .head p {
@@ -658,10 +658,10 @@
   font-size: 13px;
 }
 .blog .txt {
-  border-left: 5px solid #54D4BD;
+  border-left: 5px solid #98C1D9;
 }
 .blog .txt span {
-  color: #54D4BD;
+  color: #98C1D9;
 }
 
 @media only screen and (max-width: 991px) {
@@ -966,7 +966,7 @@ ul.list_ok li:before {
   border: 1px solid var(--color-dull-white);
   outline: none;
   width: 100%;
-  color: var(--color-second);
+  color: var(--color-default);
   padding: 10px;
   border-radius: 5px;
   font-size: 15px;
@@ -1167,7 +1167,7 @@ ul.list_ok li:before {
 
 form label {
   font-weight: 500 !important;
-  color: var(--color-second);
+  color: var(--color-default);
 }
 form input,
 form textarea {
