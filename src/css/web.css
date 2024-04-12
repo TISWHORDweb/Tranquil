@@ -973,7 +973,7 @@ ul.list_ok li:before {
 }
 .auth .first form label {
   font-size: 14px;
-  color: var(--color-second);
+  color: var(--color-default);
 }
 .auth .first .check {
   display: flex;

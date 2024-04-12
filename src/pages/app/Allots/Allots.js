@@ -9,10 +9,12 @@ import Loader from '../../../components/Loader'
 import { USER_BASE_URL } from '../../../Datas/data'
 import axios from 'axios'
 import { Check } from '../../../Utils/Core'
+import SessionExpireModal from '../../../components/SessionExpireModal'
 
 function Allots() {
     const { checkAuth, type } = useContext(MyContext)
     const [allots, setAllots] = useState(null)
+    const [expired, setexpired] = useState(false)
 
     const Checks = Check()
     useEffect(() => {
@@ -24,7 +26,7 @@ function Allots() {
         const data = JSON.parse(localStorage.getItem('userData'));
         if (Checks) {
 
-            const url = `${USER_BASE_URL}/${type}/allot/all`
+            const url = `${USER_BASE_URL}/employee/allot/all`
             axios.get(url, {
                 headers: {
                     'Content-Type': 'application/json;charset=UTF-8',
@@ -38,11 +40,14 @@ function Allots() {
                 })
                 .catch((err) => console.log(err));
 
+        } else {
+            setexpired(true)
         }
     }, [type, Checks]);
-    
+
     return (
         <div>
+            {expired ? <SessionExpireModal /> : <></>}
             {allots ?
                 <Layout>
                     <div className="container">
