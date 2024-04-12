@@ -8,12 +8,12 @@ import Loader from '../../../components/Loader'
 import { USER_BASE_URL } from '../../../Datas/data'
 import axios from 'axios'
 import { Check } from '../../../Utils/Core'
-import Card2 from '../../../components/Card2'
+import Card3 from '../../../components/Card3'
 
+function Shift() {
 
-function Department() {
     const { checkAuth, type } = useContext(MyContext)
-    const [department, setDepartment] = useState(null)
+    const [shift, setShift] = useState(null)
 
     const Checks = Check()
     useEffect(() => {
@@ -25,7 +25,7 @@ function Department() {
         const data = JSON.parse(localStorage.getItem('userData'));
         if (Checks) {
 
-            const url = `${USER_BASE_URL}/admin/department/all`
+            const url = `${USER_BASE_URL}/employee/shift/all`
             axios.get(url, {
                 headers: {
                     'Content-Type': 'application/json;charset=UTF-8',
@@ -35,7 +35,7 @@ function Department() {
             })
                 .then((res) => {
                     const response = res.data.data
-                    setDepartment(response)
+                    setShift(response)
                 })
                 .catch((err) => console.log(err));
 
@@ -44,28 +44,27 @@ function Department() {
 
     return (
         <div>
-            {department ?
+           {shift ?
                 <Layout>
-                    <div className="container">
-                        <Modal title=" Create Department" id="departmentModal" >
-                            <ModalDetails />
-                        </Modal>
-                        <div className=" Patients">
-                            <TableHeader title="Departments" />
-                            <div className="mt-3">
+                <div className="container">
+                    <Modal title=" Create Shift" id="shiftModal" >
+                        <ModalDetails />
+                    </Modal>
+                    <div className=" Patients">
+                        <TableHeader title="Shift" />
+                        <div className="mt-3">
                                 <div className="row">
-                                    {department.map((each, i) => (
+                                    {shift.map((each, i) => (
                                         <div className="col-md-6 mb-3" key={i}>
-                                            <Card2
+                                            <Card3
                                             data={each}
                                             />
                                         </div>
                                     ))}
                                 </div>
                             </div>
-                            {/* <Table department={department} /> */}
-                        </div>
                     </div>
+                </div>
                 </Layout>
                 : <div className="">
                     <Loader />
@@ -75,4 +74,4 @@ function Department() {
     )
 }
 
-export default Department
+export default Shift

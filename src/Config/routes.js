@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRoutes } from 'react-router-dom';
-import { Dashboard, Login, Register, Report, Profile, Patients, Home, Contact, About, Service, Employee, Appointment, Medication, Medicine, Department, Allots, Payment } from '../pages/index';
+import { Dashboard, Login, Register, Report, Profile, Patients, Home, Contact, About, Service, Employee, Appointment, Medication, Medicine, Department, Allots, Payment, Shift } from '../pages/index';
 import ResetPassword from '../pages/auth/Reset/ResetPassword';
 import VerifyCode from '../pages/auth/Reset/VerifyCode';
 import UpdatePassword from '../pages/auth/Reset/UpdatePassword';
@@ -67,6 +67,10 @@ export const Routes = () => {
         {
             path: '/app/patient',
             element: < Patients />
+        },
+        {
+            path: '/app/shift',
+            element: < Shift />
         },
         {
             path: '/app/report',

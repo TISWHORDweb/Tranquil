@@ -16,28 +16,42 @@
 .w-80 {
     width: 80%;
 }
+
 .loaderHeightWeight {
     width: 50px;
     height: 50px;
 }
 
-.loadWrapper{
+.loadWrapper {
     height: 80vh;
     position: relative;
-    .loader{
+
+    .loader {
         position: absolute;
         top: 40%;
         left: 40%;
     }
 }
 
-h1,h2,h3,h4{
+h1,
+h2,
+h3,
+h4 {
     color: var(--color-default) !important;
 }
+
 .offcanvas-start {
     width: 300px !important;
     background-color: var(--color-default);
 }
+
+// .TopColumn {
+//     // background-color: var(--color-default-light);
+//     color: var(--color-third) !important;
+//     padding: 10px 15px;
+//     border-radius: 10px;
+//     font-size: 20px;
+// }
 
 .fw3 {
     font-weight: 300;
@@ -112,7 +126,7 @@ h1,h2,h3,h4{
     }
 }
 
-.timg{
+.timg {
     width: 25px;
 }
 
@@ -137,13 +151,13 @@ h1,h2,h3,h4{
     }
 }
 
-.justify-content-space{
-    display:flex;
+.justify-content-space {
+    display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.Depeach{
+.Depeach {
     background-color: var(--color-default);
     width: 40px;
     height: 40px;
@@ -162,13 +176,14 @@ h1,h2,h3,h4{
     color: var(--color-second);
 }
 
-.Card2{
+.Card2 {
     background-color: var(--color-body);
     border-radius: 15px;
     padding: 20px;
     cursor: pointer;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-    &:hover{
+
+    &:hover {
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
 }
@@ -191,9 +206,11 @@ h1,h2,h3,h4{
     border: 1px solid #efefef;
     border-radius: 15px;
 }
-textarea{
+
+textarea {
     min-height: 100px !important;
 }
+
 .inputts {
     border: 1px solid rgba(99, 119, 138, 0.5);
     border-radius: 8px;
@@ -221,8 +238,8 @@ textarea{
         width: 12px;
     }
 
-    option{
-        font-size: 12px !important; 
+    option {
+        font-size: 12px !important;
         color: rgba(99, 119, 138, 0.5) !important;
     }
 
@@ -321,10 +338,11 @@ textarea{
     }
 }
 
-.search_list{
+.search_list {
     display: flex;
     flex-wrap: wrap;
-    span{
+
+    span {
         border: 1px solid var(--color-second);
         border-radius: 5px;
         padding: 5px 10px;
@@ -332,7 +350,8 @@ textarea{
         margin: 5px;
         cursor: pointer;
     }
-    .picked{
+
+    .picked {
         background-color: var(--color-second);
         color: white;
     }

@@ -943,7 +943,6 @@ ul.list_ok li:before {
   background: transparent;
 }
 .auth .first {
-  background-color: var(--color-white);
   height: 100vh;
 }
 .auth .first .up img {
@@ -969,6 +968,7 @@ ul.list_ok li:before {
   color: var(--color-default);
   padding: 10px;
   border-radius: 5px;
+  background-color: transparent;
   font-size: 15px;
 }
 .auth .first form label {

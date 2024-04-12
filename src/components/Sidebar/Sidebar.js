@@ -16,6 +16,7 @@ function Sidebar() {
     const [department, setDepartment] = useState()
     const [payment, setPayment] = useState()
     const [employee, setEmployee] = useState()
+    const [shift, setShift] = useState()
 
 
     const { updateData, data } = useContext(MyContext);
@@ -42,9 +43,10 @@ function Sidebar() {
             setEmployee(Access.employee)
             setMedication(Access.medication)
             setMedicine(Access.medicine)
+            setShift(Access.shift)
         }
         console.log(Access.patient)
-    },[])
+    }, [])
 
     return (
         <div>
@@ -53,7 +55,7 @@ function Sidebar() {
                     {/* <i class="bx bxl-audible icon"></i> */}
                     <img src={Logo} alt="" className='icon' />
                     {!noItem ? <i class="bx bx-menu" id="btn" onClick={handleOpen}></i> :
-                        <i class="bx bx-menu-alt-right" id="btn" onClick={ handleClose}></i>}
+                        <i class="bx bx-menu-alt-right" id="btn" onClick={handleClose}></i>}
                 </div>
                 <ul class="nav-list p-0 ">
                     <Link to="/app">
@@ -73,6 +75,18 @@ function Sidebar() {
                                     <span class="link_name">Patients</span>
                                 </span>
                                 <span class="tooltip">Patients</span>
+                            </li>
+                        </Link>
+                        : <li></li>
+                    }
+                    {shift ?
+                        <Link to="/app/shift">
+                            <li>
+                                <span>
+                                    <i class='bx bx-analyse'></i>
+                                    <span class="link_name">Shift</span>
+                                </span>
+                                <span class="tooltip">Shift</span>
                             </li>
                         </Link>
                         : <li></li>

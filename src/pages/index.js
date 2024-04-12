@@ -9,6 +9,7 @@ import Employee from "./app/Employee/Employee"
 import Medication from "./app/Medication/Medication"
 import Medicine from "./app/Medicine/Medicine"
 import Department from "./app/Department/Department"
+import Shift from "./app/Shift/Shift"
 import Payment from "./app/Payment/Payment"
 import Allots from "./app/Allots/Allots"
 import Home from "./web/Home"
@@ -33,5 +34,6 @@ export {
     Medicine,
     Department,
     Allots,
-    Payment
+    Payment,
+    Shift
 }

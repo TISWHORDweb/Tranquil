@@ -121,4 +121,21 @@ const calculateAge =(birthDate)=> {
   
     return age;
 }
-export { checkPasswordValidity, TimeConverter, DateConverter, Check, calculateAge }
+
+function timestampToTime(timestamp) {
+    const date = new Date(timestamp);
+
+    let hours = date.getHours();
+    const minutes = date.getMinutes();
+
+    const period = hours < 12 ? 'AM' : 'PM';
+
+    if (hours > 12) {
+        hours -= 12;
+    }
+
+    const paddedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+    return `${hours}:${paddedMinutes} ${period}`;
+}
+
+export { checkPasswordValidity, timestampToTime, TimeConverter, DateConverter, Check, calculateAge }
