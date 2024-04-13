@@ -15,7 +15,7 @@ function Loader() {
     const Checks = Check()
 
     useEffect(() => {
-        if (!Checks) {
+        if (Checks === "false") {
             setexpired(true)
         }
     }, [Checks]);

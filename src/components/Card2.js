@@ -14,7 +14,7 @@ function Card2({ data }) {
             setEmployee(data.employees)
         }
     }, [data])
-    
+
     const firstFiveEmployee = employee.slice(0, 5);
 
     const formattedUsers = firstFiveEmployee.map((employee) => {
@@ -25,7 +25,6 @@ function Card2({ data }) {
         };
     });
 
-    console.log(formattedUsers)
 
     return (
         <div>

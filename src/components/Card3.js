@@ -26,7 +26,6 @@ function Card3({data}) {
         };
     });
 
-    console.log(data)
   return (
     <div>
     <div className="Card2">
