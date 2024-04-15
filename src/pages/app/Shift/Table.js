@@ -1,37 +1,38 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import TableAction from '../../../components/TableAction'
-import { DateConverter } from '../../../Utils/Core'
-import Other from '../../../img/other.png'
+import { DateConverter, timestampToTime } from '../../../Utils/Core'
 
 
-function Table({ patient }) {
+function Table({ audit }) {
+    const [audits, setAudits] = useState([])
+    useEffect(()=>{
+        setAudits(audit)
+    },[audit])
     return (
         <div>
             <div className="Table mt-4">
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">Avatar</th>
-                            <th scope="col">Patient ID</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Gender</th>
-                            <th scope="col">Age</th>
-                            <th scope="col">Date Added</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Shift</th>
+                            <th scope="col">Department</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Sign in time</th>
+                            <th scope="col">Sign out time</th>
                             <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        {patient ? <>
-                            {patient.map((each, i) => (
+                        {audits.length > 0 ? <>
+                            {audits.map((each, i) => (
                                 <tr key={i}>
-                                     <th scope="row"><img className='timg' src={Other} alt="" /></th>
-                                    <th scope="row">{each.hid}</th>
-                                    <td>{each.firstName} {each.lastName}</td>
-                                    <td>{each.email}</td>
-                                    <td>{each.gender}</td>
-                                    <td>{each.age}</td>
-                                    <td>{DateConverter(each.creationDateTime)}</td>
+                                    <th scope="row">{each.eid.hid}</th>
+                                    <td>{each.sid.name} {each.lastName}</td>
+                                    <td>{each.did.name}</td>
+                                    <td>{DateConverter(each.date)}</td>
+                                    <td> {timestampToTime(parseInt(each.startDateTime))}</td>
+                                    <td>{each.endDateTime ? timestampToTime(parseInt(each.endDateTime)) : "-----"}</td>
                                     <td>
                                         <TableAction />
                                     </td>
@@ -39,7 +40,6 @@ function Table({ patient }) {
                             ))}
 
                         </> : <tr>
-                            <td>....</td>
                             <td>....</td>
                             <td>....</td>
                             <td>....</td>

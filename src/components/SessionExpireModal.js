@@ -8,15 +8,19 @@ function SessionExpireModal() {
     const navigate = useNavigate();
     const expiredRef = useRef(null);
 
+    useEffect(() => {
+        expiredRef.current.click()
+    }, [])
+
     const HandleLogout = () => {
+        console.log("in");
         localStorage.clear()
         navigate('/');
         window.location.reload();
     }
 
-    useEffect(() => {
-        expiredRef.current.click()
-    }, [])
+
+
 
     return (
         <div>
@@ -31,7 +35,7 @@ function SessionExpireModal() {
                                 <img src={CautionImg} alt="" />
                                 <p>Your session has expired, Please log in again</p>
                                 <div className="buttonss">
-                                    <button onClick={HandleLogout} type="button"  class="btn success" >Login</button>
+                                  <button onClick={HandleLogout()} type="button" class="btn success" >Login</button>
                                 </div>
                             </center>
                         </div>

@@ -4,7 +4,6 @@ import { timestampToTime } from '../Utils/Core';
 
 
 function Card3({data}) {
-    console.log(data);
 
     const [employee, setEmployee] = useState([])
     const [shift, setShift] = useState({})

@@ -46,8 +46,14 @@ function ModalDetails() {
                     setWard(response.ward)
                     setCabin(response.cabin)
                     setFetched(true)
+                }).catch((e)=>{
+                    console.log(e);
+                    setClick(true)
+                    setClassName("alert__message error")
+                    setMessage("There was an error trying to process your request, Please try again later")
+                    setSpin(false)
+                    Clearer()
                 })
-                .catch((err) => console.log(err));
         }
     }, [type]);
 
@@ -100,14 +106,14 @@ function ModalDetails() {
                         setClassName("alert__message success")
                         setMessage(data.message)
                         setSpin(false)
-                    } else if (data.status === false) {
-                        setClick(true)
-                        setClassName("alert__message error")
-                        setMessage(data.message)
-                        setSpin(false)
-                        Clearer()
                     }
-
+                }).catch((e)=>{
+                    console.log(e);
+                    setClick(true)
+                    setClassName("alert__message error")
+                    setMessage("There was an error trying to process your request, Please try again later")
+                    setSpin(false)
+                    Clearer()
                 })
         }
     }

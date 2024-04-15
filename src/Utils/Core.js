@@ -138,4 +138,28 @@ function timestampToTime(timestamp) {
     return `${hours}:${paddedMinutes} ${period}`;
 }
 
-export { checkPasswordValidity, timestampToTime, TimeConverter, DateConverter, Check, calculateAge }
+function generateTimeOptions() {
+    const options = [];
+    for (let hour = 0; hour < 24; hour++) {
+        const isPM = hour >= 12;
+        const displayHour = hour % 12 === 0 ? 12 : hour % 12;
+        const timeString = `${displayHour.toString().padStart(2, '0')}:00 ${isPM ? 'PM' : 'AM'}`;
+        const timestamp = hour * 60 * 60 * 1000; // Convert hours to milliseconds
+        options.push({ time: timeString, timestamp: timestamp });
+    }
+    return options;
+}
+
+function subtractHourFromTimestamp(timestamp) {
+    // Convert timestamp to milliseconds
+    const milliseconds = Number(timestamp);
+
+    // Subtract an hour (in milliseconds)
+    const hourMilliseconds = 60 * 60 * 1000;
+    const newMilliseconds = milliseconds - hourMilliseconds;
+
+    // Convert back to timestamp
+    return newMilliseconds;
+}
+
+export { checkPasswordValidity, timestampToTime, subtractHourFromTimestamp, generateTimeOptions, TimeConverter, DateConverter, Check, calculateAge }

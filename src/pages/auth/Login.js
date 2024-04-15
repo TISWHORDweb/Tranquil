@@ -53,7 +53,6 @@ function Login() {
             axios.post(`${LOCAL_AUTH_BASE_URL}/login`, body, axiosConfig)
                 .then(response => {
                     const data = response.data
-                    console.log(data)
 
                     if (data.status === true) {
                         setClick(false)
@@ -71,17 +70,15 @@ function Login() {
 
                         return () => clearTimeout(timerId);
 
-                    } else if (data.status === false) {
-                        console.log("in")
-                        setClick(true)
-                        setClassName("alert__message error")
-                        setMessage(data.message)
-                        setSpin(false)
-                        Clearer()
-                    }
-
+                    } 
+                }).catch((e)=>{
+                    console.log(e);
+                    setClick(true)
+                    setClassName("alert__message error")
+                    setMessage("There was an error trying to process your request, Please try again later")
+                    setSpin(false)
+                    Clearer()
                 })
-                .catch(err => console.log(err))
         }
     }
 

@@ -78,7 +78,6 @@ export const MyContextProvider = ({ children }) => {
   const filterPatients = useCallback((newQuery) => {
     if (!newQuery) {
       setFilteredPatient('');
-      console.log("in")
     }
     const filtered = patients.filter((patient) => {
       // Adjust search logic as needed
