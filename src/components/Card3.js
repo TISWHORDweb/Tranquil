@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import TableAction from './TableAction'
 import { timestampToTime } from '../Utils/Core';
+import { Link } from 'react-router-dom';
 
 
-function Card3({data}) {
+function Card3({ data }) {
 
     const [employee, setEmployee] = useState([])
     const [shift, setShift] = useState({})
@@ -14,7 +15,7 @@ function Card3({data}) {
             setEmployee(data.employees)
         }
     }, [data])
-    
+
     const firstFiveEmployee = employee.slice(0, 5);
 
     const formattedUsers = firstFiveEmployee.map((employee) => {
@@ -25,34 +26,36 @@ function Card3({data}) {
         };
     });
 
-  return (
-    <div>
-    <div className="Card2">
-        <div className="justify-content-space">
-            <h4 className='TopColumn'>{shift.name}</h4>
-            <div className="">
-                <TableAction />
-            </div>
-        </div>
-        <p>{shift.description}</p>
-        <div className=" mt-3">
-            <div className="justify-content-space">
-                <div className="d-flex">
-                    {formattedUsers.map((each, i) => (
-                        <div className="Depeach m-1">
-                            {each.each}
+    return (
+        <div>
+            <Link to={`/app/shift/${shift._id}`}>
+                <div className="Card2">
+                    <div className="justify-content-space">
+                        <h4 className='TopColumn'>{shift.name}</h4>
+                        <div className="">
+                            <TableAction />
                         </div>
-                    ))}
+                    </div>
+                    <p>{shift.description}</p>
+                    <div className=" mt-3">
+                        <div className="justify-content-space">
+                            <div className="d-flex">
+                                {formattedUsers.map((each, i) => (
+                                    <div className="Depeach m-1">
+                                        {each.each}
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="">
+                                <span className='f13 third'>Start time : {timestampToTime(parseInt(shift.startDate))}</span> <br />
+                                <span className='f13 third'>End time : {timestampToTime(parseInt(shift.endDate))}</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className="">
-                    <span className='f13 third'>Start time : {timestampToTime(parseInt(shift.startDate))}</span> <br />
-                    <span className='f13 third'>End time : {timestampToTime(parseInt(shift.endDate))}</span>
-                </div>
-            </div>
+            </Link>
         </div>
-    </div>
-</div>
-  )
+    )
 }
 
 export default Card3

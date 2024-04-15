@@ -1,46 +1,42 @@
 import React, { useEffect, useState } from 'react'
 import TableAction from '../../../components/TableAction'
-import { DateConverter, timestampToTime } from '../../../Utils/Core'
+import { DateConverter } from '../../../Utils/Core'
 
 
-function Table({ audit }) {
-    const [audits, setAudits] = useState([])
+function EmployeeTable({ employee }) {
+    const [employees, setEmployee] = useState([])
     useEffect(()=>{
-        setAudits(audit)
-    },[audit])
+        setEmployee(employee)
+    },[employee])
     return (
         <div>
             <div className="Table mt-4">
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Shift</th>
+                            <th scope="col">Shift Name</th>
+                            <th scope="col">Employee</th>
                             <th scope="col">Department</th>
-                            <th scope="col">Date</th>
-                            <th scope="col">Sign in time</th>
-                            <th scope="col">Sign out time</th>
+                            <th scope="col">Date Assigned</th>
+                            <th scope="col">Employee Status</th>
                             <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        {audits.length > 0 ? <>
-                            {audits.map((each, i) => (
+                        {employees.length > 0 ? <>
+                            {employees.map((each, i) => (
                                 <tr key={i}>
-                                    <th scope="row">{each.eid.hid}</th>
-                                    <td>{each.sid.name} </td>
+                                    <th scope="row">{each.sid.name}</th>
+                                    <td>{each.eid.firstName} {each.eid.lastName}</td>
                                     <td>{each.did.name}</td>
-                                    <td>{DateConverter(each.date)}</td>
-                                    <td> {timestampToTime(parseInt(each.startDateTime))}</td>
-                                    <td>{each.endDateTime ? timestampToTime(parseInt(each.endDateTime)) : "-----"}</td>
+                                    <td>{DateConverter(each.creationDateTime)}</td>
+                                    <td>{each.eid.status ? <span className='redStatus'>Inactive</span> : <span className='greenStatus'>Active</span>}</td>
                                     <td>
                                         <TableAction />
                                     </td>
                                 </tr>
                             ))}
-
                         </> : <tr>
-                            <td>....</td>
                             <td>....</td>
                             <td>....</td>
                             <td>....</td>
@@ -78,4 +74,4 @@ function Table({ audit }) {
     )
 }
 
-export default Table
+export default EmployeeTable

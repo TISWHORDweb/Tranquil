@@ -50,14 +50,14 @@ function Sidebar() {
 
     return (
         <div>
-            <div class={`sidebar ${data}`}>
+            <div class={`sidebar  ${data}`}>
                 <div class="logo_details">
                     {/* <i class="bx bxl-audible icon"></i> */}
                     <img src={Logo} alt="" className='icon' />
                     {!noItem ? <i class="bx bx-menu" id="btn" onClick={handleOpen}></i> :
                         <i class="bx bx-menu-alt-right" id="btn" onClick={handleClose}></i>}
                 </div>
-                <ul class="nav-list p-0 ">
+                <ul class="nav-list navFlow p-0 ">
                     <Link to="/app">
                         <li>
                             <span>

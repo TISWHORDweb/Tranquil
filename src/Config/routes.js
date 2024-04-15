@@ -4,6 +4,7 @@ import { Dashboard, Login, Register, Report, Profile, Patients, Home, Contact, A
 import ResetPassword from '../pages/auth/Reset/ResetPassword';
 import VerifyCode from '../pages/auth/Reset/VerifyCode';
 import UpdatePassword from '../pages/auth/Reset/UpdatePassword';
+import AdminShiftDetails from '../pages/app/Shift/AdminShiftDetails';
 
 export const Routes = () => {
     return useRoutes([
@@ -71,6 +72,10 @@ export const Routes = () => {
         {
             path: '/app/shift',
             element: < Shift />
+        },
+        {
+            path: '/app/shift/:id',
+            element: < AdminShiftDetails />
         },
         {
             path: '/app/report',

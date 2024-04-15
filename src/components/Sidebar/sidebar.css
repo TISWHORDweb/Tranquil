@@ -18,6 +18,27 @@ body{
     top: 0;
     left: 0;
 }
+.navFlow{
+    height: 90vh;
+    overflow: scroll;
+}
+
+.navFlow {
+    overflow: scroll;
+    height: 87vh;
+}
+
+.navFlow::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.navFlow {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
 
  .open{
     width: 250px;
