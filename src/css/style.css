@@ -177,6 +177,13 @@ h4 {
   border-radius: 5px;
 }
 
+.blueStatus {
+  background-color: rgba(0, 0, 255, 0.145);
+  color: blue;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
 .Nav-menu {
   font-size: 30px;
   color: var(--color-second);
@@ -192,6 +199,21 @@ h4 {
 }
 .Card2:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.Confirmaation_screen {
+  padding: 15% 25%;
+  height: 100vh;
+  background-color: var(--color-body);
+}
+.Confirmaation_screen img {
+  width: 30%;
+  margin: 30px;
+}
+.Confirmaation_screen .in {
+  background-color: var(--color-second);
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .Inner {
@@ -328,6 +350,7 @@ textarea {
 }
 .btnDark:hover {
   background-color: var(--color-dark);
+  color: white;
 }
 
 .search_list {

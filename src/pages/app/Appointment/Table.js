@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import TableAction from '../../../components/TableAction'
 import { DateConverter, StatusChecker, timestampToTime } from '../../../Utils/Core'
 
 
 function Table({ appointment }) {
+    const [appointments, setAppointments] = useState([])
+    useEffect(()=>{
+        setAppointments(appointment)
+    },[appointment])
     return (
         <div>
             <div className="Table mt-4">
@@ -22,8 +26,8 @@ function Table({ appointment }) {
                         </tr>
                     </thead>
                     <tbody>
-                        {appointment ? <>
-                            {appointment.map((each, i) => (
+                        {appointments.length > 0 ? <>
+                            {appointments.map((each, i) => (
                                 <tr key={i}>
                                      <th scope="row">{i}</th>
                                     <th scope="row">{each.title}</th>

@@ -164,11 +164,14 @@ function StatusChecker(status) {
     let name;
     if (status === 0) {
         className = "yellowStatus";
-        name = "Open"
+        name = "Pending"
     } else if (status === 1) {
-        className = "greenStatus";
-        name = "Closed"
+        className = "blueStatus";
+        name = "Accepted"
     } else if (status === 2) {
+        className = "greenStatus";
+        name = "Attended"
+    } else if (status === 3) {
         className = "redStatus";
         name = "Canceled"
     }

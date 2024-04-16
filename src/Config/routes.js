@@ -5,6 +5,7 @@ import ResetPassword from '../pages/auth/Reset/ResetPassword';
 import VerifyCode from '../pages/auth/Reset/VerifyCode';
 import UpdatePassword from '../pages/auth/Reset/UpdatePassword';
 import AdminShiftDetails from '../pages/app/Shift/AdminShiftDetails';
+import ConfirmationScreen from '../components/ConfirmationScreen';
 
 export const Routes = () => {
     return useRoutes([
@@ -30,6 +31,10 @@ export const Routes = () => {
         {
             path: '/web/service',
             element: < Service />
+        },
+        {
+            path: '/web/confirmation/:id',
+            element: < ConfirmationScreen />
         },
         {
             path: '/app',
