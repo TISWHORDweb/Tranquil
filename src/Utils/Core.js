@@ -65,7 +65,7 @@ const TimeConverter = (timestamp) => {
     const monthNames = [
         'January', 'February', 'March', 'April', 'May', 'June',
         'July', 'August', 'September', 'October', 'November', 'December'
-      ];
+    ];
 
     // Extracting date components
     const year = date.getFullYear();
@@ -88,7 +88,7 @@ const DateConverter = (timestamp) => {
     const monthNames = [
         'January', 'February', 'March', 'April', 'May', 'June',
         'July', 'August', 'September', 'October', 'November', 'December'
-      ];
+    ];
 
     // Extracting date components
     const year = date.getFullYear();
@@ -102,23 +102,23 @@ const DateConverter = (timestamp) => {
     return formattedDate;
 }
 
-const Check =()=>{
+const Check = () => {
     const Check = localStorage.getItem('userLoggedIn');
     return Check
 }
 
-const calculateAge =(birthDate)=> {
+const calculateAge = (birthDate) => {
     const birth = new Date(birthDate);
     const today = new Date();
-  
+
     let age = today.getFullYear() - birth.getFullYear();
-  
+
     const birthMonth = birth.getMonth();
     const todayMonth = today.getMonth();
     if (todayMonth < birthMonth || (todayMonth === birthMonth && today.getDate() < birth.getDate())) {
         age--;
     }
-  
+
     return age;
 }
 
@@ -144,22 +144,51 @@ function generateTimeOptions() {
         const isPM = hour >= 12;
         const displayHour = hour % 12 === 0 ? 12 : hour % 12;
         const timeString = `${displayHour.toString().padStart(2, '0')}:00 ${isPM ? 'PM' : 'AM'}`;
-        const timestamp = hour * 60 * 60 * 1000; // Convert hours to milliseconds
+        const timestamp = hour * 60 * 60 * 1000;
         options.push({ time: timeString, timestamp: timestamp });
     }
     return options;
 }
 
 function subtractHourFromTimestamp(timestamp) {
-    // Convert timestamp to milliseconds
     const milliseconds = Number(timestamp);
 
-    // Subtract an hour (in milliseconds)
     const hourMilliseconds = 60 * 60 * 1000;
     const newMilliseconds = milliseconds - hourMilliseconds;
 
-    // Convert back to timestamp
     return newMilliseconds;
 }
 
-export { checkPasswordValidity, timestampToTime, subtractHourFromTimestamp, generateTimeOptions, TimeConverter, DateConverter, Check, calculateAge }
+function StatusChecker(status) {
+    let className;
+    let name;
+    if (status === 0) {
+        className = "yellowStatus";
+        name = "Open"
+    } else if (status === 1) {
+        className = "greenStatus";
+        name = "Closed"
+    } else if (status === 2) {
+        className = "redStatus";
+        name = "Canceled"
+    }
+    return (<span className={className}>{name}</span>)
+}
+
+function convertTimeToTimestamp(timeString) {
+    const [hours, minutes] = timeString.split(':').map(Number);
+
+    const date = new Date();
+    date.setHours(hours, minutes, 0, 0);
+    const timestamp = date.getTime();
+
+    return timestamp;
+}
+
+function convertDateToTimestamp(value) {
+    const date = new Date(value);
+    const timestamp = date.getTime();
+    return timestamp; 
+}
+
+export { checkPasswordValidity, convertDateToTimestamp, convertTimeToTimestamp, StatusChecker, timestampToTime, subtractHourFromTimestamp, generateTimeOptions, TimeConverter, DateConverter, Check, calculateAge }

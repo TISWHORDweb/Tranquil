@@ -49,7 +49,7 @@ export const MyContextProvider = ({ children }) => {
 
   useEffect(() => {
     if(type && token){
-      const url = `${USER_BASE_URL}/${type}/patient/all`
+      const url = `${USER_BASE_URL}/employee/patient/all`
       axios.get(url, {
         headers: {
           'Content-Type': 'application/json;charset=UTF-8',
