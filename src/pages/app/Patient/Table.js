@@ -2,6 +2,7 @@ import React from 'react'
 import TableAction from '../../../components/TableAction'
 import { DateConverter } from '../../../Utils/Core'
 import Other from '../../../img/other.png'
+import Actions from './Actions'
 
 
 function Table({ patient }) {
@@ -33,7 +34,9 @@ function Table({ patient }) {
                                     <td>{each.age}</td>
                                     <td>{DateConverter(each.creationDateTime)}</td>
                                     <td>
-                                        <TableAction />
+                                        <TableAction >
+                                            <Actions />
+                                        </TableAction>
                                     </td>
                                 </tr>
                             ))}

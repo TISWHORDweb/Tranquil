@@ -107,6 +107,17 @@ const Check = () => {
     return Check
 }
 
+// const DataCheck = () => {
+//     let status
+//     const data = JSON.parse(localStorage.getItem('userData'));
+//     if(data === null || data === undefined){
+//         status = true
+//     }else{
+//         status = false
+//     }
+//     return status
+// }
+
 const calculateAge = (birthDate) => {
     const birth = new Date(birthDate);
     const today = new Date();
