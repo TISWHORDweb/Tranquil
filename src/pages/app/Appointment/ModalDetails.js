@@ -25,6 +25,7 @@ function ModalDetails() {
             setPatientName(patient.firstName + " " + patient.lastName)
         }
     }
+    
     const Clearer = () => {
         const timerId = setTimeout(() => {
             setClick(false)

@@ -8,21 +8,14 @@ import { MyContext } from '../../../context/Context'
 import Loader from '../../../components/Loader'
 import { USER_BASE_URL } from '../../../Datas/data'
 import axios from 'axios'
-import { Check } from '../../../Utils/Core'
 
 function Employee() {
-    const { checkAuth, type } = useContext(MyContext)
+    const { type } = useContext(MyContext)
     const [employees, setEmployees] = useState(null)
-
-    const Checks = Check()
-    useEffect(() => {
-        checkAuth();
-
-    }, [checkAuth]);
 
     useEffect(() => {
         const data = JSON.parse(localStorage.getItem('userData'));
-        if (Checks) {
+        if (data) {
 
             const url = `${USER_BASE_URL}/${type}/employee/all`
             axios.get(url, {
@@ -39,7 +32,7 @@ function Employee() {
                 .catch((err) => console.log(err));
 
         }
-    }, [type, Checks]);
+    }, [type]);
 
     return (
         <div>

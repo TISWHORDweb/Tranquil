@@ -140,6 +140,10 @@ h4 {
   margin: 0;
 }
 
+.defaultColor {
+  color: var(--color-default) !important;
+}
+
 .justify-content-space {
   display: flex;
   justify-content: space-between;
@@ -283,6 +287,24 @@ textarea {
   margin-right: 10px;
 }
 .btnLight:hover {
+  background-color: var(--color-second-light);
+}
+
+.btnThird {
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 15px;
+  border: none;
+  font-weight: 500;
+  outline: none;
+  color: var(--color-white);
+  background-color: var(--color-third);
+}
+.btnThird i {
+  margin-right: 10px;
+}
+.btnThird:hover {
   background-color: var(--color-second-light);
 }
 

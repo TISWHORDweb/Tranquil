@@ -6,6 +6,8 @@ import VerifyCode from '../pages/auth/Reset/VerifyCode';
 import UpdatePassword from '../pages/auth/Reset/UpdatePassword';
 import AdminShiftDetails from '../pages/app/Shift/AdminShiftDetails';
 import ConfirmationScreen from '../components/ConfirmationScreen';
+import ViewProfile from '../pages/app/Profile/ViewProfile';
+import EmployeeShift from '../pages/app/Shift/EmployeeShift';
 
 export const Routes = () => {
     return useRoutes([
@@ -71,12 +73,20 @@ export const Routes = () => {
             element: < Profile />
         },
         {
+            path: '/app/profile/view/:types/:id',
+            element: < ViewProfile />
+        },
+        {
             path: '/app/patient',
             element: < Patients />
         },
         {
             path: '/app/shift',
             element: < Shift />
+        },
+        {
+            path: '/app/shift/audit/:id',
+            element: < EmployeeShift />
         },
         {
             path: '/app/shift/:id',

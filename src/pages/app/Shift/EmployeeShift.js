@@ -8,23 +8,35 @@ import TableHeader from '../../../components/TableHeader'
 import Table from './Table'
 import ShiftDetails from './ShiftDetails'
 import NoData from '../../../img/icon/1746734.png'
+import { useParams } from 'react-router-dom'
 
 function EmployeeShift() {
     const [shifts, setShifts] = useState(null)
-    const [check, setCheck] = useState(false)
     const [audit, setAudit] = useState(null)
+    const [url, setUrl] = useState(null)
+    const [url2, setUrl2] = useState(null)
     const [noShift, setNoshift] = useState(false)
-    const { checkAuth, type } = useContext(MyContext)
+    const { type } = useContext(MyContext)
+    let { id } = useParams()
+
+    if (!id) {
+        id = 1
+    }
 
     useEffect(() => {
-        checkAuth();
+        if (type === "admin") {
+            setUrl(`${USER_BASE_URL}/admin/shift/employee/audit/${id}`)
+            setUrl2(`${USER_BASE_URL}/admin/shift/employee/${id}`)
+        } else {
+            setUrl(`${USER_BASE_URL}/employee/shift/audit/all`)
+            setUrl2(`${USER_BASE_URL}/employee/shift`)
+        }
+    }, [type, id])
 
-    }, [checkAuth]);
 
     useEffect(() => {
         const data = JSON.parse(localStorage.getItem('userData'));
         if (data) {
-            const url = `${USER_BASE_URL}/employee/shift/audit/all`
             axios.get(url, {
                 headers: {
                     'Content-Type': 'application/json;charset=UTF-8',
@@ -37,15 +49,15 @@ function EmployeeShift() {
                     setAudit(response)
                 })
                 .catch((err) => console.log(err));
+
         }
 
-    }, [type]);
+    }, [type, url]);
 
     useEffect(() => {
         const data = JSON.parse(localStorage.getItem('userData'));
         if (data) {
-            const url = `${USER_BASE_URL}/employee/shift`
-            axios.get(url, {
+            axios.get(url2, {
                 headers: {
                     'Content-Type': 'application/json;charset=UTF-8',
                     "Access-Control-Allow-Origin": "*",
@@ -54,9 +66,6 @@ function EmployeeShift() {
             })
                 .then((res) => {
                     const response = res.data
-                    if (response) {
-                        setCheck(true)
-                    }
 
                     if (response.status === true) {
                         setNoshift(true)
@@ -65,34 +74,45 @@ function EmployeeShift() {
 
                 })
                 .catch((err) => {
-                    setCheck(true)
                     setNoshift(false)
                     console.log(err)
                 });
         }
 
-    }, [type]);
+    }, [type, url2]);
 
     return (
         <div>
-            {check ?
+            {shifts ?
                 <Layout>
                     <div className="container">
                         <div className="">
-                            {!noShift ? <center className=''>
-                                <div className="mt-5">
-                                    <h4>Sorry you've not been assigned to a shift yet</h4>
-                                    <img className='' src={NoData} alt="" />
-                                </div>
-                            </center> :
-                                <div className="">
-                                    <ShiftDetails shifts={shifts} />
-                                    <div className=" Patients">
-                                        <TableHeader title="Shift Audit" />
-                                        <div className="mt-3">
-                                            <Table audit={audit} />
-                                        </div>
+                            {type === "admin" ? <div className="">
+                                <ShiftDetails shifts={shifts} />
+                                <div className=" Patients">
+                                    <TableHeader title="Shift Audit" />
+                                    <div className="mt-3">
+                                        <Table audit={audit} />
                                     </div>
+                                </div>
+                            </div> :
+                                <div className="">
+                                    {!noShift ? <center className=''>
+                                        <div className="mt-5">
+                                            <h4>Sorry you've not been assigned to a shift yet</h4>
+                                            <img className='' src={NoData} alt="" />
+                                        </div>
+                                    </center> :
+                                        <div className="">
+                                            <ShiftDetails shifts={shifts} />
+                                            <div className=" Patients">
+                                                <TableHeader title="Shift Audit" />
+                                                <div className="mt-3">
+                                                    <Table audit={audit} />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
                                 </div>
                             }
                         </div>

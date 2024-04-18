@@ -1,25 +1,20 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { MyContext } from '../context/Context'
+import React, { useEffect, useState } from 'react'
 import SessionExpireModal from '../components/SessionExpireModal'
 import { Check } from '../Utils/Core'
 import { useNavigate } from 'react-router-dom'
 
 function Loader() {
-    const { checkAuth } = useContext(MyContext)
     const [expired, setexpired] = useState(false)
     const navigate = useNavigate()
 
-    useEffect(() => {
-        checkAuth();
-
-    }, [checkAuth]);
+    const Checks = Check()
 
     useEffect(() => {
-        const Checks = Check()
+      
         if (Checks === "false") {
             setexpired(true)
         }
-    }, []);
+    }, [Checks]);
 
     let documentLoaded = false;
     const timeout = 60000; // 60 seconds
@@ -28,13 +23,14 @@ function Loader() {
         documentLoaded = true;
     });
 
-    setTimeout(() => {
-        if (!documentLoaded) {
-            navigate('/')
-        }
-    }, timeout);
+    if (Checks === null || Checks === undefined) {
+        setTimeout(() => {
+            if (!documentLoaded) {
+                navigate('/')
+            }
+        }, timeout);
 
-
+    }
     return (
         <div>
             {

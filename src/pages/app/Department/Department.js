@@ -1,46 +1,15 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import Layout from '../../../components/Layout'
 import Modal from '../../../components/Modal'
 import TableHeader from '../../../components/TableHeader'
 import ModalDetails from './ModalDetails'
 import { MyContext } from '../../../context/Context'
 import Loader from '../../../components/Loader'
-import { USER_BASE_URL } from '../../../Datas/data'
-import axios from 'axios'
-import { Check } from '../../../Utils/Core'
 import Card2 from '../../../components/Card2'
 
 
 function Department() {
-    const { checkAuth, type } = useContext(MyContext)
-    const [department, setDepartment] = useState(null)
-
-    const Checks = Check()
-    useEffect(() => {
-        checkAuth();
-
-    }, [checkAuth]);
-
-    useEffect(() => {
-        const data = JSON.parse(localStorage.getItem('userData'));
-        if (Checks) {
-
-            const url = `${USER_BASE_URL}/admin/department/all`
-            axios.get(url, {
-                headers: {
-                    'Content-Type': 'application/json;charset=UTF-8',
-                    "Access-Control-Allow-Origin": "*",
-                    "t-token": data.token
-                }
-            })
-                .then((res) => {
-                    const response = res.data.data
-                    setDepartment(response)
-                })
-                .catch((err) => console.log(err));
-
-        }
-    }, [type, Checks]);
+    const { department } = useContext(MyContext)
 
     return (
         <div>

@@ -10,13 +10,8 @@ import { USER_BASE_URL } from '../../../Datas/data'
 import axios from 'axios'
 
 function Patients() {
-    const { checkAuth, type } = useContext(MyContext)
+    const { type } = useContext(MyContext)
     const [patient, setPatient] = useState(null)
-
-    useEffect(() => {
-        checkAuth();
-
-    }, [checkAuth]);
 
     useEffect(() => {
         const data = JSON.parse(localStorage.getItem('userData'));

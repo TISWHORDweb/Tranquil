@@ -11,14 +11,11 @@ import axios from 'axios'
 import { Check } from '../../../Utils/Core'
 
 function Allots() {
-    const { checkAuth, type } = useContext(MyContext)
+    const { type } = useContext(MyContext)
     const [allots, setAllots] = useState(null)
 
     const Checks = Check()
-    useEffect(() => {
-        checkAuth();
-
-    }, [checkAuth]);
+  
 
     useEffect(() => {
         const data = JSON.parse(localStorage.getItem('userData'));

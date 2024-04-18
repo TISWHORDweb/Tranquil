@@ -11,14 +11,11 @@ import axios from 'axios'
 
 function Appointment() {
 
-    const { checkAuth, type } = useContext(MyContext)
+    const { type } = useContext(MyContext)
     const [appointment, setAppointment] = useState(null)
     const [isPatient, setIsPatient] = useState(false)
 
-    useEffect(() => {
-        checkAuth();
-
-    }, [checkAuth]);
+  
 
     useEffect(() => {
         const data = JSON.parse(localStorage.getItem('userData'));
