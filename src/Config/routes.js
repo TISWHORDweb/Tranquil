@@ -8,6 +8,7 @@ import AdminShiftDetails from '../pages/app/Shift/AdminShiftDetails';
 import ConfirmationScreen from '../components/ConfirmationScreen';
 import ViewProfile from '../pages/app/Profile/ViewProfile';
 import EmployeeShift from '../pages/app/Shift/EmployeeShift';
+import DepartmentDetails from '../pages/app/Department/DepartmentDetails';
 
 export const Routes = () => {
     return useRoutes([
@@ -119,6 +120,10 @@ export const Routes = () => {
         {
             path: '/app/department',
             element: < Department />
+        },
+        {
+            path: '/app/department/:id',
+            element: < DepartmentDetails />
         },
         {
             path: '/app/allots',

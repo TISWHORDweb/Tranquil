@@ -4,7 +4,7 @@ function TableHeader(props) {
     return (
         <div>
             <div className="header">
-                <h4>{props.title}</h4>
+                <h5>{props.title}</h5>
                 <div className="right">
                     <div className="search">
                         <input type="text" placeholder='Search.....' />

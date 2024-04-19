@@ -1,90 +1,90 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import TableAction from '../../../components/TableAction'
 import { DateConverter } from '../../../Utils/Core'
+// import { MyContext } from '../../../context/Context'
+// import CautionImg from '../../../img/icon/Group 5647.png'
 import Action from './Action'
-import { MyContext } from '../../../context/Context'
-import CautionImg from '../../../img/icon/Group 5647.png'
-import { USER_BASE_URL } from '../../../Datas/data';
-import axios from 'axios'
+// import { USER_BASE_URL } from '../../../Datas/data';
+// import axios from 'axios'
 
 function EmployeeTable(props) {
-    const { display, unDisplay, token, id } = useContext(MyContext)
+    // const { display, unDisplay, token, id } = useContext(MyContext)
     const [employees, setEmployee] = useState([])
-    const [click, setClick] = useState(false);
-    const [spin, setSpin] = useState(false);
-    const [message, setMessage] = useState("");
-    const [className, setClassName] = useState("");
+    // const [click, setClick] = useState(false);
+    // const [spin, setSpin] = useState(false);
+    // const [message, setMessage] = useState("");
+    // const [className, setClassName] = useState("");
 
     useEffect(() => {
         setEmployee(props.employee)
     }, [props.employee])
 
-    const modalRef = useRef()
+    // const modalRef = useRef()
 
-    useEffect(() => {
-        if (display === true) {
-            modalRef.current.click()
-            unDisplay()
+    // useEffect(() => {
+    //     if (display === true) {
+    //         modalRef.current.click()
+    //         unDisplay()
 
-        }
-    }, [display, unDisplay])
+    //     }
+    // }, [display, unDisplay])
 
-    const Clearer = () => {
-        const timerId = setTimeout(() => {
-            setClick(false)
-            setMessage("")
-        }, 5000);
+    // const Clearer = () => {
+    //     const timerId = setTimeout(() => {
+    //         setClick(false)
+    //         setMessage("")
+    //     }, 5000);
 
-        return () => clearTimeout(timerId);
-    }
+    //     return () => clearTimeout(timerId);
+    // }
 
 
-    let axiosConfig = {
-        headers: {
-            'Content-Type': 'application/json;charset=UTF-8',
-            "Access-Control-Allow-Origin": "*",
-            "t-token": token
-        }
-    }
+    // let axiosConfig = {
+    //     headers: {
+    //         'Content-Type': 'application/json;charset=UTF-8',
+    //         "Access-Control-Allow-Origin": "*",
+    //         "t-token": token
+    //     }
+    // }
 
-    const HandleUnassigned = (e) => {
-        e.preventDefault();
+    // const HandleUnassigned = (e) => {
+    //     e.preventDefault();
 
-        if (!id) {
-            setClick(true)
-            setClassName("alert__message error")
-            setMessage("Sorry user cannot be deleted, Try again later")
-            Clearer()
-        } else {
-            setSpin(true)
-            const body ={
-                id
-            }
-            console.log(body);
-            axios.post(`${USER_BASE_URL}/admin/shift/unassign`, body, axiosConfig)
-                .then(response => {
-                    const data = response.data
+    //     if (!id) {
+    //         setClick(true)
+    //         setClassName("alert__message error")
+    //         setMessage("Sorry user cannot be deleted, Try again later")
+    //         Clearer()
+    //     } else {
+    //         setSpin(true)
+    //         const body ={
+    //             id
+    //         }
+    //         console.log(body);
+    //         axios.post(`${USER_BASE_URL}/admin/shift/unassign`, body, axiosConfig)
+    //             .then(response => {
+    //                 const data = response.data
 
-                    if (data.status === true) {
-                        setClick(true)
-                        setClassName("alert__message success")
-                        setMessage(data.message)
-                        setSpin(false)
-                    }
-                }).catch((e) => {
-                    console.log(e);
-                    setClick(true)
-                    setClassName("alert__message error")
-                    setMessage("There was an error trying to process your request, Please try again later")
-                    setSpin(false)
-                    Clearer()
-                })
-        }
-    }
+    //                 if (data.status === true) {
+    //                     setClick(true)
+    //                     setClassName("alert__message success")
+    //                     setMessage(data.message)
+    //                     setSpin(false)
+    //                 }
+    //             }).catch((e) => {
+    //                 console.log(e);
+    //                 setClick(true)
+    //                 setClassName("alert__message error")
+    //                 setMessage("There was an error trying to process your request, Please try again later")
+    //                 setSpin(false)
+    //                 Clearer()
+    //             })
+    //     }
+    // }
 
     return (
         <div>
-            <button type="button" class="btnRed" ref={modalRef} data-bs-toggle="modal" style={{ display: "none" }} data-bs-target="#unassignedModal">
+            {/* <button type="button" class="btnRed" ref={modalRef} data-bs-toggle="modal" style={{ display: "none" }} data-bs-target="#unassignedModal">
             </button>
             <div class="modal fade" id="unassignedModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog ">
@@ -97,7 +97,7 @@ function EmployeeTable(props) {
                                     <p>{message}</p>
                                 </div> : ""}
                                 <div className="buttonss">
-                                    <button type="button" onClick={HandleUnassigned} class="btn success">
+                                    <button type="button" class="btn success">
                                     {spin ? <span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span> : <span></span>}
                                         Yes
                                     </button>
@@ -107,14 +107,15 @@ function EmployeeTable(props) {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
             <div className="Table mt-4">
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">Shift Name</th>
+                            <th scope="col">Department Name</th>
                             <th scope="col">Employee</th>
-                            <th scope="col">Department</th>
+                            <th scope="col">Category </th>
+                            <th scope="col">Gender</th>
                             <th scope="col">Date Assigned</th>
                             <th scope="col">Employee Status</th>
                             <th scope="col"></th>
@@ -124,11 +125,12 @@ function EmployeeTable(props) {
                         {employees.length > 0 ? <>
                             {employees.map((each, i) => (
                                 <tr key={i}>
-                                    <th scope="row">{props.shift.name}</th>
-                                    <td>{each.eid.firstName} {each.eid.lastName}</td>
-                                    <td>{each.did.name}</td>
+                                    <th scope="row">{props.department.name}</th>
+                                    <td>{each.firstName} {each.lastName}</td>
+                                    <td>{each.ecid.category}</td>
+                                    <td>{each.gender}</td>
                                     <td>{DateConverter(each.creationDateTime)}</td>
-                                    <td>{each.eid.status ? <span className='redStatus'>Inactive</span> : <span className='greenStatus'>Active</span>}</td>
+                                    <td>{each.blocked ? <span className='redStatus'>Inactive</span> : <span className='greenStatus'>Active</span>}</td>
                                     <td>
                                         <TableAction >
                                             <Action id={each._id}/>

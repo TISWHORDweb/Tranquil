@@ -7,22 +7,21 @@ import { USER_BASE_URL } from '../../../Datas/data'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { timestampToTime } from '../../../Utils/Core'
-import EmployeeTable from './EmployeeTable'
 import Modal from '../../../components/Modal'
-import AssignShift from './AssignShift'
-function AdminShiftDetails() {
+import EmployeeTable from './EmployeeTable'
 
+function DepartmentDetails() {
     const { type } = useContext(MyContext)
-    const [shift, setShift] = useState(null)
+    const [department, setDepartment] = useState(null)
     const [employee, setEmployee] = useState(null)
     const { id } = useParams()
-  
+
 
     useEffect(() => {
         const data = JSON.parse(localStorage.getItem('userData'));
 
         if (data) {
-            const url = `${USER_BASE_URL}/employee/shift/${id}`
+            const url = `${USER_BASE_URL}/admin/department/${id}`
             axios.get(url, {
                 headers: {
                     'Content-Type': 'application/json;charset=UTF-8',
@@ -32,8 +31,8 @@ function AdminShiftDetails() {
             })
                 .then((res) => {
                     const response = res.data.data
-                    setShift(response.shift)
-                    setEmployee(response.employee)
+                    setDepartment(response.department)
+                    setEmployee(response.employees)
                 })
                 .catch((err) => console.log(err));
         }
@@ -41,37 +40,35 @@ function AdminShiftDetails() {
     }, [type, id]);
     return (
         <div>
-            {shift ?
+            {department ?
                 <Layout>
                     <div className="container">
                         <div className="mt-5">
                             <div className="justify-content-space">
                                 <div className="">
                                     <small className='third'>Details of :</small>
-                                    <h3 style={{ textTransform: "uppercase" }}>{shift.name} SHIFT</h3>
+                                    <h3 style={{ textTransform: "uppercase" }}>{department.name} </h3>
                                 </div>
                                 <div className="mb-3">
-                                    <Modal title=" Assigned Shift" id="assignModal" >
-                                        <AssignShift id={id} name={shift.name}/>
+                                    <Modal title=" Assigned Employee" id="assignModal" >
+                                       <p>Assign employee to department</p>
                                     </Modal>
                                 </div>
                             </div>
 
-                            <p>{shift.description}</p>
+                            <p>{department.description}</p>
                             <div className="justify-content-space">
 
                                 <div className="d-flex">
-                                    <span className='me-3 '><span className='third'>Shift start from : <br /></span> <span style={{ fontWeight: "600" }}> {timestampToTime(parseInt(shift.startDate))}</span></span>
-                                    {/* <span>| <br /> |</span> */}
-                                    <span className='ms-3'><span className='third'>Shift end by: <br /></span> <span style={{ fontWeight: "600" }}> {timestampToTime(parseInt(shift.endDate))}</span></span>
+                                    <span className='me-3 '><span className='third'>Date created : <br /></span> <span style={{ fontWeight: "600" }}> {timestampToTime(parseInt(department.creationDateTime))}</span></span>
                                 </div>
-                                <button className='btnThird'> <i class='bx bx-edit-alt'></i> Edit Shift</button>
+                                <button className='btnThird'> <i class='bx bx-edit-alt'></i> Edit Department</button>
                             </div>
                         </div>
                         <div className=" Patients">
-                            <TableHeader title="Employes assigned to this Shift" />
+                            <TableHeader title="Employes assigned to this Department" />
                             <div className="mt-3">
-                                <EmployeeTable employee={employee} shift={shift}/>
+                                <EmployeeTable employee={employee} department={department}/>
                             </div>
                         </div>
                     </div>
@@ -81,4 +78,4 @@ function AdminShiftDetails() {
     )
 }
 
-export default AdminShiftDetails
+export default DepartmentDetails
