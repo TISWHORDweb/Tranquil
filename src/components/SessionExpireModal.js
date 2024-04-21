@@ -12,8 +12,7 @@ function SessionExpireModal() {
         expiredRef.current.click()
     }, [])
 
-    const HandleLogout = (e) => {
-        e.preventDefault()
+    const HandleLogout = () => {
         console.log("in");
         localStorage.clear()
         navigate('/');

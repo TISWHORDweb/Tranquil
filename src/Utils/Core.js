@@ -205,4 +205,17 @@ function convertDateToTimestamp(value) {
     return timestamp; 
 }
 
-export { checkPasswordValidity, convertDateToTimestamp, convertTimeToTimestamp, StatusChecker, timestampToTime, subtractHourFromTimestamp, generateTimeOptions, TimeConverter, DateConverter, Check, calculateAge }
+function GetTodaysDate () {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0'); 
+    const day = String(today.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+}
+
+function GetTime () {
+    const currentTime = Date.now();
+    return currentTime;
+}
+
+export { checkPasswordValidity, GetTime, GetTodaysDate, convertDateToTimestamp, convertTimeToTimestamp, StatusChecker, timestampToTime, subtractHourFromTimestamp, generateTimeOptions, TimeConverter, DateConverter, Check, calculateAge }

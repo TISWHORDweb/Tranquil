@@ -3,11 +3,12 @@ import TableAction from '../../../components/TableAction'
 import { DateConverter, timestampToTime } from '../../../Utils/Core'
 
 
-function Table({ audit }) {
+function Table( audit ) {
     const [audits, setAudits] = useState([])
     useEffect(()=>{
-        setAudits(audit)
+        setAudits(audit.audit)
     },[audit])
+    console.log(audits)
     return (
         <div>
             <div className="Table mt-4">
@@ -32,7 +33,7 @@ function Table({ audit }) {
                                     <td>{each.did.name}</td>
                                     <td>{DateConverter(each.date)}</td>
                                     <td> {timestampToTime(parseInt(each.startDateTime))}</td>
-                                    <td>{each.endDateTime ? timestampToTime(parseInt(each.endDateTime)) : "-----"}</td>
+                                    <td>{each.endDateTime ? timestampToTime(parseInt(each.endDateTime)) : "Not yet"}</td>
                                     <td>
                                         <TableAction />
                                     </td>

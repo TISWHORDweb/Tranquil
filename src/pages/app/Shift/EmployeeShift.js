@@ -10,12 +10,13 @@ import ShiftDetails from './ShiftDetails'
 import NoData from '../../../img/icon/1746734.png'
 import { useParams } from 'react-router-dom'
 
+
 function EmployeeShift() {
-    const [shifts, setShifts] = useState(null)
-    const [audit, setAudit] = useState(null)
-    const [url, setUrl] = useState(null)
+    const [shifts, setShifts] = useState([])
+    const [check, setCheck] = useState(false)
+    const [audit, setAudit] = useState([])
     const [url2, setUrl2] = useState(null)
-    const [noShift, setNoshift] = useState(false)
+    const [noShift, setNoshift] = useState()
     const { type } = useContext(MyContext)
     let { id } = useParams()
 
@@ -25,34 +26,11 @@ function EmployeeShift() {
 
     useEffect(() => {
         if (type === "admin") {
-            setUrl(`${USER_BASE_URL}/admin/shift/employee/audit/${id}`)
             setUrl2(`${USER_BASE_URL}/admin/shift/employee/${id}`)
         } else {
-            setUrl(`${USER_BASE_URL}/employee/shift/audit/all`)
             setUrl2(`${USER_BASE_URL}/employee/shift`)
         }
     }, [type, id])
-
-
-    useEffect(() => {
-        const data = JSON.parse(localStorage.getItem('userData'));
-        if (data) {
-            axios.get(url, {
-                headers: {
-                    'Content-Type': 'application/json;charset=UTF-8',
-                    "Access-Control-Allow-Origin": "*",
-                    "t-token": data.token
-                }
-            })
-                .then((res) => {
-                    const response = res.data.data
-                    setAudit(response)
-                })
-                .catch((err) => console.log(err));
-
-        }
-
-    }, [type, url]);
 
     useEffect(() => {
         const data = JSON.parse(localStorage.getItem('userData'));
@@ -66,14 +44,22 @@ function EmployeeShift() {
             })
                 .then((res) => {
                     const response = res.data
-
-                    if (response.status === true) {
-                        setNoshift(true)
-                        setShifts(response.data)
+                    if (response) {
+                        setCheck(true)
                     }
 
+                    if (response.status === true) {
+                        setNoshift(false)
+                        setShifts(response.data.shifts)
+                        setAudit(response.data.audit)
+                    }
+
+                    if (response.status === false) {
+                        setNoshift(true)
+                    }
                 })
                 .catch((err) => {
+                    setCheck(true)
                     setNoshift(false)
                     console.log(err)
                 });
@@ -81,13 +67,14 @@ function EmployeeShift() {
 
     }, [type, url2]);
 
+    console.log(audit)
     return (
         <div>
-            {shifts ?
+            {check ?
                 <Layout>
                     <div className="container">
                         <div className="">
-                            {type === "admin" ? <div className="">
+                            {type === "admin" ? < div className="">
                                 <ShiftDetails shifts={shifts} />
                                 <div className=" Patients">
                                     <TableHeader title="Shift Audit" />
@@ -97,13 +84,14 @@ function EmployeeShift() {
                                 </div>
                             </div> :
                                 <div className="">
-                                    {!noShift ? <center className=''>
+                                    {noShift ? <center className=''>
                                         <div className="mt-5">
                                             <h4>Sorry you've not been assigned to a shift yet</h4>
                                             <img className='' src={NoData} alt="" />
                                         </div>
                                     </center> :
                                         <div className="">
+                                       
                                             <ShiftDetails shifts={shifts} />
                                             <div className=" Patients">
                                                 <TableHeader title="Shift Audit" />
@@ -113,13 +101,13 @@ function EmployeeShift() {
                                             </div>
                                         </div>
                                     }
-                                </div>
-                            }
+                                </div>}
                         </div>
                     </div>
                 </Layout>
-                : <Loader />}
-        </div>
+                : <Loader />
+            }
+        </div >
     )
 }
 
