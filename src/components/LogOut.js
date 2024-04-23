@@ -26,7 +26,7 @@ function LogOut() {
                                         <img src={CautionImg} alt="" />
                                         <p>Are you sure you want to log out ?</p>
                                         <div className="buttonss">
-                                            <button  onClick={HandleLogout} type="button" class="btn success">Yes</button>
+                                            <button onClick={HandleLogout} type="button" class="btn success">Yes</button>
                                             <button type="button" class="btn cancel" data-bs-dismiss="modal">Cancel</button>
                                         </div>
                                     </center>
