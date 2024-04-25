@@ -11,7 +11,7 @@ function Actions({id}) {
 
     return (
         <div>
-            <Link to={`/app/profile/view/patient/${id}`}>
+            <Link to={`/app/report/view/${id}`}>
                 <div className="flex">
                     <span type="button" class="defaultColor" >
                         View report

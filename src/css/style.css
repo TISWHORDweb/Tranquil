@@ -38,7 +38,8 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
   color: var(--color-default) !important;
 }
 
@@ -521,6 +522,26 @@ textarea {
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.ViewReport .ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.ViewReport .ul li {
+  margin: 10px 20px;
+}
+.ViewReport .ul li small {
+  font-size: 13px;
+  color: var(--color-third);
+}
+.ViewReport .ul li span {
+  color: var(--color-default);
+}
+.ViewReport .tit {
+  color: var(--color-third);
 }
 
 .section {

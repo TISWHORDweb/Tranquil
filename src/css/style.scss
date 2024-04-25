@@ -37,7 +37,8 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
     color: var(--color-default) !important;
 }
 
@@ -579,6 +580,31 @@ textarea {
             }
         }
 
+    }
+}
+
+.ViewReport{
+    // h6{
+    //     color: var(--color-third) !important;
+    // }
+    .ul{
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        li{
+            margin: 10px 20px;
+            small{
+                font-size: 13px;
+                color: var(--color-third);
+            }
+            span{
+                color: var(--color-default);
+            }
+        }
+    }
+    .tit{
+        color: var(--color-third);
     }
 }
 

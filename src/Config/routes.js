@@ -9,6 +9,7 @@ import ConfirmationScreen from '../components/ConfirmationScreen';
 import ViewProfile from '../pages/app/Profile/ViewProfile';
 import EmployeeShift from '../pages/app/Shift/EmployeeShift';
 import DepartmentDetails from '../pages/app/Department/DepartmentDetails';
+import ViewReport from '../pages/app/Report/ViewReport';
 
 export const Routes = () => {
     return useRoutes([
@@ -96,6 +97,10 @@ export const Routes = () => {
         {
             path: '/app/report',
             element: < Report />
+        },
+        {
+            path: '/app/report/view/:id',
+            element: < ViewReport />
         },
         {
             path: '/app/employee',
