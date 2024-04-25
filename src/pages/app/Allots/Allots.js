@@ -9,6 +9,7 @@ import Loader from '../../../components/Loader'
 import { USER_BASE_URL } from '../../../Datas/data'
 import axios from 'axios'
 import { Check } from '../../../Utils/Core'
+import LinkHeader from '../../../components/LinkHeader'
 
 function Allots() {
     const { type } = useContext(MyContext)
@@ -62,6 +63,7 @@ function Allots() {
 
             {allots ?
                 <Layout>
+                       <LinkHeader many="2" current="Allots"/>
                     <div className="container">
                         {type === "patient" ? <></> :
                             <Modal title=" Create Allots" id="allotsModal" >

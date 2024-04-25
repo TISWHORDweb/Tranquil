@@ -9,6 +9,7 @@ import { useParams } from 'react-router-dom'
 import { timestampToTime } from '../../../Utils/Core'
 import Modal from '../../../components/Modal'
 import EmployeeTable from './EmployeeTable'
+import LinkHeader from '../../../components/LinkHeader'
 
 function DepartmentDetails() {
     const { type } = useContext(MyContext)
@@ -42,6 +43,7 @@ function DepartmentDetails() {
         <div>
             {department ?
                 <Layout>
+                    <LinkHeader many="3" current={department.name+" Department" } where="/app/department" page="Departments" />
                     <div className="container">
                         <div className="mt-5">
                             <div className="justify-content-space">

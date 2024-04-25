@@ -6,11 +6,13 @@ import CautionImg from '../../../img/icon/Group 5647.png'
 import { USER_BASE_URL } from '../../../Datas/data';
 import axios from 'axios';
 import Actions from './Actions'
+import EditReport from './EditReport'
 
 
 function Table({ report }) {
-    const { display, unDisplay, token, id } = useContext(MyContext)
+    const { display, unDisplay, display2, unDisplay2, token, id } = useContext(MyContext)
     const modalRef = useRef()
+    const modalRef2 = useRef()
     const [click, setClick] = useState(false);
     const [spin, setSpin] = useState(false);
     const [message, setMessage] = useState("");
@@ -23,6 +25,14 @@ function Table({ report }) {
         }
     }, [display, unDisplay])
 
+    useEffect(() => {
+        if (display2 === true) {
+            modalRef2.current.click()
+            unDisplay2()
+     
+        }
+    }, [ display2, unDisplay2])
+    console.log(id);
     const Clearer = () => {
         const timerId = setTimeout(() => {
             setClick(false)
@@ -99,6 +109,15 @@ function Table({ report }) {
                     </div>
                 </div>
             </div>
+            <button type="button" class="btnRed" ref={modalRef2} data-bs-toggle="modal" style={{ display: "none" }} data-bs-target="#EDITModal">
+            </button>
+            <div class="modal fade" id="EDITModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog ">
+                    <div class="modal-content">
+                        <EditReport data={id}/>
+                    </div>
+                </div>
+            </div>
             <div className="Table mt-4">
                 <table class="table table-striped">
                     <thead>
@@ -126,7 +145,7 @@ function Table({ report }) {
                                     <td>{DateConverter(each.creationDateTime)}</td>
                                     <td>
                                         <TableAction >
-                                            <Actions id={each._id} />
+                                            <Actions id={each._id} data={each} />
                                         </TableAction>
                                     </td>
                                 </tr>

@@ -18,10 +18,10 @@ body{
     top: 0;
     left: 0;
 }
-.navFlow{
+/* .navFlow{
     height: 90vh;
     overflow: scroll;
-}
+} */
 
 .navFlow {
     overflow: scroll;

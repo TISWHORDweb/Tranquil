@@ -8,6 +8,7 @@ import { MyContext } from '../../../context/Context'
 import Loader from '../../../components/Loader'
 import { USER_BASE_URL } from '../../../Datas/data'
 import axios from 'axios'
+import LinkHeader from '../../../components/LinkHeader'
 
 function Appointment() {
 
@@ -58,6 +59,7 @@ function Appointment() {
         <div>
             {appointment ?
                 <Layout>
+                    <LinkHeader many="2" current="Appointment"/>
                     <div className="container">
                         {!isPatient ? 
                         <Modal title=" Create Appointment" id="appointmentModal" >

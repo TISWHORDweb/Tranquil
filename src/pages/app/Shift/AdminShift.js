@@ -6,6 +6,7 @@ import ModalDetails from './ModalDetails'
 import Card3 from '../../../components/Card3'
 import { MyContext } from '../../../context/Context'
 import Loader from '../../../components/Loader'
+import LinkHeader from '../../../components/LinkHeader'
 
 function AdminShift() {
 
@@ -15,6 +16,7 @@ function AdminShift() {
         <div>
             {shift ?
                 <Layout>
+                    <LinkHeader many="2" current="Shifts"/>
                     <div className="container">
                         <Modal title=" Create Shift" id="shiftModal" >
                             <ModalDetails />

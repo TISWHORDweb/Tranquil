@@ -10,6 +10,7 @@ import { timestampToTime } from '../../../Utils/Core'
 import EmployeeTable from './EmployeeTable'
 import Modal from '../../../components/Modal'
 import AssignShift from './AssignShift'
+import LinkHeader from '../../../components/LinkHeader'
 function AdminShiftDetails() {
 
     const { type } = useContext(MyContext)
@@ -43,6 +44,7 @@ function AdminShiftDetails() {
         <div>
             {shift ?
                 <Layout>
+                    <LinkHeader many="3" current={shift.name+" Shift" } where="/app/shift" page="Shifts" />
                     <div className="container">
                         <div className="mt-5">
                             <div className="justify-content-space">

@@ -6,6 +6,7 @@ import ModalDetails from './ModalDetails'
 import { MyContext } from '../../../context/Context'
 import Loader from '../../../components/Loader'
 import Card2 from '../../../components/Card2'
+import LinkHeader from '../../../components/LinkHeader'
 
 
 function Department() {
@@ -15,6 +16,7 @@ function Department() {
         <div>
             {department ?
                 <Layout>
+                     <LinkHeader many="2" current="Department"/>
                     <div className="container">
                         <Modal title=" Create Department" id="departmentModal" >
                             <ModalDetails />

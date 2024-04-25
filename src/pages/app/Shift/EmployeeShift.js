@@ -9,6 +9,7 @@ import Table from './Table'
 import ShiftDetails from './ShiftDetails'
 import NoData from '../../../img/icon/1746734.png'
 import { useParams } from 'react-router-dom'
+import LinkHeader from '../../../components/LinkHeader'
 
 
 function EmployeeShift() {
@@ -72,6 +73,7 @@ function EmployeeShift() {
         <div>
             {check ?
                 <Layout>
+                    <LinkHeader many="2" current="Shifts"/>
                     <div className="container">
                         <div className="">
                             {type === "admin" ? < div className="">

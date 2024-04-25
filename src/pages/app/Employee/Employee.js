@@ -8,6 +8,7 @@ import { MyContext } from '../../../context/Context'
 import Loader from '../../../components/Loader'
 import { USER_BASE_URL } from '../../../Datas/data'
 import axios from 'axios'
+import LinkHeader from '../../../components/LinkHeader'
 
 function Employee() {
     const { type } = useContext(MyContext)
@@ -38,6 +39,7 @@ function Employee() {
         <div>
             {employees ?
                 <Layout>
+                       <LinkHeader many="2" current="Employee"/>
                     <div className="container">
                         <Modal title=" Create Employee" id="employeeModal" >
                             <ModalDetails />

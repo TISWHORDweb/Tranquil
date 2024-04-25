@@ -5,6 +5,7 @@ import axios from 'axios'
 import { USER_BASE_URL } from '../../../Datas/data'
 import Loader from '../../../components/Loader'
 import { useParams } from 'react-router-dom'
+import LinkHeader from '../../../components/LinkHeader';
 
 function ViewReport() {
     const {id} = useParams()
@@ -39,6 +40,7 @@ function ViewReport() {
         <div className='ViewReport'>
             {report ?
             <Layout>
+                <LinkHeader many="3" current="View Report" where="/app/report" page="Report" />
                 <div className="container">
                     <h3 className='mt-4'>Medical Report</h3>
                     <div className="Patients ">
