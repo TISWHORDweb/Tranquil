@@ -1,5 +1,6 @@
 import React from 'react'
 import TableAction from '../../../components/TableAction'
+import Actions from './Actions'
 
 
 function Table({ employees }) {
@@ -29,7 +30,9 @@ function Table({ employees }) {
                                     <td>{each.did.name}</td>
                                     <td>{each.blocked ? "Disabled" : "Active"}</td>
                                     <td>
-                                        <TableAction />
+                                        <TableAction>
+                                            <Actions id={each._id} />
+                                        </TableAction>
                                     </td>
                                 </tr>
                             ))}
