@@ -2,11 +2,15 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { MyContext } from '../../../context/Context'
 
-function Actions({id}) {
-    const { Display } = useContext(MyContext)
+function Actions({ id, data }) {
+    const { Display, Display2, type } = useContext(MyContext)
 
     const Click = (id) => {
         Display(id)
+    }
+
+    const Click2 =(data)=>{
+        Display2(data)
     }
 
     return (
@@ -18,11 +22,22 @@ function Actions({id}) {
                     </span>
                 </div>
             </Link>
-            <div className="flex" onClick={() => Click(id)}>
-                <span type="button" class="defaultColor" >
-                    Delete report
-                </span>
-            </div>
+            {type === "patient" ?
+                <></> :
+                <>
+                    <div className="flex" onClick={()=>Click2(data)}>
+                        <span type="button" class="defaultColor" >
+                            Edit report
+                        </span>
+                    </div>
+                    <div className="flex" onClick={() => Click(id)}>
+                        <span type="button" class="defaultColor" >
+                            Delete report
+                        </span>
+                    </div>
+                </>
+
+            }
         </div>
     )
 }

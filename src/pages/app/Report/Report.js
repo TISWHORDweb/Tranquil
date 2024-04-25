@@ -8,21 +8,30 @@ import { MyContext } from '../../../context/Context'
 import Loader from '../../../components/Loader'
 import { USER_BASE_URL } from '../../../Datas/data'
 import axios from 'axios'
+import LinkHeader from '../../../components/LinkHeader'
 
 function Report() {
-    const { type } = useContext(MyContext)
+    const { type, token } = useContext(MyContext)
     const [report, setReport] = useState(null)
+    const [url2, setUrl2] = useState(null)
 
     useEffect(() => {
-        const data = JSON.parse(localStorage.getItem('userData'));
-        if (data) {
+        if (type === "admin") {
+            setUrl2(`${USER_BASE_URL}/employee/report/all`)
+        } else if (type === "employee") {
+            setUrl2(`${USER_BASE_URL}/employee/reports`)
+        } else if (type === "patient") {
+            setUrl2(`${USER_BASE_URL}/patient/reports`)
+        }
+    }, [type])
 
-            const url = `${USER_BASE_URL}/employee/report/all`
-            axios.get(url, {
+    useEffect(() => {
+        if (type) {
+            axios.get(url2, {
                 headers: {
                     'Content-Type': 'application/json;charset=UTF-8',
                     "Access-Control-Allow-Origin": "*",
-                    "t-token": data.token
+                    "t-token": token
                 }
             })
                 .then((res) => {
@@ -32,19 +41,23 @@ function Report() {
                 .catch((err) => console.log(err));
 
         }
-    }, [type]);
+    }, [type, token, url2]);
 
     return (
         <div>
             {report ?
                 <Layout>
+                    <LinkHeader many="2" current="Reports" />
                     <div className="container">
-                        <Modal title=" Create Report" id="reportModal" >
-                            <ModalDetails />
-                        </Modal>
+                        {type === "admin" ?
+                            <Modal title=" Create Report" id="reportModal" >
+                                <ModalDetails />
+                            </Modal>
+                            : <></>
+                        }
                         <div className=" Patients">
-                            <TableHeader title="All Reports" />
-                            <Table report={report}/>
+                            <TableHeader title= {type === "admin" ? "All Reports" : "Your Reports" } />
+                            <Table report={report} />
                         </div>
                     </div>
                 </Layout>
