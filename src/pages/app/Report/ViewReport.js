@@ -47,44 +47,48 @@ function ViewReport() {
                             <ul className='ul'>
                                 <li>
                                     <small>Full name:</small> <br />
-                                    <span>John Doe</span>
+                                    <span>{report.Patient.firstName} {report.Patient.lastName} </span>
                                 </li>
                                 <li>
                                     <small>Date of birth:</small> <br />
-                                    <span>03-03-2032</span>
+                                    <span>{report.Patient.dob} </span>
                                 </li>
                                 <li>
                                     <small>Age:</small> <br />
-                                    <span>26 years</span>
+                                    <span>{report.Patient.age}  years</span>
                                 </li>
                                 <li>
                                     <small>Phone number:</small> <br />
-                                    <span>08120963057</span>
+                                    <span>{report.Patient.phone ? report.Patient.phone : "----"}  </span>
                                 </li>
                                 <li>
                                     <small>Gender:</small> <br />
-                                    <span>Male</span>
+                                    <span>{report.Patient.gender} </span>
                                 </li>
                                 <li>
                                     <small>Address:</small> <br />
-                                    <span>2nd floor, Durumi</span>
+                                    <span>{report.Patient.address ? report.Patient.address : "----"} </span>
                                 </li>
                             </ul>
                         </div>
                         <div className=" borderGray p-3 mb-3">
-                            <h6><b>Doctor Details</b></h6>
+                            <h6><b>Attendee Details</b></h6>
                             <ul className='ul'>
                                 <li>
                                     <small>Full name:</small> <br />
-                                    <span>John Doe</span>
+                                    <span>{report.Doctor.firstName} {report.Doctor.lastName} </span>
                                 </li>
                                 <li>
                                     <small>Phone number:</small><br />
-                                    <span>08120963057</span>
+                                    <span>{report.Doctor.phone  ? report.Doctor.phone : "----"} </span>
+                                </li>
+                                <li>
+                                    <small>Category:</small><br />
+                                    <span>{report.Doctor.ecid.category} </span>
                                 </li>
                                 <li>
                                     <small>Gender:</small> <br />
-                                    <span>Male</span>
+                                    <span>{report.Doctor.gender  ? report.Doctor.gender : "----"} </span>
                                 </li>
                             </ul>
                         </div>
@@ -92,19 +96,19 @@ function ViewReport() {
                             <div className="row">
                                 <div className="col-md-6 mb-3">
                                     <h6><b>Condition :</b></h6>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque commodi nostrum optio dolor blanditiis modi sequi autem similique nobis laborum? Optio quasi perferendis rem error deleniti, sed deserunt ex eaque.</p>
+                                    <p>{report.report.currentCondition}</p>
                                 </div>
                                 <div className="col-md-6 mb-3">
                                     <h6><b>Medication :</b></h6>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque commodi nostrum optio dolor blanditiis modi sequi autem similique nobis laborum? Optio quasi perferendis rem error deleniti, sed deserunt ex eaque.</p>
+                                    <p>{report.report.currentMedication}</p>
                                 </div>
                                 <div className="col-md-6 mb-3">
                                     <h6><b>Allergies :</b></h6>
-                                    <p>Lorem ipsum dolor sit amet consectetur, </p>
+                                    <p>{report.report.allergies} </p>
                                 </div>
                                 <div className="col-md-6 mb-3">
                                     <h6><b>Frequency :</b></h6>
-                                    <p>Lorem ipsum dolor sit amet consectetur, </p>
+                                    <p>{report.report.frequency} </p>
                                 </div>
                             </div>
                         </div>
@@ -113,11 +117,11 @@ function ViewReport() {
                             <div className="row">
                                 <div className="col-md-6 mb-3">
                                     <h6><b>Condition :</b></h6>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque commodi nostrum optio dolor blanditiis modi sequi autem similique nobis laborum? Optio quasi perferendis rem error deleniti, sed deserunt ex eaque.</p>
+                                    <p>{report.report.pastCondition}</p>
                                 </div>
                                 <div className="col-md-6 mb-3">
                                     <h6><b>Medication :</b></h6>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque commodi nostrum optio dolor blanditiis modi sequi autem similique nobis laborum? Optio quasi perferendis rem error deleniti, sed deserunt ex eaque.</p>
+                                    <p>{report.report.pastMedication}</p>
                                 </div>
                             </div>
                         </div>
