@@ -12,26 +12,28 @@ import axios from 'axios';
 function Table({ patient }) {
     const { display, unDisplay, display2, unDisplay2, token, id } = useContext(MyContext)
     const modalRef = useRef()
-    const modalRef2 = useRef()
     const [click, setClick] = useState(false);
     const [spin, setSpin] = useState(false);
     const [message, setMessage] = useState("");
     const [className, setClassName] = useState("");
+    const [disable, setDisable] = useState(true);
 
     useEffect(() => {
         if (display === true) {
             modalRef.current.click()
+            setDisable(true)
             unDisplay()
         }
     }, [display, unDisplay])
 
     useEffect(() => {
         if (display2 === true) {
-            modalRef2.current.click()
+            console.log("in");
+            setDisable(false)
+            modalRef.current.click()
             unDisplay2()
-            console.log("ind");
         }
-    }, [ display2, unDisplay2])
+    }, [display2, unDisplay2])
 
     const Clearer = () => {
         const timerId = setTimeout(() => {
@@ -102,7 +104,6 @@ function Table({ patient }) {
             const body = {
                 id
             }
-            console.log(body);
             axios.put(`${USER_BASE_URL}/admin/patient/enable`, body, axiosConfig)
                 .then(response => {
                     const data = response.data
@@ -133,36 +134,15 @@ function Table({ patient }) {
                         <div class="modal-body AlertModal p-5">
                             <center>
                                 <img src={CautionImg} alt="" />
-                                <p>Are you sure you want to Disable this user ?</p>
+                                {disable ?
+                                    <p>Are you sure you want to Disable this user ?</p>
+                                    : <p>Are you sure you want to Enable this user ?</p>
+                                }
                                 {click ? <div className={className}>
                                     <p>{message}</p>
                                 </div> : ""}
                                 <div className="buttonss">
-                                    <button type="button" onClick={HandleDisable} class="btn success">
-                                        {spin ? <span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span> : <span></span>}
-                                        Yes
-                                    </button>
-                                    <button type="button" class="btn cancel" data-bs-dismiss="modal">Cancel</button>
-                                </div>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button type="button" class="btnRed" ref={modalRef2} data-bs-toggle="modal" style={{ display: "none" }} data-bs-target="#enableModal">
-            </button>
-            <div class="modal fade" id="enableModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog ">
-                    <div class="modal-content">
-                        <div class="modal-body AlertModal p-5">
-                            <center>
-                                <img src={CautionImg} alt="" />
-                                <p>Are you sure you want to Enable this user ?</p>
-                                {click ? <div className={className}>
-                                    <p>{message}</p>
-                                </div> : ""}
-                                <div className="buttonss">
-                                    <button type="button" onClick={HandleEnable} class="btn success">
+                                    <button type="button" onClick={disable ? HandleDisable : HandleEnable} class="btn success">
                                         {spin ? <span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span> : <span></span>}
                                         Yes
                                     </button>
