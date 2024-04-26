@@ -10,6 +10,7 @@ import ViewProfile from '../pages/app/Profile/ViewProfile';
 import EmployeeShift from '../pages/app/Shift/EmployeeShift';
 import DepartmentDetails from '../pages/app/Department/DepartmentDetails';
 import ViewReport from '../pages/app/Report/ViewReport';
+import ViewAppointment from '../pages/app/Appointment/ViewAppointment';
 
 export const Routes = () => {
     return useRoutes([
@@ -105,6 +106,10 @@ export const Routes = () => {
         {
             path: '/app/employee',
             element: < Employee />
+        },
+        {
+            path: '/app/appointment/view/:id',
+            element: < ViewAppointment />
         },
         {
             path: '/app/appointment',

@@ -12,61 +12,51 @@ import LinkHeader from '../../../components/LinkHeader'
 
 function Appointment() {
 
-    const { type } = useContext(MyContext)
+    const { type, token } = useContext(MyContext)
     const [appointment, setAppointment] = useState(null)
-    const [isPatient, setIsPatient] = useState(false)
+    const [url2, setUrl2] = useState(null)
 
-  
 
     useEffect(() => {
-        const data = JSON.parse(localStorage.getItem('userData'));
-        if (data) {
-            if (type === 'patient') {
-                setIsPatient(true)
-                const url = `${USER_BASE_URL}/patient/appointments`
-                axios.get(url, {
-                    headers: {
-                        'Content-Type': 'application/json;charset=UTF-8',
-                        "Access-Control-Allow-Origin": "*",
-                        "t-token": data.token
-                    }
+        if (type === "admin") {
+            setUrl2(`${USER_BASE_URL}/admin/appointment/all`)
+        } else if (type === "employee") {
+            setUrl2(`${USER_BASE_URL}/employee/appointments`)
+        } else if (type === "patient") {
+            setUrl2(`${USER_BASE_URL}/patient/appointments`)
+        }
+    }, [type])
+
+    useEffect(() => {
+        if (token) {
+            axios.get(url2, {
+                headers: {
+                    'Content-Type': 'application/json;charset=UTF-8',
+                    "Access-Control-Allow-Origin": "*",
+                    "t-token": token
+                }
+            })
+                .then((res) => {
+                    const response = res.data.data
+                    setAppointment(response)
                 })
-                    .then((res) => {
-                        const response = res.data.data
-                        setAppointment(response)
-                    })
-                    .catch((err) => console.log(err));
-            } else {
-                const url = `${USER_BASE_URL}/employee/appointment/all`
-                axios.get(url, {
-                    headers: {
-                        'Content-Type': 'application/json;charset=UTF-8',
-                        "Access-Control-Allow-Origin": "*",
-                        "t-token": data.token
-                    }
-                })
-                    .then((res) => {
-                        const response = res.data.data
-                        setAppointment(response)
-                    })
-                    .catch((err) => console.log(err));
-            }
+                .catch((err) => console.log(err));
 
         }
-    }, [type]);
+    }, [type,token,url2]);
 
     return (
         <div>
             {appointment ?
                 <Layout>
-                    <LinkHeader many="2" current="Appointment"/>
+                    <LinkHeader many="2" current="Appointment" />
                     <div className="container">
-                        {!isPatient ? 
-                        <Modal title=" Create Appointment" id="appointmentModal" >
-                            <ModalDetails />
-                        </Modal> : null}
+                        {type === "employee" ?
+                            <Modal title=" Create Appointment" id="appointmentModal" >
+                                <ModalDetails />
+                            </Modal> : null}
                         <div className=" Patients">
-                            <TableHeader title={ isPatient ? "All your Appointments" : "All Appointments"} />
+                            <TableHeader title={type === "admin" ? "All Appointments" : "All your Appointments" } />
                             <Table appointment={appointment} />
                         </div>
                     </div>

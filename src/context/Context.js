@@ -90,7 +90,7 @@ export const MyContextProvider = ({ children }) => {
 
     }
   }, [type, token])
-  
+
 
   const updateSearchQuery = (newQuery) => {
     if (!newQuery) {
