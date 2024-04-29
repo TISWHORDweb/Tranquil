@@ -19,9 +19,6 @@ function SessionExpireModal() {
         window.location.reload();
     }
 
-
-
-
     return (
         <div>
             <button type="button" ref={expiredRef} class="btn " style={{ display: 'none' }} data-bs-toggle="modal" data-bs-target="#sessionModal">

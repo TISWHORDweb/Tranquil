@@ -36,7 +36,7 @@ function ModalDetails() {
         return () => clearTimeout(timerId);
     }
 
-    const HandlePatient = (e) => {
+    const HandleShift = (e) => {
         e.preventDefault()
 
         if (!name || !startTime || !endTime) {
@@ -74,7 +74,7 @@ function ModalDetails() {
                 })
         }
     }
-
+    
     return (
         <div>
             <div class="modal-body InviteModal p-5">
@@ -113,7 +113,7 @@ function ModalDetails() {
                         <p>{message}</p>
                     </div> : ""}
                     <div className="pt-3">
-                        <button type="button" onClick={HandlePatient} class="btnDark  w-100 m-0 f17 ">
+                        <button type="button" onClick={HandleShift} class="btnDark  w-100 m-0 f17 ">
                             {spin ? <span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span> : <span></span>}
                             Create Shift
                         </button>

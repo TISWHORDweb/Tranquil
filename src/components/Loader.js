@@ -1,20 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import SessionExpireModal from '../components/SessionExpireModal'
 import { Check } from '../Utils/Core'
 import { useNavigate } from 'react-router-dom'
 
 function Loader() {
-    const [expired, setexpired] = useState(false)
     const navigate = useNavigate()
 
     const Checks = Check()
-
-    useEffect(() => {
-      
-        if (Checks === "false") {
-            setexpired(true)
-        }
-    }, [Checks]);
 
     let documentLoaded = false;
     const timeout = 60000; // 60 seconds
@@ -31,10 +23,10 @@ function Loader() {
         }, timeout);
 
     }
+
     return (
         <div>
-            {
-                expired ? <SessionExpireModal /> :
+            {Checks === "false" ? <SessionExpireModal /> :
                     <div className='loadWrapper m-5'>
                         <div className="loader">
                             <div class="spinner-grow second loaderHeightWeight" role="status">
