@@ -14,6 +14,10 @@ function Overview({user}) {
                         <h5>{user.gender ? user.gender : "---"}</h5>
                     </div>
                     <div className="col-md-4 mb-3">
+                        <p>Age: </p>
+                        <h5>{user.age ? user.age : "---"}</h5>
+                    </div>
+                    <div className="col-md-4 mb-3">
                         <p>Date of birth: </p>
                         <h5>{user.dob ? user.dob : "---"}</h5>
                     </div>

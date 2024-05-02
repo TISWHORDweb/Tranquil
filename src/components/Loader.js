@@ -9,7 +9,7 @@ function Loader() {
     const Checks = Check()
 
     let documentLoaded = false;
-    const timeout = 60000; // 60 seconds
+    const timeout = 10000; // 60 seconds
 
     document.addEventListener('DOMContentLoaded', () => {
         documentLoaded = true;

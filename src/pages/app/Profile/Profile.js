@@ -6,13 +6,14 @@ import Kin from './Kin'
 import Overview from './Overview'
 import ButtonLink from './ButtonLink'
 import Modal from '../../../components/Modal'
-import ModalDetails from './ModalDetails'
+import ModalDetails from './EditProfile'
 import LogOut from '../../../components/LogOut'
 import { MyContext } from '../../../context/Context';
 import axios from 'axios'
 import { USER_BASE_URL } from '../../../Datas/data'
 import Loader from '../../../components/Loader'
 import { Check } from '../../../Utils/Core'
+import EditProfile from './EditProfile'
 
 function Profile() {
     const { type } = useContext(MyContext)
@@ -45,12 +46,10 @@ function Profile() {
         <div>
             {user ?
                 <Layout>
-
-
                     <div className="container">
-                        <div className="text-end">
+                        <div className="text">
                             <Modal title=" Edit profile" id="profileModal" class="" >
-                                <ModalDetails />
+                                <EditProfile user={user} />
                             </Modal>
                         </div>
                         <div className="Profile">

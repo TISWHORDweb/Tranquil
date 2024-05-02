@@ -226,6 +226,10 @@ h6 {
   border-radius: 10px;
 }
 
+.Editform label {
+  text-align: left;
+}
+
 .Inner {
   overflow: scroll;
   height: 91.2vh;

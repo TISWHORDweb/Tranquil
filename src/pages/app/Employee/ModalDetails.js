@@ -88,6 +88,11 @@ function ModalDetails() {
                         setClassName("alert__message success")
                         setMessage(data.message)
                         setSpin(false)
+                    } else  if (data.status === false) {
+                        setClick(true)
+                        setClassName("alert__message error")
+                        setMessage(data.message)
+                        setSpin(false)
                     } 
                 }).catch((e)=>{
                     console.log(e);
@@ -143,7 +148,7 @@ function ModalDetails() {
                     <div className="pt-3">
                         <button type="button" onClick={HandleEmployee} class="btnDark  w-100 m-0 f17 ">
                             {spin ? <span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span> : <span></span>}
-                            Create Allotment
+                            Create Employee
                         </button>
                     </div>
                 </form> : <center><span class="spinner-border spinner-border-sm me-2 second " style={{ width: "50px", height: "50px" }} aria-hidden="true"></span></center>}
