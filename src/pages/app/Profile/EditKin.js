@@ -2,42 +2,31 @@ import React, { useContext, useEffect, useState } from 'react'
 import { MyContext } from '../../../context/Context';
 import { USER_BASE_URL } from '../../../Datas/data';
 import axios from 'axios';
-import { calculateAge } from '../../../Utils/Core';
 
-function EditProfile({ user }) {
-    const { token, type } = useContext(MyContext)
+function EditKin({user}) {
+    const { token } = useContext(MyContext)
     const [click, setClick] = useState(false);
     const [spin, setSpin] = useState(false);
     const [message, setMessage] = useState("");
     const [className, setClassName] = useState("");
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [dob, setDob] = useState("");
-    const [nationality, setNationality] = useState("");
-    const [state, setState] = useState("");
+    const [fullName, setFullName] = useState("");
+    const [email, setEmail] = useState("");
+    const [work, setWork] = useState("");
+    const [relationship, setRelationship] = useState("");
     const [address, setAddress] = useState("");
     const [phone, setPhone] = useState("");
-    const [id, setId] = useState()
     const [gender, setGender] = useState()
-    const [age, setAge] = useState()
-
-    const Ageconverter = (date) => {
-        setDob(date)
-        const NewAge = calculateAge(date)
-        setAge(NewAge)
-    }
+    const [id, setId] = useState()
 
     useEffect(() => {
         if (user) {
-            setFirstName(user.firstName)
-            setLastName(user.lastName)
-            setDob(user.dob)
-            setNationality(user.nationality)
-            setState(user.state)
+            setFullName(user.fullName)
+            setEmail(user.email)
+            setWork(user.work)
+            setRelationship(user.relationship)
             setAddress(user.address)
             setPhone(user.phone)
             setId(user._id)
-            setAge(user.age)
             setGender(user.gender)
         }
     }, [user])
@@ -58,25 +47,22 @@ function EditProfile({ user }) {
         }
     }
 
-    const HandleEditProfile = (e) => {
+    const HandeEditKin = (e) => {
         e.preventDefault()
         if (user) {
             setSpin(true)
             const body = {
-                firstName,
-                lastName,
-                dob,
-                nationality,
-                state,
+                fullName,
+                email,
+                relationship,
+                work,
                 gender,
-                age,
                 address,
                 phone,
                 id
             }
 
-            console.log(body)
-            axios.put(`${USER_BASE_URL}/${type}/edit`, body, axiosConfig)
+            axios.put(`${USER_BASE_URL}/patient/kin/edit`, body, axiosConfig)
                 .then(response => {
                     const data = response.data
 
@@ -96,22 +82,21 @@ function EditProfile({ user }) {
                 })
         }
     }
-
     return (
         <div>
-            <div class="modal-body InviteModal p-5">
+            <div class="modal-body InviteModal ">
                 <div class="justify-content-space">
-                    <h3 className='mb-3 f20'>Edit profile</h3>
+                    <h3 className='mb-3 f20'>Edit Kin</h3>
                     <button type="button" class=" cancel f20" data-bs-dismiss="modal"><i class='bx bx-x'></i></button>
                 </div>
                 <form action="E">
                     <div className="mb-3">
-                        <label htmlFor="discount" className='f15 fw3'>First name</label>  <br />
-                        <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} className='inputts' name="" id="discount" placeholder='John' />
+                        <label htmlFor="discount" className='f15 fw3'>Full name</label>  <br />
+                        <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} className='inputts' name="" id="discount" placeholder='John' />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="discount" className='f15 fw3'>Last name</label>  <br />
-                        <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} className='inputts' name="" id="discount" placeholder='Doe' />
+                        <label htmlFor="discount" className='f15 fw3'>Email</label>  <br />
+                        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className='inputts' name="" id="discount" placeholder='Doe' />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="discount" className='f15 fw3'>Phone number</label>  <br />
@@ -131,28 +116,20 @@ function EditProfile({ user }) {
                         </select>
                     </div>
                     <div className="mb-3">
-                        <div className="mb-3">
-                            <label htmlFor="discount" className='f15 fw3'>Date of birth</label>  <br />
-                            <input type="date" className='inputts' value={dob} name="" id="discount" onChange={(e) => Ageconverter(e.target.value)} placeholder='01-01-1999' />
-                        </div>
-                        <label htmlFor="discount" className='f15 fw3'>Age</label>  <br />
-                        <input type="text" className='inputts' value={age} name="" id="discount" disabled />
+                        <label htmlFor="discount" className='f15 fw3'>Profession</label>  <br />
+                        <input type="date" className='inputts' value={work} name="" id="discount" onChange={(e) => setWork(e.target.value)} placeholder='01-01-1999' />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="discount" className='f15 fw3'>Nationality</label>  <br />
-                        <input type="text" value={nationality} onChange={(e) => setNationality(e.target.value)} className='inputts' name="" id="discount" />
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="discount" className='f15 fw3'>State of origin</label>  <br />
-                        <input type="text" value={state} onChange={(e) => setState(e.target.value)} className='inputts' name="" id="discount" />
+                        <label htmlFor="discount" className='f15 fw3'>Relationship</label>  <br />
+                        <input type="text" value={relationship} onChange={(e) => setRelationship(e.target.value)} className='inputts' name="" id="discount" />
                     </div>
                     {click ? <div className={className}>
                         <p>{message}</p>
                     </div> : ""}
                     <div className="pt-3">
-                        <button type="button" onClick={HandleEditProfile} class="btnDark  w-100 m-0 f17 " >
+                        <button type="button" onClick={HandeEditKin} class="btnDark  w-100 m-0 f17 " >
                             {spin ? <span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span> : <span></span>}
-                            Update
+                            Update kin
                         </button>
                     </div>
                 </form>
@@ -161,4 +138,4 @@ function EditProfile({ user }) {
     )
 }
 
-export default EditProfile
+export default EditKin

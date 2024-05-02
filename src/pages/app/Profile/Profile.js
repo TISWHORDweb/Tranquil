@@ -6,7 +6,6 @@ import Kin from './Kin'
 import Overview from './Overview'
 import ButtonLink from './ButtonLink'
 import Modal from '../../../components/Modal'
-import ModalDetails from './EditProfile'
 import LogOut from '../../../components/LogOut'
 import { MyContext } from '../../../context/Context';
 import axios from 'axios'
@@ -14,13 +13,15 @@ import { USER_BASE_URL } from '../../../Datas/data'
 import Loader from '../../../components/Loader'
 import { Check } from '../../../Utils/Core'
 import EditProfile from './EditProfile'
+import FewAudit from '../Shift/FewAudit'
 
 function Profile() {
     const { type } = useContext(MyContext)
     const [user, setUser] = useState(null)
+    const [audit, setAudit] = useState([])
 
     const Checks = Check()
-  
+
 
     useEffect(() => {
         const data = JSON.parse(localStorage.getItem('userData'));
@@ -36,7 +37,13 @@ function Profile() {
             })
                 .then((res) => {
                     const response = res.data.data
-                    setUser(response)
+                    if (type === "patient") {
+                        setUser(response)
+                    } else if (type === "employee") {
+                        setUser(response.employee)
+                        setAudit(response.audit)
+                    }
+
                 })
                 .catch((err) => console.log(err));
         }
@@ -56,7 +63,14 @@ function Profile() {
                             <div className="row ">
                                 <div className="col-md-5">
                                     <Details user={user} />
-                                    <Kin user={user} />
+                                    {type === "patient" ?
+                                        <Kin user={user} /> :
+                                        <></>
+                                    }
+                                     {type === "employee" ?
+                                        <FewAudit audit={audit} /> :
+                                        <></>
+                                    }
                                 </div>
                                 <div className="col-md-7">
                                     <Overview user={user} />

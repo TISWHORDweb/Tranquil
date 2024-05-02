@@ -112,10 +112,11 @@ h6 {
 
 .alert__message.error {
   background: var(--color-red-light);
-  color: var(--color-red);
+  color: var(--color-red) !important;
 }
 .alert__message.error p {
   margin: 0;
+  color: var(--color-red) !important;
 }
 
 .timg {
@@ -134,16 +135,25 @@ h6 {
   margin: 0 !important;
 }
 
+.EditKin {
+  background-color: var(--color-default);
+  color: var(--color-third);
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
 .third {
   color: var(--color-third);
 }
 
 .alert__message.success {
   background: var(--color-green-light);
-  color: var(--color-green);
+  color: var(--color-green) !important;
 }
 .alert__message.success p {
   margin: 0;
+  color: var(--color-green) !important;
 }
 
 .defaultColor {
