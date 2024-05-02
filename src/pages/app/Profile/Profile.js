@@ -18,7 +18,7 @@ import FewAudit from '../Shift/FewAudit'
 function Profile() {
     const { type } = useContext(MyContext)
     const [user, setUser] = useState(null)
-    const [audit, setAudit] = useState([])
+    const [department, setDepartment] = useState([])
 
     const Checks = Check()
 
@@ -40,8 +40,8 @@ function Profile() {
                     if (type === "patient") {
                         setUser(response)
                     } else if (type === "employee") {
-                        setUser(response.employee)
-                        setAudit(response.audit)
+                        setUser(response)
+                        setDepartment(response.did)
                     }
 
                 })
@@ -67,8 +67,24 @@ function Profile() {
                                         <Kin user={user} /> :
                                         <></>
                                     }
-                                     {type === "employee" ?
-                                        <FewAudit audit={audit} /> :
+                                    {type === "employee" ?
+                                        <>
+                                            <div className="Card2 mt-3">
+
+                                                <div className="justify-content-space">
+                                                    <div className="">
+                                                        <small className='third'>Assigned to :</small>
+                                                        <h3>{department.name}</h3>
+                                                    </div>
+                                                    <div className="">
+                                                        <small className='third'>Category :</small>
+                                                        <h4>{user.ecid.category}</h4>
+                                                    </div>
+
+                                                </div>
+                                                <p>{department.description}</p>
+                                            </div>
+                                        </> :
                                         <></>
                                     }
                                 </div>
