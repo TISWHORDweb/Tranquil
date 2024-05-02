@@ -48,15 +48,14 @@ function EmployeeShift() {
                     if (response) {
                         setCheck(true)
                     }
-
                     if (response.status === true) {
-                        setNoshift(false)
+                        setNoshift(true)
                         setShifts(response.data.shifts)
                         setAudit(response.data.audit)
                     }
 
                     if (response.status === false) {
-                        setNoshift(true)
+                        setNoshift(false)
                     }
                 })
                 .catch((err) => {
@@ -68,7 +67,7 @@ function EmployeeShift() {
 
     }, [type, url2]);
 
-    console.log(audit)
+    console.log(noShift)
     return (
         <div>
             {check ?
@@ -86,7 +85,7 @@ function EmployeeShift() {
                                 </div>
                             </div> :
                                 <div className="">
-                                    {noShift ? <center className=''>
+                                    {!noShift ? <center className=''>
                                         <div className="mt-5">
                                             <h4>Sorry you've not been assigned to a shift yet</h4>
                                             <img className='' src={NoData} alt="" />
