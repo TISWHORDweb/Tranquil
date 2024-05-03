@@ -13,7 +13,7 @@ import { USER_BASE_URL } from '../../../Datas/data'
 import Loader from '../../../components/Loader'
 import { Check } from '../../../Utils/Core'
 import EditProfile from './EditProfile'
-import FewAudit from '../Shift/FewAudit'
+import ChangePassword from './ChangePassword'
 
 function Profile() {
     const { type } = useContext(MyContext)
@@ -51,13 +51,27 @@ function Profile() {
 
     return (
         <div>
+            <div className=''>
+                <div class="modal fade" id="loginSuccess" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-body AlertModal p-5">
+                                <ChangePassword />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             {user ?
                 <Layout>
                     <div className="container">
-                        <div className="text">
+                        <div className="d-flex">
                             <Modal title=" Edit profile" id="profileModal" class="" >
                                 <EditProfile user={user} />
                             </Modal>
+                            <button type="button" className="btnNoBg mt-4" data-bs-toggle="modal" data-bs-target="#loginSuccess" >
+                                Change password
+                            </button>
                         </div>
                         <div className="Profile">
                             <div className="row ">
@@ -70,17 +84,15 @@ function Profile() {
                                     {type === "employee" ?
                                         <>
                                             <div className="Card2 mt-3">
-
-                                                <div className="justify-content-space">
-                                                    <div className="">
-                                                        <small className='third'>Assigned to :</small>
-                                                        <h3>{department.name}</h3>
-                                                    </div>
-                                                    <div className="">
-                                                        <small className='third'>Category :</small>
-                                                        <h4>{user.ecid.category}</h4>
-                                                    </div>
-
+                                                <div className="">
+                                                    <small className='third'>Category :</small>
+                                                    <h4>{user.ecid.category}</h4>
+                                                </div>
+                                            </div>
+                                            <div className="Card2 mt-3">
+                                                <div className="">
+                                                    <small className='third'>Assigned to :</small>
+                                                    <h3>{department.name}</h3>
                                                 </div>
                                                 <p>{department.description}</p>
                                             </div>
